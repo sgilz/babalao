@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-# babalao
+# Babalao
 
 Babalao is an eCommerce platform implemented in Laravel for special topics in software engineering. This project has been built by Santi, Manu, Pipe and Lumi :)
 
