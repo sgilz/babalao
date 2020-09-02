@@ -12,3 +12,4 @@
 10. No mezclar **html** con código PHP.
 11. Todo ***pull request***  debe ser requerido como mínimo **24h** antes de la reunión semanal.
 12. Todos los estilos serán indicados en **Sass**.
+13. Los datos de entrada deben ser validados en la vista y en el modelo.
