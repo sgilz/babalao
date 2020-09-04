@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
   <link rel="icon" type="image/png" href="{{ url('storage/brand/favicon.png') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url('css/app.css') }}">
+  @stack('styles')
 </head>
 
 <body>
