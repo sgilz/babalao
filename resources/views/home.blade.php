@@ -18,7 +18,7 @@
       <div class="col-md-3">
         <div class="card">
           <div class="card-header">
-            <img class="card-img-top" alt="Card image cap" style="" src="https://www.intel.la/content/dam/products/hero/foreground/processor-box-celeron-1x1.png.rendition.intel.web.550.550.png">
+            <img class="card-img-top" alt="Card image cap" src="https://www.intel.la/content/dam/products/hero/foreground/processor-box-celeron-1x1.png.rendition.intel.web.550.550.png">
           </div>
           <div class="card-body">
             <h5 class="card-title">{{ __('home.sampleCategory') }}</h5>
