@@ -11,7 +11,9 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
   <link rel="icon" type="image/png" href="{{ url('storage/brand/favicon.png') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url('css/app.css') }}">
-  @stack('styles')
+    <link rel="stylesheet" href="{{  asset('css/bootstrap.min.css') }}">
+    <link href="{{ asset('css/customStyle.css') }}" rel="stylesheet">
+    @stack('styles')
 </head>
 
 <body>
@@ -36,7 +38,7 @@
           @endforeach
         </div>
       </div>
-      
+
     </div>
   </nav>
   <div class="container-fluid p-5">
