@@ -10,7 +10,7 @@
         <h4>{{ __('home.banner.start') }} <br>{{ __('home.banner.end') }}</h4>
         <a name="" id="" class="btn btn-dark mt-3" href="#" role="button">{{ __('home.banner.buttonText') }}</a>
       </div>
-      <img src="{{ url('storage/home/case.png') }}" class="category-img" alt="" loading="lazy">
+      <img src="{{ URL::asset('storage/home/case.png') }}" class="category-img" alt="" loading="lazy">
 
     </div>
     <div class="row mt-5">
