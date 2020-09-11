@@ -2,6 +2,7 @@
 
 namespace App;
 
+use http\Env\Request;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -36,5 +37,12 @@ class Order extends Model
     public function setTotal($total)
     {
         $this->attributes['total'] = $total;
+    }
+
+    public static function validate($request){
+        $request->validate([
+            "date" => "required",
+            "total" => "required|numeric|gt:0"
+        ]);
     }
 }

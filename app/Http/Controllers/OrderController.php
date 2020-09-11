@@ -27,10 +27,7 @@ class OrderController extends Controller {
     }
 
     public function save(Request $request){
-        $request->validate([
-            "date" => "required",
-            "total" => "required|numeric|gt:0"
-            ]);
+        Order::validate($request);
         Order::create($request->only(["date","total"]));
         return back()->with('success','Item created successfully!');
     }
@@ -44,7 +41,7 @@ class OrderController extends Controller {
     }
 
     public function delete($id){
-        DB::delete('delete from orders where id = ?',[$id]);
+        Order::destroy($id);
         return redirect()->route('order.list');
     }
 
