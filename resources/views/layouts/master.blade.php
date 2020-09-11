@@ -9,11 +9,9 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-  <link rel="icon" type="image/png" href="{{ url('storage/brand/favicon.png') }}" />
-  <link rel="stylesheet" type="text/css" href="{{ url('css/app.css') }}">
-    <link rel="stylesheet" href="{{  asset('css/bootstrap.min.css') }}">
-    <link href="{{ asset('css/customStyle.css') }}" rel="stylesheet">
-    @stack('styles')
+  <link rel="icon" type="image/png" href="{{ URL::asset('storage/brand/favicon.png') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/app.css') }}">
+  @stack('styles')
 </head>
 
 <body>
