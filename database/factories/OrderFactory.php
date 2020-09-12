@@ -1,9 +1,11 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+
 use App\Order;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
+
 /*
 |--------------------------------------------------------------------
 ------
@@ -20,6 +22,7 @@ for
 $factory->define(Order::class, function (Faker $faker) {
     return [
         'date' => $faker->date(),
+        'state' => "DELIVERED",
         'total' => $faker->numberBetween($min = 200, $max = 90000),
     ];
 });

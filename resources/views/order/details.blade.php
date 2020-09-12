@@ -8,6 +8,7 @@
                 <div class="card-header">{{ $data["order"]->getId() }}</div>
                 <div class="card-body">
                     <b>Initial date: </b> {{ $data["order"]->getDate() }}<br />
+                    <b>State: </b> {{ $data["order"]->getState() }}<br />
                     <b>Total: </b> {{ $data["order"]->getTotal() }}<br /><br />
 
                     <form method="post" action="{{ route('order.delete', $data["order"]->getId()) }}">

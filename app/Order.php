@@ -3,11 +3,13 @@
 namespace App;
 
 use http\Env\Request;
+use Util\State;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $fillable = ['date','total'];
+    protected $fillable = ['date','state','total'];
 
     public function getId()
     {
@@ -39,9 +41,29 @@ class Order extends Model
         $this->attributes['total'] = $total;
     }
 
-    public static function validate($request){
+    public function getState(){
+        return $this->attributes['state'];
+    }
+
+    public function setState($state){
+        $this->attributes['state'] = $state;
+    }
+
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public static function validate($request)
+    {
         $request->validate([
-            "date" => "required",
+            "date" => "required|date",
+            "state" => "required",
             "total" => "required|numeric|gt:0"
         ]);
     }

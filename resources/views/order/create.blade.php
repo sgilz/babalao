@@ -21,6 +21,18 @@
                         <div class="label-text">Date</div>
                     </label>
                     <label>
+                        <select name="state">
+                            <option value="SHOPPING_CART" selected>SHOPPING_CART</option>
+
+                            <option value="CONFIRMED" selected>CONFIRMED</option>
+
+                            <option value="SHIPPED" selected>SHIPPED</option>
+
+                            <option value="DELIVERED" selected>DELIVERED</option>
+                        </select>
+                        <div class="label-text">State</div>
+                    </label>
+                    <label>
                         <input type="number" name="total" id="total" />
                         <div class="label-text">Total</div>
                     </label>

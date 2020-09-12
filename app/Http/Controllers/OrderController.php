@@ -28,8 +28,8 @@ class OrderController extends Controller {
 
     public function save(Request $request){
         Order::validate($request);
-        Order::create($request->only(["date","total"]));
-        return back()->with('success','Item created successfully!');
+        Order::create($request->only(["date","state","total"]));
+        return back()->with('success','Order created successfully!');
     }
 
     public function details($id) {
