@@ -17,7 +17,7 @@ class UserController extends Controller
         $data = [];
         $user = Auth::user();
 
-        $data["title"] = $user->getName();
+        $data["title"] = __("user.title_header");
         $data["user"] = $user;
 
         return view('user.showInformation')->with("data",$data);

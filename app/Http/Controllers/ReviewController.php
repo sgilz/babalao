@@ -21,7 +21,7 @@ class ReviewController extends Controller
         $user = Auth::user();
         $product = Product::findOrFail($product_id);
 
-        $data["title"] = "Creating a review";
+        $data["title"] = __("review.title_header");
         $data["user"] = $user;
         $data["product"] = $product;
 

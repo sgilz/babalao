@@ -21,7 +21,7 @@ class Review extends Model
         ]
         );
     }
-
+    
     public function getId()
     {
         return $this->attributes['id'];
