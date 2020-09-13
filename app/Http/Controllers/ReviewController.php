@@ -21,6 +21,7 @@ class ReviewController extends Controller
         $user = Auth::user();
         $product = Product::findOrFail($product_id);
 
+        $data["title"] = "Creating a review";
         $data["user"] = $user;
         $data["product"] = $product;
 
@@ -30,7 +31,7 @@ class ReviewController extends Controller
     public function save(Request $request, int $product_id)
     {
         Review::validate($request);
-
+        
         $user = Auth::user();
 
         Review::create([

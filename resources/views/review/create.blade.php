@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section("title", __('review.title_header'))
+@section("title", $data["title"])
 @section('content')
 
 <div class="container">

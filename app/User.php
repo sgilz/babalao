@@ -33,13 +33,13 @@ class User extends Authenticatable
     public static function validate(Request $request)
     {
         $request->validate([
-            'address' => ['max:50','required','string'],
-            'city' => ['max:50','required','string'],
-            'email' => ['max:255','required','string','unique:users'],
-            'name' => ['max:50','required','string'], 
-            'neighborhood' => ['max:50','required','string'],
-            'password' => ['min:8','required','same:passwordConfirm'],
-            'passwordConfirm' => ['required', 'min:8'],
+            'address' => 'max:50|required|string',
+            'city' => 'max:50|required|string',
+            'email' => 'max:255|required|string|unique:users',
+            'name' => 'max:50|required|string', 
+            'neighborhood' => 'max:50|required|string',
+            'password' => 'min:8|required|same:passwordConfirm',
+            'passwordConfirm' => 'required|min:8',
         ]);
     }
 

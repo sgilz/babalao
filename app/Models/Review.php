@@ -15,9 +15,9 @@ class Review extends Model
     public static function validate(Request $request)
     {
         $request->validate([
-            'description' => ['max:400','required','string'],
-            'headline' => ['max:100','required','string'],
-            'rating' => ['integer'],
+            'description' => 'max:400|required|string',
+            'headline' => 'max:100|required|string',
+            'rating' => 'integer',
         ]
         );
     }

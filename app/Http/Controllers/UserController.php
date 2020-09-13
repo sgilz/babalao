@@ -12,10 +12,12 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
-    public function showInformation(){
+    public function showInformation()
+    {
         $data = [];
         $user = Auth::user();
 
+        $data["title"] = $user->getName();
         $data["user"] = $user;
 
         return view('user.showInformation')->with("data",$data);

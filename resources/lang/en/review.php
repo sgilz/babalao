@@ -12,5 +12,4 @@ return [
     ],
     'submit' => 'Submit',
     'title' => 'Create a review for ',
-    'title_header' => 'Creating a Review',
 ];
