@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+/* 
+Routes for Review
+*/
+Route::get('/review/create/{product_id}', 'ReviewController@create')->name('review.create');
+
+Route::post('/review/save/{product_id}', 'ReviewController@save')->name('review.save');
+
+/*
+Routes for User
+*/
+Route::get('/user', 'UserController@showInformation')->name('user.showInformation');
+
+Auth::routes();
