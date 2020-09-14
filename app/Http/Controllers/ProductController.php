@@ -36,6 +36,13 @@ class ProductController extends Controller
         return back()->with('success', 'Item added successfully!');
     }
 
+    public function removeFromCart($id, Request $request){
+        $products = $request->session()->get("products");
+        unset($products[$id]);
+        $request->session()->put('products', $products);
+        return back();
+    }
+
     public function removeCart(Request $request)
     {
         $request->session()->forget('products');

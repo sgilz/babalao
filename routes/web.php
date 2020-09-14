@@ -44,6 +44,8 @@ Route::post('/products/add-to-cart/{id}', 'ProductController@addToCart')->name("
 
 Route::get('/cart', 'ProductController@cart')->name("product.cart");
 
+Route::get('/cart/removeItem/{id}','ProductController@removeFromCart')->name("product.removeFromCart");
+
 Route::post('/cart/buy', 'ProductController@buy')->name("product.buy");
 
 Auth::routes();
