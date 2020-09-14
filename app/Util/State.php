@@ -6,8 +6,9 @@ namespace App\Util;
 
 abstract class State
 {
-    const SHOPPING_CART = 0;
+    const PENDING = 0;
     const CONFIRMED = 1;
-    const SHIPPED = 2;
-    const DELIVERED = 3;
+    const PREPARING_ORDER = 2;
+    const DISPATCHED = 3;
+    const DELIVERED = 4;
 }
