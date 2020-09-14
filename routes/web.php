@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'CategoryController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/category/add', 'CategoryController@add')->name('category.add');
+Route::post('/category/save', 'CategoryController@save')->name('category.save');
+Route::get('/category/delete/{id}', 'CategoryController@delete')->name("category.delete");
 
 /* 
 Routes for Review
