@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use http\Env\Request;
-use App\Item;
+use App\Models\Item;
 
 use Illuminate\Database\Eloquent\Model;
 

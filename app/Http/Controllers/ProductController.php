@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 
 use App\Util\State;
 use Illuminate\Http\Request;
-use App\Product;
-use App\Order;
-use App\Item;
+use App\Models\Product;
+use App\Models\Order;
+use App\Models\Item;
 
 class ProductController extends Controller
 {
@@ -89,6 +89,6 @@ class ProductController extends Controller
 
             $request->session()->forget('products');
         }
-        return redirect()->route('product.index');
+        return redirect()->route('product.index')->with('success', 'Success! your order is now being confirmed');
     }
 }

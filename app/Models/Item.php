@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
-use App\Product;
-use App\Order;
+use App\Models\Product;
+use App\Models\Order;
 
 
 class Item extends Model

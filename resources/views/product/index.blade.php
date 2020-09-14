@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    @include('util.message')
     @foreach($data["products"] as $product)
     <div class="row">
         <div class="col-md-3">

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Symfony\Component\VarDumper\Cloner\Data;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Order;
+use App\Models\Order;
 
 class OrderController extends Controller {
 

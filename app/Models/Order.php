@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use http\Env\Request;
-use Util\State;
-use App\Item;
+use App\Util\State;
+use App\Models\Item;
 
 use Illuminate\Database\Eloquent\Model;
 
