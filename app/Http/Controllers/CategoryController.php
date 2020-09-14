@@ -24,7 +24,7 @@ class CategoryController extends Controller
 
         $request->file('image')->storeAs(
             'public/categories',
-            $category->id.".png"
+            $category->getId().".png"
         );
 
         return back()->with('success', 'Item created successfully!');
