@@ -25,7 +25,8 @@ return [
         'placeholder' => 'Category specification',
         'new' => 'Add new category'
     ],
-    'submit' => 'Accept'
+    'submit' => 'Accept',
+    'success' => 'Category :category created successfully!'
 
 
 ];

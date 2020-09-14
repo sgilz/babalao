@@ -12,7 +12,7 @@ class CategoryController extends Controller
     public function add()
     {
         $data = [];
-        $data["title"] = "Add New Category";
+        $data["title"] = __('category.formTitle');
         return view('category.add')->with("data", $data);
     }
 
@@ -27,7 +27,7 @@ class CategoryController extends Controller
             $category->getId().".png"
         );
 
-        return back()->with('success', 'Item created successfully!');
+        return back()->with('success', __('category.success', ['category'=> $category->getName()]));
     }
 
     public function delete($id)

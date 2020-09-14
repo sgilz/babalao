@@ -17,6 +17,7 @@ class Category extends Model
     public static function validate(Request $request){
         $request->validate([
             "name" => "required",
+            'specs.*' => "required|min:2",
             "image" => "required|image|mimes:png"
         ]);
     }
