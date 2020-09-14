@@ -17,9 +17,26 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+/*
+Routes for Review
+*/
+Route::get('/review/create/{product_id}', 'ReviewController@create')->name('review.create');
+
+Route::post('/review/save/{product_id}', 'ReviewController@save')->name('review.save');
+
+/*
+Routes for User
+*/
+Route::get('/user', 'UserController@showInformation')->name('user.showInformation');
+
+/*
+Routes for Shopping-Cart and Order
+ */
 Route::get('/products', 'ProductController@index')->name("product.index");
 
-Route::get('/products/remove-cart','ProductController@removeCart')->name("product.removeCart");
+Route::get('/products/remove-cart', 'ProductController@removeCart')->name("product.removeCart");
 
 Route::get('/products/{id}', 'ProductController@show')->name("product.show");
 
@@ -29,16 +46,4 @@ Route::get('/cart', 'ProductController@cart')->name("product.cart");
 
 Route::post('/cart/buy', 'ProductController@buy')->name("product.buy");
 
-/*
-Route::get('/order', 'OrderController@index')->name('order.index');
-
-Route::get('/order/create', 'OrderController@create')->name('order.create');
-
-Route::get('/order/list', 'OrderController@list')->name('order.list');
-
-Route::get('/order/details/{id}','OrderController@details')->name('order.details');
-
-Route::post('/order/save', 'OrderController@save')->name('order.save');
-
-Route::delete('/order/delete/{id}', 'OrderController@delete')->name('order.delete');
-*/
+Auth::routes();
