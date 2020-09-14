@@ -30,5 +30,6 @@ Route::post('/review/save/{product_id}', 'ReviewController@save')->name('review.
 Routes for User
 */
 Route::get('/user', 'UserController@showInformation')->name('user.showInformation');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('user.logout');
 
 Auth::routes();
