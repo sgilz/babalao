@@ -14,55 +14,23 @@
 
     </div>
     <div class="row mt-5">
-
-      <div class="col-md-3">
+      @foreach($data["categories"] as $category)
+      <div class="col-md-3 mb-5">
         <div class="card">
           <div class="card-header">
-            <img class="card-img-top" alt="Card image cap" src="https://www.intel.la/content/dam/products/hero/foreground/processor-box-celeron-1x1.png.rendition.intel.web.550.550.png">
+            <img class="card-img-top" alt="Card image cap" src="{{ URL::asset('storage/categories/'.$category->getId().'.png') }}">
           </div>
           <div class="card-body">
-            <h5 class="card-title">{{ __('home.sampleCategory') }}</h5>
-
-
+            <h5 class="card-title">{{ $category->getName() }}</h5>
+            
+            @foreach($category->getSpecs() as $spec)
+                {{$spec}}<br>
+            @endforeach
+            
           </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="card">
-          <div class="card-header">
-            <img class="card-img-top" alt="Card image cap" src="https://starcomp.in/pub/media/catalog/product/cache/600x600/gigabyte-x570-aorus-ultra-atx-motherboard-(-amd-am4-socket,-for-ryzen-series-cpu,-4-ram-slots,-max-128gb-ram-support-).png">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">{{ __('home.sampleCategory') }}</h5>
-
-
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card">
-          <div class="card-header">
-            <img class="card-img-top" alt="Card image cap" src="https://i.ebayimg.com/images/g/qX0AAOSwPile~PjI/s-l640.png">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">{{ __('home.sampleCategory') }}</h5>
-
-
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card">
-          <div class="card-header">
-            <img class="card-img-top" alt="Card image cap" src="https://sta3-nzxtcorporation.netdna-ssl.com/uploads/product/cover_image_content/840/card_1ab93e87196cf33a.png">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">{{ __('home.sampleCategory') }}</h5>
-
-
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 
