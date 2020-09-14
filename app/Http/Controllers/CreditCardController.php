@@ -5,24 +5,19 @@ namespace App\Http\Controllers;
 
 use App\Models\CreditCard;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class CreditCardController
 {
-    public function details($id)
+    public function __construct()
     {
-        $data = []; //to be sent to the view
-        $card = CreditCard::findOrFail($id);
-
-        $data["title"] = $card->getNumber();
-        $data["card"] = $card;
-        return view('card.show')->with("data",$data);
+        $this->middleware('auth');
     }
 
     public function create()
     {
         $data = []; //to be sent to the view
-        $data["title"] = __("creditCard.create.title");
+        $data["title"] = __("creditCard.create.header_title");
 
         return view('creditCard.create')->with("data",$data);
     }
@@ -30,24 +25,26 @@ class CreditCardController
     public function list()
     {
         $data = []; //to be sent to the view
-        $data["title"] = "Registered cards";
+        $data["title"] = __("creditCard.list.header_title");
         $data["cards"] = CreditCard::all();
 
-        return view('card.showAll')->with("data",$data);
+        return view('creditCard.list')->with("data",$data);
     }
 
     public function delete($id)
     {
-        DB::delete('delete from cards where id = ?',[$id]);
-
-        return view('home.index');
+        $user = CreditCard::find($id);
+        $user->delete();
+        return back()->with('deleted', __("creditCard.message.deleted"));
     }
 
     public function save(Request $request)
     {
         CreditCard::validate($request);
-        CreditCard::create($request->only(["owner", "owner_id", "card_number", "expiration_date", "cvv"]));
-        return back()->with('success', __("creditCard.save.success"));
+        $credit_card = new CreditCard($request->only(["owner", "owner_id", "card_number", "expiration_date", "cvv"]));
+        $credit_card->setUserId(Auth::user()->getId());
+        $credit_card->save();
+        return back()->with('success', __("creditCard.message.success"));
     }
 
 }

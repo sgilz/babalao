@@ -6,11 +6,12 @@ namespace App\Models;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 
-/* use App\Models\User;
-use App\Models\Order; */
+use App\User;
+use App\Models\Order;
 
 class CreditCard extends Model
 {
+    //attributes id, user_id, owner, owner_id, card_number, expiration_date, cvv
     protected $fillable = ['owner', 'owner_id', 'card_number','expiration_date','cvv'];
 
     public function getId()
@@ -21,6 +22,16 @@ class CreditCard extends Model
     public function setId($id)
     {
         $this->attributes['id'] = $id;
+    }
+
+    public function setUserId($user_id)
+    {
+        $this->attributes['user_id'] = $user_id;
+    }
+
+    public function getUserId()
+    {
+        $this->attributes['user_id'];
     }
 
     public function getOwner()
@@ -73,7 +84,7 @@ class CreditCard extends Model
         $this->attributes['cvv'] = $cvv;
     }
 
-    /* public function user()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
@@ -81,7 +92,7 @@ class CreditCard extends Model
     public function orders()
     {
         return $this->hasMany(Order::class);
-    } */
+    }
 
     public static function validate(Request $request)
     {

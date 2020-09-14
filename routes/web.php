@@ -23,9 +23,4 @@ Route::post('/card/save', 'CreditCardController@save')->name("card.save");
 
 Route::get('/card/list/', 'CreditCardController@list')->name("card.list");
 
-Route::get('/card/details/{id}', 'CreditCardController@details')->name("card.details");
-
-Route::delete('/card/details/delete/{id}','CreditCardController@delete')->name("card.delete");
-
-
-
+Route::delete('/card/list/delete/{id}','CreditCardController@delete')->name("card.delete");

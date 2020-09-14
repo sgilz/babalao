@@ -14,12 +14,13 @@ class CreateCreditCardsTable extends Migration
     public function up()
     {
         Schema::create('credit_cards', function (Blueprint $table) {
-            $table->bigIncrements("id")->primary();
+            $table->bigIncrements("id");
+            $table->foreign("user_id")->references("id")->on("users");
             $table->text("owner");
             $table->text("owner_id");
             $table->text('card_number');
-            $table->date('expiration_date');
-            $table->integer('cvv');
+            $table->text('expiration_date');
+            $table->integer('cvv')->unsigned();
             $table->timestamps();
         });
     }

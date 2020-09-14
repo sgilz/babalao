@@ -19,7 +19,7 @@
                     <form  method="POST" action="{{ route('card.save') }}" >
                         @csrf
                         <div class="col-50">
-                            <label for="fname">{{ __("creditCard.create.accepted")}}</label>
+                            <label>{{ __("creditCard.create.accepted")}}</label>
                             <div class="icon-container">
                                 <i class="fa fa-cc-visa" style="color:navy;"></i>
                                 <i class="fa fa-cc-amex" style="color:blue;"></i>
