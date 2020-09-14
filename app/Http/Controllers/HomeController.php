@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class HomeController extends CategoryController
+class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -21,5 +22,11 @@ class HomeController extends CategoryController
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function index()
+    {
+        $data = []; //to be sent to the view
 
+        $data["categories"] = Category::all();
+        return view('home')->with("data", $data);
+    }
 }
