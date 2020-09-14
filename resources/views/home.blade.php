@@ -15,7 +15,7 @@
     </div>
     <div class="row mt-5">
       @foreach($data["categories"] as $category)
-      <div class="col-md-3 mb-5">
+      <div class="col-md-3 mb-5 d-flex align-items-stretch">
         <div class="card">
           <div class="card-header">
             <img class="card-img-top" alt="Card image cap" src="{{ URL::asset('storage/categories/'.$category->getId().'.png') }}">
