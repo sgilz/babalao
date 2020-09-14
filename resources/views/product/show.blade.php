@@ -31,7 +31,7 @@
                                 <div class="specs-input-group input-group mb-3">
                                     <input type="number" class="form-control" name="amount" min="1" value="1">
                                     <div class="input-group-append">
-                                        <a class="btn btn-outline-primary btn-add" href="#" role="button">Añadir al carrito</a>
+                                        <a class="btn btn-outline-primary btn-add" href="#" role="button">{{ __('product.show.cart') }}</a>
                                     </div>
                                 </div>
                             </div>

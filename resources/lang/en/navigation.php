@@ -13,6 +13,7 @@ return [
     */
 
     'brand' => 'Babalao',
+    'search' => 'Search...',
     'dropdown' => [
         'loggedIn' => [
             'account' => 'Your account',

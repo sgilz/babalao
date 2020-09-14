@@ -9,39 +9,48 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    
+
     public function show($product_id)
     {
         $data = [];
-        $data["title"] = "Show product";
         $data["product"] = Product::findOrFail($product_id);
-        $reviews_avg = Review::with(['product_id',$product_id])->avg('rating');
-        $data["review"] = ($reviews_avg/5)*100;
+        $data["title"] = $data["product"]->getName();
+        $reviews_avg = Review::with(['product_id', $product_id])->avg('rating');
+        $data["review"] = ($reviews_avg / 5) * 100;
 
-        return view('product.show')->with("data",$data);
+        return view('product.show')->with("data", $data);
     }
 
     public function search($search)
     {
         $data = [];
-        $data["title"] = "Show product";
-        $data["search"] = "$search";
-        $data["products"] = Product::where('name', 'like', '%'. $search . '%')->get();
-        $data["product"] = $data["products"]->first();
+        $data["title"] = __('product.search.title', ['search' => $search]);
+        $data["search"] = $search;
+        $results = Product::where('name', 'like', '%' . $search . '%')->get();
+        if ($results->isEmpty()) {
+            return view('product.empty')->with("data", $data);
+        } else {
+            $data["products"] = $results;
+            $data["product"] = $data["products"]->first();
+            return view('product.search')->with("data", $data);
+        }
+    }
 
-
-        return view('product.search')->with("data",$data);
+    public function searchBar(Request $request)
+    {
+        $search = $request['search'];
+        return redirect()->route("product.search", ['search' => $search]);
     }
 
 
     public function list($category_id)
     {
         $data = [];
-        $data["title"] = "Show product";
         $data['category'] = Category::findOrFail($category_id);
+        $data["title"] = $data['category']->getName();
         $data["products"] = Product::all();
 
-        return view('product.list')->with("data",$data);
+        return view('product.list')->with("data", $data);
     }
 
     public function add($category_id)
@@ -50,13 +59,13 @@ class ProductController extends Controller
         $data["title"] = "Add product";
         $data['category'] = Category::findOrFail($category_id);
 
-        return view('product.add')->with("data",$data);
+        return view('product.add')->with("data", $data);
     }
 
     public function save(Request $request, int $category_id)
     {
         Product::validate($request);
-        
+
         $product = Product::create([
             'name' => $request['name'],
             'price' => $request['price'],
@@ -67,7 +76,7 @@ class ProductController extends Controller
 
         $request->file('image')->storeAs(
             'public/products',
-            $product->getId().".png"
+            $product->getId() . ".png"
         );
 
         return redirect()->route('home');

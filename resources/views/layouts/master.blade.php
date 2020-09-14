@@ -22,8 +22,11 @@
     </a>
     <div class="d-flex toolbar">
       <div class="searchbar">
-        <input class="search_input" type="text" name="" placeholder="Search...">
-        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+        <form method="POST" action="{{ route('product.searchBar') }}">
+          @csrf
+          <input class="search_input" type="text" name="search" placeholder="{{ __('navigation.search') }}">
+          <button class="search_icon"><i class="fas fa-search"></i></button>
+        </form>
       </div>
       <div class="user-menu dropdown btn-toolbar">
         <a href="#" class="search_icon icon-toolbar"><i class="fas fa-shopping-cart"></i></a>

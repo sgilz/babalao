@@ -32,6 +32,7 @@ Route::get('/c{category_id}/products', 'ProductController@list')->name('product.
 Route::get('/c{category_id}/product/add', 'ProductController@add')->name('product.add');
 Route::post('/c{category_id}/product/save', 'ProductController@save')->name('product.save');
 Route::get('/search/{search}', 'ProductController@search')->name('product.search');
+Route::post('/searchBar', 'ProductController@searchBar')->name('product.searchBar');
 
 
 
