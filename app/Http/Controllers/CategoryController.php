@@ -9,15 +9,6 @@ use Illuminate\Support\Facades\Storage;
 class CategoryController extends Controller
 {
 
-    public function index()
-    {
-        $data = []; //to be sent to the view
-
-        $data["categories"] = Category::all();
-        return view('home')->with("data", $data);
-    }
-
-
     public function add()
     {
         $data = [];
