@@ -48,7 +48,7 @@ class ProductController extends Controller
         $data = [];
         $data['category'] = Category::findOrFail($category_id);
         $data["title"] = $data['category']->getName();
-        $data["products"] = Product::all();
+        $data["products"] = Product::where('category_id',$category_id)->get();
 
         return view('product.list')->with("data", $data);
     }
@@ -56,8 +56,8 @@ class ProductController extends Controller
     public function add($category_id)
     {
         $data = [];
-        $data["title"] = "Add product";
         $data['category'] = Category::findOrFail($category_id);
+        $data["title"] = __('product.formTitle', ['category'=>$data['category']->getName()]);
 
         return view('product.add')->with("data", $data);
     }
