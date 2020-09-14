@@ -31,9 +31,15 @@
       <div class="user-menu dropdown btn-toolbar">
         <a href="#" class="user_icon icon-toolbar dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+        @auth
           @foreach(__('navigation.dropdown.loggedIn') as $key => $value)
-          <a class="dropdown-item" href="#">{{$value}}</a>
+          <a class="dropdown-item" href="{{route($value['route'])}}">{{$value['label']}}</a>
           @endforeach
+        @else
+          @foreach(__('navigation.dropdown.loggedOut') as $key => $value)
+          <a class="dropdown-item" href="{{route($value['route'])}}">{{$value['label']}}</a>
+          @endforeach
+        @endauth
         </div>
       </div>
       
