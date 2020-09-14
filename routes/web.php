@@ -16,9 +16,25 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/home');
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+/* 
+Routes for Category
+*/
 Route::get('/category/add', 'CategoryController@add')->name('category.add');
 Route::post('/category/save', 'CategoryController@save')->name('category.save');
-Route::get('/category/delete/{id}', 'CategoryController@delete')->name("category.delete");
+Route::post('/category/delete/{category_id}', 'CategoryController@delete')->name("category.delete");
+
+/* 
+Routes for Product
+*/
+Route::get('/product/{product_id}', 'ProductController@show')->name('product.show');
+Route::get('/c{category_id}/products', 'ProductController@list')->name('product.list');
+Route::get('/c{category_id}/product/add', 'ProductController@add')->name('product.add');
+Route::post('/c{category_id}/product/save', 'ProductController@save')->name('product.save');
+Route::get('/search/{search}', 'ProductController@search')->name('product.search');
+
+
+
 
 /* 
 Routes for Review

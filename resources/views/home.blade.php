@@ -21,15 +21,15 @@
             <img class="card-img-top" alt="Card image cap" src="{{ URL::asset('storage/categories/'.$category->getId().'.png') }}">
           </div>
           <div class="card-body">
-            <h5 class="card-title">{{ $category->getName() }}</h5>
-            
-            @foreach($category->getSpecs() as $spec)
-                {{$spec}}<br>
-            @endforeach
-            
+            <h5 class="card-title">
+              <a href="{{ route('product.list',$category->getId()) }}" class="stretched-link">
+                {{ $category->getName() }}
+              </a>
+            </h5>
           </div>
         </div>
       </div>
+
       @endforeach
     </div>
   </div>
