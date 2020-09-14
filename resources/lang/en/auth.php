@@ -14,6 +14,24 @@ return [
     */
 
     'failed' => 'These credentials do not match our records.',
+    'input' => [
+        'address' => 'Enter your address:',
+        'city' => 'Enter your city:',
+        'confirm_password' => 'Confirm your password:',
+        'email' => 'Enter your email:',
+        'name' => 'Enter your name:',
+        'neighborhood' => 'Enter your neighborhood',
+        'password' => 'Enter your password:',
+    ],
+    'place_holder' => [
+        'address' => 'Your shipping addres',
+        'city' => 'Your city',
+        'email' => 'name@example.com',
+        'name' => 'Your name',
+        'neighborhood' => 'Your neighborhood',
+    ],
+    'register_title' => 'Create account',
+    'submit' => 'Create your Babalao account',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+    'title' => 'Create account',
 ];

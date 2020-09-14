@@ -7,7 +7,7 @@ use App\Models\CreditCard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CreditCardController
+class CreditCardController extends Controller
 {
     public function __construct()
     {
@@ -41,8 +41,10 @@ class CreditCardController
     public function save(Request $request)
     {
         CreditCard::validate($request);
+
+        $user = Auth::user();
         $credit_card = new CreditCard($request->only(["owner", "owner_id", "card_number", "expiration_date", "cvv"]));
-        $credit_card->setUserId(Auth::user()->getId());
+        $credit_card->setUserId($user()->getId());
         $credit_card->save();
         return back()->with('success', __("creditCard.message.success"));
     }
