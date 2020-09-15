@@ -39,7 +39,6 @@ return [
                 'route' => 'register'
             ]
         ],
-    ]
-
-
+    ],
+    'search' => 'Search...'
 ];

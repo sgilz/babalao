@@ -21,6 +21,7 @@
                     </label>
                     <label>
                         <select name="status">
+
                             <option value="PENDING" selected>{{__('order.views.create.pending')}}</option>
 
                             <option value="CONFIRMED" selected>{{__('order.views.create.confirmed')}}</option>

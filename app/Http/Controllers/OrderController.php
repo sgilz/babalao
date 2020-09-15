@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 
+
 class OrderController extends Controller
 {
 
@@ -109,11 +110,13 @@ class OrderController extends Controller
 
     public function buy(Request $request)
     {
+        $user = Auth::user();
         $order = new Order();
         $order->setDate(date('Y-m-d H:i:s'));
         $order->setStatus(Status::PENDING);
         $order->setTotal("0");
-        $order->user();
+        $order->setUserId($user->getId());
+
         $order->save();
 
         $totalPrice = 0;

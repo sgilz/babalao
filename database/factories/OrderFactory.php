@@ -19,6 +19,7 @@ for
 | model instances for testing / seeding your application's database.
 |
 */
+
 $factory->define(Order::class, function (Faker $faker)
 {
     return [

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\CreditCard;
+use App\Models\Item;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,5 +16,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(UserSeeder::class);
         $this->call(CreditCard::class);
         $this->call(OrdersTableSeeder::class);
+        $this->call(Item::class);
     }
 }

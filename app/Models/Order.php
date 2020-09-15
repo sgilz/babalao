@@ -11,7 +11,8 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     //attributes id, date, status, total, user, created_at, updated_at
-    protected $fillable = ['date','status','user_id','total'];
+    protected $fillable = ['date', 'status', 'user_id', 'total'];
+
 
     public function getId()
     {
@@ -43,12 +44,19 @@ class Order extends Model
         $this->attributes['total'] = $total;
     }
 
-    public function getStatus(){
+    public function getStatus()
+    {
         return $this->attributes['status'];
     }
 
-    public function setStatus($status){
+    public function setStatus($status)
+    {
         $this->attributes['status'] = $status;
+    }
+
+    public function setUserId($user_id)
+    {
+        $this->attributes['user_id'] = $user_id;
     }
 
     public function items()
@@ -65,7 +73,9 @@ class Order extends Model
     {
         $request->validate([
             "date" => "required|date",
+
             "status" => "required",
+
             "total" => "required|numeric|gt:0"
         ]);
     }
