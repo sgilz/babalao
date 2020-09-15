@@ -13,13 +13,15 @@
                 <div class="card-body controls pl-5 pr-5">
                     <div class="row">
                         <div class="col-8">
-                            <img class="card-img-top" alt="Card image cap" src="{{ URL::asset('storage/products/'.$data['product']->getId().'.png') }}">
+                            <img class="card-img-top" alt="Card image cap"
+                                src="{{ URL::asset('storage/products/'.$data['product']->getId().'.png') }}">
                         </div>
                         <div class="col-4">
                             <h4>{{ $data['product']->getName() }}</h4>
                             <a href="#" data-toggle="modal" data-target="#review-modal">
                                 <div class="star-ratings-sprite">
-                                    <span style="width: {{ $data['reviews_avg'] }}%" class="star-ratings-sprite-rating"></span>
+                                    <span style="width: {{ $data['reviews_avg'] }}%"
+                                        class="star-ratings-sprite-rating"></span>
                                 </div>
                             </a>
                             <hr>
@@ -28,18 +30,22 @@
                             @endforeach
                             <hr>
                             <div class="form-group row" id="specs-form-group">
-                                <form action="{{ route('cart.addToCart',['id'=> $data['product']->getId()]) }}" method="POST">
+                                <form action="{{ route('cart.addToCart',['id'=> $data['product']->getId()]) }}"
+                                    method="POST">
                                     @csrf
                                     <div class="specs-input-group input-group mb-3">
                                         <input type="number" class="form-control" name="quantity" min="1" value="1">
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-primary btn-add" role="submit">{{ __('product.show.cart') }}</button>
+                                            <button class="btn btn-outline-primary btn-add"
+                                                role="submit">{{ __('product.show.cart') }}</button>
                                         </div>
-                                    </div>
                                 </form>
                             </div>
-
                         </div>
+                        <form action="{{route('wishList.addProduct',$data['product']->getId())}}" method="POST">
+                            @csrf
+                            <button class="btn btn-danger" role="submit"> {{ __('product.show.wish_list') }} </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -50,7 +56,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">{{ __('product.reviews.title', ['product' => $data['product']->getName()]) }}</h5>
+                <h5 class="modal-title">{{ __('product.reviews.title', ['product' => $data['product']->getName()]) }}
+                </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -61,7 +68,8 @@
                     <div class="card-header">
                         {{ $review->getHeadline() }}
                         <div class="star-ratings-sprite">
-                            <span style="width: {{ $review->getRating()*100/5 }}%" class="star-ratings-sprite-rating"></span>
+                            <span style="width: {{ $review->getRating()*100/5 }}%"
+                                class="star-ratings-sprite-rating"></span>
                         </div>
                     </div>
                     <div class="card-body">
@@ -72,8 +80,10 @@
                 @endforeach
             </div>
             <div class="modal-footer">
-                <a class="btn btn-primary" href="{{ route('review.create',$data['product']->getId()) }}">{{ __('product.reviews.make') }}</a>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('product.reviews.exit') }}</button>
+                <a class="btn btn-primary"
+                    href="{{ route('review.create',$data['product']->getId()) }}">{{ __('product.reviews.make') }}</a>
+                <button type="button" class="btn btn-secondary"
+                    data-dismiss="modal">{{__('product.reviews.exit') }}</button>
             </div>
         </div>
     </div>

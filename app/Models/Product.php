@@ -26,7 +26,6 @@ class Product extends Model
 
     }
 
-
     public function getId()
     {
         return $this->attributes['id'];
@@ -96,5 +95,9 @@ class Product extends Model
         $this->attributes['category_id'] = $category_id;
     }
 
+    public function wishsLists()
+    {
+        return $this->belongsToMany(WishList::class);
+    }
 }
 

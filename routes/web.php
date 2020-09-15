@@ -71,4 +71,11 @@ Route::post('/order/save', 'OrderController@save')->name('order.save');
 Route::get('/order/details/{id}','OrderController@details')->name('order.details');
 Route::delete('/order/delete/{id}', 'OrderController@delete')->name('order.delete');
 
+/*
+Routes for Wish List
+*/
+Route::get('/wishList/show','WishListController@show')->name("wishList.show");
+Route::post('/wishList/{id_product}', 'WishListController@addProduct')->name("wishList.addProduct");
+Route::delete('wishList/delete-product/{id_product}', 'WishListController@deleteProduct')->name('wishList.deleteProduct');
+
 Auth::routes();
