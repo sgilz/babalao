@@ -11,7 +11,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    /* int id, String name, String email, String password, String address, String neighborhood, 
+    /* int id, String name, String email, String password, String address, String neighborhood,
     String city, boolean is_admin, Date created_at, Date upated_at
     */
     protected $fillable = ['address','city','email','name', 'neighborhood','password'];
@@ -36,7 +36,7 @@ class User extends Authenticatable
             'address' => 'max:50|required|string',
             'city' => 'max:50|required|string',
             'email' => 'max:255|required|string|unique:users',
-            'name' => 'max:50|required|string', 
+            'name' => 'max:50|required|string',
             'neighborhood' => 'max:50|required|string',
             'password' => 'min:8|required|same:passwordConfirm',
             'passwordConfirm' => 'required|min:8',
@@ -97,7 +97,7 @@ class User extends Authenticatable
         return $this->attributes['neighborhood'];
     }
 
-    public function setNeighborhood()
+    public function setNeighborhood($neighborhood)
     {
         $this->attributes['neighborhood'] =  $neighborhood;
     }
@@ -116,7 +116,7 @@ class User extends Authenticatable
     {
         return $this->attributes['is_admin'];
     }
-    
+
     public function setIsAdmin($isAdmin)
     {
         $this->attributs['is_admin'] =  $isAdmin;

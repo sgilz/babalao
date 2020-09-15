@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-/* 
+/*
 Routes for Review
 */
 Route::get('/review/create/{product_id}', 'ReviewController@create')->name('review.create');
@@ -33,3 +33,14 @@ Route::get('/user', 'UserController@showInformation')->name('user.showInformatio
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('user.logout');
 
 Auth::routes();
+
+/*
+Routes for CreditCard
+*/
+Route::get('/card/create', 'CreditCardController@create')->name("card.create");
+
+Route::post('/card/save', 'CreditCardController@save')->name("card.save");
+
+Route::get('/card/list/', 'CreditCardController@list')->name("card.list");
+
+Route::delete('/card/list/delete/{id}','CreditCardController@delete')->name("card.delete");

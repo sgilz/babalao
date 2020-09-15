@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Review;
-use App\Product;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,7 +31,7 @@ class ReviewController extends Controller
     public function save(Request $request, int $product_id)
     {
         Review::validate($request);
-        
+
         $user = Auth::user();
 
         Review::create([
