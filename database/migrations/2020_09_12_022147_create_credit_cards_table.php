@@ -15,6 +15,7 @@ class CreateCreditCardsTable extends Migration
     {
         Schema::create('credit_cards', function (Blueprint $table) {
             $table->bigIncrements("id");
+            $table->bigInteger('user_id')->unsigned();
             $table->foreign("user_id")->references("id")->on("users");
             $table->text("owner");
             $table->text("owner_id");

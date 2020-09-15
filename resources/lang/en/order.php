@@ -21,7 +21,7 @@ return[
             'dispatched'=>'DISPATCHED',
             'pending'=>'PENDING',
             'preparing'=>'PREPARING_ORDER',
-            'state'=>'State',
+            'status'=>'Status',
             'submit'=>'Submit',
             'total'=>'Total'
             ],
@@ -29,7 +29,7 @@ return[
             'back'=>'Back',
             'delete'=>'Delete',
             'initialDate'=>'Initial date: ',
-            'state'=>'State: ',
+            'status'=>'Status: ',
             'total'=>'Total: ',
         ],
         'index'=> [
