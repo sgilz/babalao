@@ -60,4 +60,9 @@ class Category extends Model
     
         $this->attributes['specs'] = json_encode($specs);
     }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
