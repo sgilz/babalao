@@ -13,17 +13,18 @@ return [
     */
 
     'formTitle' => 'Add new category',
-    'name' => [
-        'label' => 'Category name'
-    ],
     'image' => [
         'label' => 'Upload image',
         'placeholder' => 'Only .png images are valid'
     ],
+    'name' => [
+        'label' => 'Category name'
+    ],
     'specs' => [
         'label' => 'Define specs for this category',
-        'placeholder' => 'Category specification',
-        'new' => 'Add new category'
+        'new' => 'Add new category',
+        'placeholder' => 'Category specification'
+        
     ],
     'submit' => 'Accept',
     'success' => 'Category :category created successfully!'

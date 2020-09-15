@@ -13,7 +13,6 @@ return [
     */
 
     'brand' => 'Babalao',
-    'search' => 'Search...',
     'dropdown' => [
         'loggedIn' => [
             [
@@ -40,7 +39,8 @@ return [
                 'route' => 'register'
             ]
         ],
-    ]
+    ],
+    'search' => 'Search...'
 
 
 ];

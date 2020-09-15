@@ -47,8 +47,9 @@ class ProductController extends Controller
     {
         $data = [];
         $data['category'] = Category::findOrFail($category_id);
-        $data["title"] = $data['category']->getName();
         $data["products"] = Product::where('category_id',$category_id)->get();
+        $data["title"] = $data['category']->getName();
+
 
         return view('product.list')->with("data", $data);
     }
@@ -67,11 +68,11 @@ class ProductController extends Controller
         Product::validate($request);
 
         $product = Product::create([
+            'brand' => $request['brand'],
+            'category_id' => $category_id,
             'name' => $request['name'],
             'price' => $request['price'],
-            'brand' => $request['brand'],
-            'specs' => $request['specs'],
-            'category_id' => $category_id
+            'specs' => $request['specs']
         ]);
 
         $request->file('image')->storeAs(

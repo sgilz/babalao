@@ -12,37 +12,37 @@ return [
     |
     */
 
-    'formTitle' => 'Add new product to :category category',
-    'name' => [
-        'label' => 'Name',
-        'placeholder' => 'Product Name'
+    'banner' => [
+        'buttonText' => 'Discover what\'s new',
+        'end' => 'There\'s one waiting for you',
+        'start' => 'New components for :category'
     ],
     'brand' => [
         'label' => 'Brand',
         'placeholder' => 'Product Brand'
     ],
-    'price' => [
-        'label' => 'Price',
-        'placeholder' => 'Amount'
-    ],
+    'formTitle' => 'Add new product to :category category',
     'image' => [
         'label' => 'Upload image',
         'placeholder' => 'Only .png images are valid'
     ],
+    'name' => [
+        'label' => 'Name',
+        'placeholder' => 'Product Name'
+    ],
+    'price' => [
+        'label' => 'Price',
+        'placeholder' => 'Amount'
+    ],
+    'search' => [
+        'empty' => 'Opps, we couldn\' find any products for given search:',
+        'result' => 'Search results:',
+        'title' => 'Results for :search'
+    ],
     'show' => [
         'cart' => 'Add to Cart'
     ],
-    'submit' => 'Accept',
-    'banner' => [
-        'start' => 'New components for :category',
-        'end' => 'There\'s one waiting for you',
-        'buttonText' => 'Discover what\'s new'
-    ],
-    'search' => [
-        'result' => 'Search results:',
-        'empty' => 'Opps, we couldn\' find any products for given search:',
-        'title' => 'Results for :search'
-    ]
+    'submit' => 'Accept'
 
 
 ];

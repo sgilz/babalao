@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class Product extends Model
 {
     //attributes id, name, price, created_at, updated_at
-    protected $fillable = ['name','price','brand','specs','category_id'];
+    protected $fillable = ['brand','category_id','name','price','specs'];
 
     protected $casts = [
         'specs' => 'array'
@@ -17,9 +17,9 @@ class Product extends Model
     public static function validate(Request $request){
 
         $request->validate([
+            "brand" => "required",
             "name" => "required",
             "price" => "required|numeric|gt:0",
-            "brand" => "required",
             "specs.*.name" => "required",
             "specs.*.value" => "required"
         ]);
