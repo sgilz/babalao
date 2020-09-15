@@ -26,7 +26,7 @@
         <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
       </div>
       <div class="user-menu dropdown btn-toolbar">
-        <a href="#" class="search_icon icon-toolbar"><i class="fas fa-shopping-cart"></i></a>
+        <a href="{{route('cart.cart')}}" class="search_icon icon-toolbar"><i class="fas fa-shopping-cart"></i></a>
       </div>
       <div class="user-menu dropdown btn-toolbar">
         <a href="#" class="user_icon icon-toolbar dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
@@ -42,7 +42,7 @@
         @endauth
         </div>
       </div>
-      
+
     </div>
   </nav>
   <div class="container-fluid p-5">
