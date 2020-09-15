@@ -47,6 +47,9 @@ class ProductController extends Controller
     public function searchBar(Request $request)
     {
         $search = $request['search'];
+        if (!$search) {
+            $search = " ";
+        }
         return redirect()->route("product.search", ['search' => $search]);
     }
 
@@ -55,7 +58,7 @@ class ProductController extends Controller
     {
         $data = [];
         $data['category'] = Category::findOrFail($category_id);
-        $data["products"] = Product::where('category_id',$category_id)->get();
+        $data["products"] = Product::where('category_id', $category_id)->get();
         $data["title"] = $data['category']->getName();
 
 
@@ -66,7 +69,7 @@ class ProductController extends Controller
     {
         $data = [];
         $data['category'] = Category::findOrFail($category_id);
-        $data["title"] = __('product.formTitle', ['category'=>$data['category']->getName()]);
+        $data["title"] = __('product.formTitle', ['category' => $data['category']->getName()]);
 
         return view('product.add')->with("data", $data);
     }
