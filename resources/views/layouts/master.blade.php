@@ -16,17 +16,20 @@
 
 <body>
   <nav class="navbar main-navbar navbar-light d-flex justify-content-between">
-    <a class="navbar-brand d-flex" href="#">
+    <a class="navbar-brand d-flex" href="{{ route('home') }}">
       <img src="{{ url('storage/brand/favicon.png') }}" width="45" height="50" class="d-inline-block align-top" alt="" loading="lazy">
       <h1 class="brand-text d-inline-block align-self-center ml-3">{{ __('navigation.brand') }} </h1>
     </a>
     <div class="d-flex toolbar">
       <div class="searchbar">
-        <input class="search_input" type="text" name="" placeholder="Search...">
-        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+        <form method="POST" action="{{ route('product.searchBar') }}">
+          @csrf
+          <input class="search_input" type="text" name="search" placeholder="{{ __('navigation.search') }}">
+          <button class="search_icon"><i class="fas fa-search"></i></button>
+        </form>
       </div>
       <div class="user-menu dropdown btn-toolbar">
-        <a href="#" class="search_icon icon-toolbar"><i class="fas fa-shopping-cart"></i></a>
+        <a href="{{route('cart.cart')}}" class="search_icon icon-toolbar"><i class="fas fa-shopping-cart"></i></a>
       </div>
       <div class="user-menu dropdown btn-toolbar">
         <a href="#" class="user_icon icon-toolbar dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
@@ -42,7 +45,7 @@
         @endauth
         </div>
       </div>
-      
+
     </div>
   </nav>
   <div class="container-fluid p-5">
@@ -54,6 +57,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/65b5c67b82.js" crossorigin="anonymous"></script>
   @stack('scripts')
+  @stack('custom-scripts')
 </body>
 
 </html>
