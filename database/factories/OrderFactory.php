@@ -19,10 +19,12 @@ for
 | model instances for testing / seeding your application's database.
 |
 */
-$factory->define(Order::class, function (Faker $faker) {
+$factory->define(Order::class, function (Faker $faker)
+{
     return [
         'date' => $faker->date(),
-        'state' => "DELIVERED",
+        'status' => "DELIVERED",
+        'user_id' => 0,
         'total' => $faker->numberBetween($min = 200, $max = 90000),
     ];
 });

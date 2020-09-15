@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    //attributes id, date, status, total, created_at, updated_at
-    protected $fillable = ['date','status','total'];
+    //attributes id, date, status, total, user, created_at, updated_at
+    protected $fillable = ['date','status','user_id','total'];
 
     public function getId()
     {
@@ -56,16 +56,16 @@ class Order extends Model
         return $this->hasMany(Item::class);
     }
 
-    /*public function user()
+    public function user()
     {
         return $this->belongsTo(User::class);
-    }*/
+    }
 
     public static function validate($request)
     {
         $request->validate([
             "date" => "required|date",
-            "state" => "required",
+            "status" => "required",
             "total" => "required|numeric|gt:0"
         ]);
     }
