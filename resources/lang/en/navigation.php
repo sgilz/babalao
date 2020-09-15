@@ -16,13 +16,29 @@ return [
     'search' => 'Search...',
     'dropdown' => [
         'loggedIn' => [
-            'account' => 'Your account',
-            'order' => 'Your orders',
-            'logout' => 'Logout'
+            [
+                'label' => 'Your Account',
+                'route' => 'user.showInformation'
+            ],
+            [
+                'label' => 'Your orders',
+                'route' => 'home'
+            ],
+            [
+                'label' => 'Logout',
+                'route' => 'logout'
+            ]
+            
         ],
         'loggedOut' => [
-            'login' => 'Login',
-            'register' => 'Sign up'
+            [
+                'label' => 'Login',
+                'route' => 'login'
+            ],
+            [
+                'label' => 'Sign Up',
+                'route' => 'register'
+            ]
         ],
     ]
 
