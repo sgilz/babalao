@@ -34,6 +34,11 @@ return [
         'label' => 'Price',
         'placeholder' => 'Amount'
     ],
+    'reviews' => [
+        'exit' => 'Exit',
+        'make' => 'Make review',
+        'title' => 'Reviews for :product'
+    ],
     'search' => [
         'empty' => 'Opps, we couldn\' find any products for given search:',
         'result' => 'Search results:',
@@ -43,6 +48,4 @@ return [
         'cart' => 'Add to Cart'
     ],
     'submit' => 'Accept'
-
-
 ];

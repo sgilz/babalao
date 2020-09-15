@@ -41,6 +41,4 @@ return [
         ],
     ],
     'search' => 'Search...'
-
-
 ];

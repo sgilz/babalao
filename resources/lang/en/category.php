@@ -28,6 +28,4 @@ return [
     ],
     'submit' => 'Accept',
     'success' => 'Category :category created successfully!'
-
-
 ];

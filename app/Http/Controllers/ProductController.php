@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Review;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,8 +22,8 @@ class ProductController extends Controller
         $data = [];
         $data["product"] = Product::findOrFail($product_id);
         $data["title"] = $data["product"]->getName();
-        $data["reviews"] = Review::with(['product_id', $product_id]);
-        $reviews_avg = $data["reviews"]->avg('rating');
+        $data["reviews"] = Review::where('product_id', $product_id)->get();
+        $reviews_avg = Review::with(['product_id', $product_id])->avg('rating');
         $data["reviews_avg"] = ($reviews_avg / 5) * 100;
 
         return view('product.show')->with("data", $data);

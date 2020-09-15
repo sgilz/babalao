@@ -43,22 +43,35 @@
     </div>
 </div>
 <div class="modal" id="review-modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p></p>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-primary" href="{{ route('review.create',$data['product']->getId()) }}">Make review</a>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
-      </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ __('product.reviews.title', ['product' => $data['product']->getName()]) }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @foreach($data['reviews'] as $review)
+                <div class="card mb-4">
+                    <div class="card-header">
+                        {{ $review->getHeadline() }}
+                        <div class="star-ratings-sprite">
+                            <span style="width: {{ $review->getRating()*100/5 }}%" class="star-ratings-sprite-rating"></span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $review->user->getName() }}</h5>
+                        <p class="card-text">{{ $review->getDescription() }}</p>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-primary" href="{{ route('review.create',$data['product']->getId()) }}">{{ __('product.reviews.make') }}</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('product.reviews.exit') }}</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 @endsection
