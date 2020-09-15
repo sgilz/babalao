@@ -18,27 +18,27 @@
                     @csrf
                     <label>
                         <input name="date" id="date" type="date" />
-                        <div class="label-text">Date</div>
+                        <div class="label-text">{{__('order.views.create.date')}}</div>
                     </label>
                     <label>
                         <select name="state">
-                            <option value="SHOPPING_CART" selected>SHOPPING_CART</option>
+                            <option value="PENDING" selected>{{__('order.views.create.pending')}}</option>
 
-                            <option value="CONFIRMED" selected>CONFIRMED</option>
+                            <option value="CONFIRMED" selected>{{__('order.views.create.confirmed')}}</option>
 
-                            <option value="SHIPPED" selected>SHIPPED</option>
+                            <option value="DISPATCHED" selected>{{__('order.views.create.dispatched')}}</option>
 
-                            <option value="DELIVERED" selected>DELIVERED</option>
+                            <option value="DELIVERED" selected>{{__('order.views.create.delivered')}}</option>
                         </select>
-                        <div class="label-text">State</div>
+                        <div class="label-text">{{__('order.views.create.state')}}</div>
                     </label>
                     <label>
                         <input type="number" name="total" id="total" />
-                        <div class="label-text">Total</div>
+                        <div class="label-text">{{__('order.views.create.total')}}</div>
                     </label>
-                    <button type="submit" value="Submit">Submit</button>
+                    <button type="submit" value="Submit">{{__('order.views.create.submit')}}</button>
                 </form>
-                <button onclick="location.href='{{ route('order.index') }}'">Back</button>
+                <button onclick="location.href='{{ route('order.index') }}'">{{__('order.views.details.back')}}</button>
             </div>
         </div>
     </div>

@@ -35,7 +35,7 @@
                         </td>
 
                         <td class="text-right">
-                            <a href="{{ route('product.removeFromCart',$product->getId()) }}" class="btn btn-sm btn-danger"><i
+                            <a href="{{ route('cart.removeFromCart',$product->getId()) }}" class="btn btn-sm btn-danger"><i
                                     class="fa fa-trash"></i></a>
                         </td>
                     </tr>
@@ -70,8 +70,8 @@
                 </table>
             </div>
         </div>
-        <a href="{{route('product.removeCart')}}" class="btn btn-danger" style="margin-right: 30git px">DELETE CART</a>
-        <form action="{{ route('product.buy') }}" method="POST">
+        <a href="{{ route('cart.removeCart') }}" class="btn btn-danger" style="margin-right: 30px">DELETE CART</a>
+        <form action="{{ route('cart.buy') }}" method="POST">
             @csrf
             <button class="btn btn-success" type="submit">CHECKOUT</button>
         </form>

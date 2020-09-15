@@ -4,7 +4,7 @@
 namespace App\Util;
 
 
-abstract class State
+abstract class Status
 {
     const PENDING = 0;
     const CONFIRMED = 1;

@@ -7,17 +7,17 @@
             <div class="card">
                 <div class="card-header">{{ $data["order"]->getId() }}</div>
                 <div class="card-body">
-                    <b>Initial date: </b> {{ $data["order"]->getDate() }}<br />
-                    <b>State: </b> {{ $data["order"]->getState() }}<br />
-                    <b>Total: </b> {{ $data["order"]->getTotal() }}<br /><br />
+                    <b>{{__('order.views.details.initialDate')}} </b> {{ $data["order"]->getDate() }}<br />
+                    <b>{{__('order.views.details.state')}} </b> {{ $data["order"]->getStatus() }}<br />
+                    <b>{{__('order.views.details.initialDate')}} </b> {{ $data["order"]->getTotal() }}<br /><br />
 
                     <form method="post" action="{{ route('order.delete', $data["order"]->getId()) }}">
                         @method('DELETE')
                         @csrf
-                        <button type="submit"> Delete</button>
+                        <button type="submit"> {{__('order.views.details.delete')}}</button>
                     </form>
                 </div>
-                <button onclick="location.href='{{ route('order.list') }}'">Back</button>
+                <button onclick="location.href='{{ route('order.list') }}'">{{__('order.views.details.back')}}</button>
             </div>
         </div>
     </div>

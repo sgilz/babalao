@@ -3,7 +3,7 @@
 @section('content')
 <div class="row justify-content-center">
     <div class="col-md-12 ">
-        <h3 class="title">Registered orders</h3>
+        <h3 class="title">{{__('order.views.list.title')}}</h3>
         <br>
         <ul id="errors">
             @foreach($data["orders"] as $order)

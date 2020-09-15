@@ -3,14 +3,15 @@
 namespace App\Models;
 
 use http\Env\Request;
-use App\Util\State;
+use App\Util\Status;
 use App\Models\Item;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $fillable = ['date','state','total'];
+    //attributes id, date, status, total, created_at, updated_at
+    protected $fillable = ['date','status','total'];
 
     public function getId()
     {
@@ -42,12 +43,12 @@ class Order extends Model
         $this->attributes['total'] = $total;
     }
 
-    public function getState(){
-        return $this->attributes['state'];
+    public function getStatus(){
+        return $this->attributes['status'];
     }
 
-    public function setState($state){
-        $this->attributes['state'] = $state;
+    public function setStatus($status){
+        $this->attributes['status'] = $status;
     }
 
     public function items()
