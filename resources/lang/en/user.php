@@ -3,7 +3,6 @@
 return [
     'address' => 'Address:',
     'add_credit_card' => 'Add credit card',
-    'wish_list' => 'Your wish list',
     'card_number' => 'Card number:',
     'city' => 'City:',
     'email' => 'Email:',
@@ -17,4 +16,5 @@ return [
         'shipment_information' => 'Shipment information'
     ],
     'title_header' => 'My information',
+    'wish_list' => 'Your wish list',
 ];
