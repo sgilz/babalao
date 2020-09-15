@@ -2,7 +2,7 @@
 @section("title", $data["title"])
 
 @section('content')
-<div class="container">
+<div class="credit-card-container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             @include('util.message')

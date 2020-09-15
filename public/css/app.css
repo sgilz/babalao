@@ -10987,7 +10987,15 @@ a.text-dark:focus {
   display: block;
 }
 
-.row {
+.credit-card-container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+}
+
+.credit-card-container .row {
   /* IE10 */
   display: flex;
   /* IE10 */
@@ -10995,35 +11003,28 @@ a.text-dark:focus {
   margin: 0 -16px;
 }
 
-.col-25 {
+.credit-card-container .col-25 {
   /* IE10 */
   flex: 25%;
 }
 
-.col-50 {
+.credit-card-container .col-50 {
   /* IE10 */
   flex: 50%;
 }
 
-.col-75 {
+.credit-card-container .col-75 {
   /* IE10 */
   flex: 75%;
 }
 
-.col-25,
-.col-50,
-.col-75 {
+.credit-card-container .col-25,
+.credit-card-container .col-50,
+.credit-card-container .col-75 {
   padding: 0 16px;
 }
 
-.container {
-  background-color: #f2f2f2;
-  padding: 5px 20px 15px 20px;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-}
-
-input[type=text] {
+.credit-card-container input[type=text] {
   width: 100%;
   margin-bottom: 20px;
   padding: 12px;
@@ -11031,18 +11032,18 @@ input[type=text] {
   border-radius: 3px;
 }
 
-label {
+.credit-card-container label {
   margin-bottom: 10px;
   display: block;
 }
 
-.icon-container {
+.credit-card-container .icon-container {
   margin-bottom: 20px;
   padding: 7px 0;
   font-size: 24px;
 }
 
-.btn {
+.credit-card-container .btn {
   background-color: #4CAF50;
   color: white;
   padding: 12px;
@@ -11054,23 +11055,21 @@ label {
   font-size: 17px;
 }
 
-.btn:hover {
+.credit-card-container .btn:hover {
   background-color: #45a049;
 }
 
-span.price {
+.credit-card-container span.price {
   float: right;
   color: grey;
 }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
-
 @media (max-width: 800px) {
-  .row {
+  .credit-card-container .row {
     flex-direction: column-reverse;
   }
 
-  .col-25 {
+  .credit-card-container .col-25 {
     margin-bottom: 20px;
   }
 }
