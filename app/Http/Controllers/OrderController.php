@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\Item;
+use App\Models\Order;
 use App\Models\Product;
 use App\Util\Status;
-use Symfony\Component\VarDumper\Cloner\Data;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\Order;
 
 class OrderController extends Controller
 {
@@ -35,8 +35,15 @@ class OrderController extends Controller
 
     public function save(Request $request)
     {
+        $user = Auth::user();
         Order::validate($request);
-        Order::create($request->only(["date", "status", "total"]));
+        //Order::create($request->only(["date", "status", "total",]));
+        Order::create([
+            'date' => $request['date'],
+            'status' => $request['status'],
+            'total' => $request['total'],
+            'user_id' => $user->getId(),
+        ]);
         return back()->with('success', __("order.messages.saveSuccess"));
     }
 
@@ -101,10 +108,13 @@ class OrderController extends Controller
 
     public function buy(Request $request)
     {
+        $user = Auth::user();
         $order = new Order();
         $order->setDate(date('Y-m-d H:i:s'));
         $order->setStatus(Status::PENDING);
         $order->setTotal("0");
+        $order->setUserId($user->getId());
+
         $order->save();
 
         $totalPrice = 0;

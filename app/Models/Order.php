@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    //attributes id, date, status, total, created_at, updated_at
-    protected $fillable = ['date','status','total'];
+    //attributes id, date, status, total, user, created_at, updated_at
+    protected $fillable = ['date', 'status',  'total', 'user_id',];
 
     public function getId()
     {
@@ -43,12 +43,19 @@ class Order extends Model
         $this->attributes['total'] = $total;
     }
 
-    public function getStatus(){
+    public function getStatus()
+    {
         return $this->attributes['status'];
     }
 
-    public function setStatus($status){
+    public function setStatus($status)
+    {
         $this->attributes['status'] = $status;
+    }
+
+    public function setUserId($user_id)
+    {
+        $this->attributes['user_id'] = $user_id;
     }
 
     public function items()
@@ -56,16 +63,16 @@ class Order extends Model
         return $this->hasMany(Item::class);
     }
 
-    /*public function user()
+    public function user()
     {
         return $this->belongsTo(User::class);
-    }*/
+    }
 
     public static function validate($request)
     {
         $request->validate([
             "date" => "required|date",
-            "state" => "required",
+            "status" => "required",
             "total" => "required|numeric|gt:0"
         ]);
     }

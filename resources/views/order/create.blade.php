@@ -20,7 +20,8 @@
                         <div class="label-text">{{__('order.views.create.date')}}</div>
                     </label>
                     <label>
-                        <select name="state">
+                        <select name="status">
+
                             <option value="PENDING" selected>{{__('order.views.create.pending')}}</option>
 
                             <option value="CONFIRMED" selected>{{__('order.views.create.confirmed')}}</option>
@@ -29,7 +30,7 @@
 
                             <option value="DELIVERED" selected>{{__('order.views.create.delivered')}}</option>
                         </select>
-                        <div class="label-text">{{__('order.views.create.state')}}</div>
+                        <div class="label-text">{{__('order.views.create.status')}}</div>
                     </label>
                     <label>
                         <input type="number" name="total" id="total" />

@@ -16,7 +16,7 @@ class AddNewFieldsInUsers extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->text('address',50);
             $table->text('city',50);
-            $table->text('is_admin',50)->default($value = false);
+            $table->text('is_admin',50)->default(false);
             $table->text('neighborhood',50);
         });
     }
