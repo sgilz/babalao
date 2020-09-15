@@ -16,4 +16,5 @@ return [
         'shipment_information' => 'Shipment information'
     ],
     'title_header' => 'My information',
+    'wish_list' => 'Your wish list',
 ];

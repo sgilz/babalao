@@ -45,7 +45,8 @@ return [
         'title' => 'Results for :search'
     ],
     'show' => [
-        'cart' => 'Add to Cart'
+        'cart' => 'Add to Cart',
+        'wish_list' => 'Add to Wish List'
     ],
     'submit' => 'Accept'
 ];

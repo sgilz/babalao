@@ -26,13 +26,14 @@
                 </ul>
                 <hr class="my-4">
                 <h2>{{ __('user.title.credit_cards') }}</h2>
-                @foreach($data["user"]->creditCards as $credit_card))- {{ $comment->getDescription() }}
+                @foreach($data["credit_cards"] as $credit_card)
                 <ul class="list-group">
-                    <li class="list-group-item"> {{ __('ending_in') }} {{$credit_card>getCardNumber()}}</li>
-                    <li class="list-group-item"> {{ __('ex_date') }} {{$credit_card>getExpirationDate()}}</li>
+                    <li class="list-group-item"> {{ __('user.card_number') }} {{$credit_card->getCardNumber()}}</li>
+                    <li class="list-group-item"> {{ __('user.ex_date') }} {{$credit_card->getExpirationDate()}}</li>
                 </ul>
                 @endforeach
-                <button type="button" class="btn btn-info">{{ __('user.add_credit_card)') }}</button>
+                <a type="button" href = {{ route('card.create') }} class="btn btn-info">{{ __('user.add_credit_card') }}</a>
+                <a type="button" href = {{ route('wishList.show') }} class="btn btn-warning">{{ __('user.wish_list') }}</a>
             </div>
         </div>
     </div>
