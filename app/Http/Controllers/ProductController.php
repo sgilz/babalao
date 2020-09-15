@@ -6,9 +6,15 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function show($product_id)
     {
