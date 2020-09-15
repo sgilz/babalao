@@ -63,3 +63,31 @@ Route::post('/card/save', 'CreditCardController@save')->name("card.save");
 Route::get('/card/list/', 'CreditCardController@list')->name("card.list");
 
 Route::delete('/card/list/delete/{id}','CreditCardController@delete')->name("card.delete");
+
+/*
+Routes for Shopping-Cart and Order
+ */
+
+Route::get('/cart/remove-cart', 'OrderController@removeCart')->name("cart.removeCart");
+
+Route::post('/cart/add-to-cart/{id}', 'OrderController@addToCart')->name("cart.addToCart");
+
+Route::get('/cart', 'OrderController@cart')->name("cart.cart");
+
+Route::get('/cart/remove-item/{id}','OrderController@removeFromCart')->name("cart.removeFromCart");
+
+Route::post('/cart/buy', 'OrderController@buy')->name("cart.buy");
+
+Route::get('/order', 'OrderController@index')->name('order.index');
+
+Route::get('/order/create', 'OrderController@create')->name('order.create');
+
+Route::get('/order/list', 'OrderController@list')->name('order.list');
+
+Route::post('/order/save', 'OrderController@save')->name('order.save');
+
+Route::get('/order/details/{id}','OrderController@details')->name('order.details');
+
+Route::delete('/order/delete/{id}', 'OrderController@delete')->name('order.delete');
+
+Auth::routes();
