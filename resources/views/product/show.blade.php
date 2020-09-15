@@ -17,9 +17,9 @@
                         </div>
                         <div class="col-4">
                             <h4>{{ $data['product']->getName() }}</h4>
-                            <a href="{{ route('review.create',$data['product']->getId()) }}">
+                            <a href="#" data-toggle="modal" data-target="#review-modal">
                                 <div class="star-ratings-sprite">
-                                    <span style="width: {{ $data['review'] }}%" class="star-ratings-sprite-rating"></span>
+                                    <span style="width: {{ $data['reviews_avg'] }}%" class="star-ratings-sprite-rating"></span>
                                 </div>
                             </a>
                             <hr>
@@ -41,5 +41,24 @@
             </div>
         </div>
     </div>
+</div>
+<div class="modal" id="review-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary" href="{{ route('review.create',$data['product']->getId()) }}">Make review</a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
+      </div>
+    </div>
+  </div>
 </div>
 @endsection

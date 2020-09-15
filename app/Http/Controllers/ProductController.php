@@ -21,8 +21,9 @@ class ProductController extends Controller
         $data = [];
         $data["product"] = Product::findOrFail($product_id);
         $data["title"] = $data["product"]->getName();
-        $reviews_avg = Review::with(['product_id', $product_id])->avg('rating');
-        $data["review"] = ($reviews_avg / 5) * 100;
+        $data["reviews"] = Review::with(['product_id', $product_id]);
+        $reviews_avg = $data["reviews"]->avg('rating');
+        $data["reviews_avg"] = ($reviews_avg / 5) * 100;
 
         return view('product.show')->with("data", $data);
     }
