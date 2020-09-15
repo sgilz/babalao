@@ -55,7 +55,7 @@ Route::post('/cart/add-to-cart/{id}', 'OrderController@addToCart')->name("cart.a
 
 Route::get('/cart', 'OrderController@cart')->name("cart.cart");
 
-Route::get('/cart/removeItem/{id}','OrderController@removeFromCart')->name("cart.removeFromCart");
+Route::get('/cart/remove-item/{id}','OrderController@removeFromCart')->name("cart.removeFromCart");
 
 Route::post('/cart/buy', 'OrderController@buy')->name("cart.buy");
 

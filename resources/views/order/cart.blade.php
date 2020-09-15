@@ -70,10 +70,10 @@
                 </table>
             </div>
         </div>
-        <a href="{{ route('cart.removeCart') }}" class="btn btn-danger" style="margin-right: 30px">DELETE CART</a>
+        <a href="{{ route('cart.removeCart') }}" class="btn btn-danger" style="margin-right: 30px">{{__('cart.delete')}}</a>
         <form action="{{ route('cart.buy') }}" method="POST">
             @csrf
-            <button class="btn btn-success" type="submit">CHECKOUT</button>
+            <button class="btn btn-success" type="submit">{{__('cart.checkout')}}</button>
         </form>
     </div>
 </div>

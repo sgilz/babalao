@@ -1,33 +1,43 @@
 <?php
 
 return[
-    'title'=>'Registered Orders',
+    'controller'=>[
+        'message'=> [
+            'add'=>'Item added successfully!',
+            'buy'=>'Success! your order is now being confirmed'
+        ]
+    ],
     'creationTitle'=>'New Order',
     'details'=>'Details',
     'messages'=>[
         'saveSuccess'=>'Order created successfully!'
     ],
-
-    'views'=>['details'=>
-                ['initialDate'=>'Initial date: ',
-                'state'=>'State: ',
-                'total'=>'Total: ',
-                'delete'=>'Delete',
-                'back'=>'Back'],
-            'create'=>
-                ['pending'=>'PENDING',
-                'confirmed'=>'CONFIRMED',
-                'preparing'=>'PREPARING_ORDER',
-                'dispatched'=>'DISPATCHED',
-                'delivered'=>'DELIVERED',
-                'state'=>'State',
-                'date'=>'Date',
-                'submit'=>'Submit',
-                'total'=>'Total'],
-            'index'=>
-                ['new'=>'NEW ORDER',
-                'list'=>'LIST PRODUCTS'],
-            'list'=>
-                ['title'=>'Registered Orders']
-    ]
+    'title'=>'Registered Orders',
+    'views'=>[
+        'create'=> [
+            'confirmed'=>'CONFIRMED',
+            'date'=>'Date',
+            'delivered'=>'DELIVERED',
+            'dispatched'=>'DISPATCHED',
+            'pending'=>'PENDING',
+            'preparing'=>'PREPARING_ORDER',
+            'state'=>'State',
+            'submit'=>'Submit',
+            'total'=>'Total'
+            ],
+        'details'=> [
+            'back'=>'Back',
+            'delete'=>'Delete',
+            'initialDate'=>'Initial date: ',
+            'state'=>'State: ',
+            'total'=>'Total: ',
+        ],
+        'index'=> [
+            'list'=>'LIST PRODUCTS',
+            'new'=>'NEW ORDER',
+        ],
+        'list'=> [
+            'title'=>'Registered Orders'
+        ],
+    ],
 ];

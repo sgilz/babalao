@@ -6,7 +6,6 @@
         @include('util.message')
         <div class="card">
             <div class="card-body">
-                <!--For if the flies-->
                 @if($errors->any())
                         <ul id="errors">
                         @foreach($errors->all() as $error)

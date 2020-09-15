@@ -63,7 +63,7 @@ class OrderController extends Controller
         $products = $request->session()->get("products");
         $products[$id] = $quantity;
         $request->session()->put('products', $products);
-        return back()->with('success', 'Item added successfully!');
+        return back()->with('success', __('order.controller.message.add'));
     }
 
     public function removeFromCart($id, Request $request)
@@ -102,7 +102,7 @@ class OrderController extends Controller
     public function buy(Request $request)
     {
         $order = new Order();
-        $order->setDate(date('Y') . "-" . date('m') . "-" . date('d'));
+        $order->setDate(date('Y-m-d H:i:s'));
         $order->setStatus(Status::PENDING);
         $order->setTotal("0");
         $order->save();
@@ -127,6 +127,6 @@ class OrderController extends Controller
 
             $request->session()->forget('products');
         }
-        return redirect()->route('product.index')->with('success', 'Success! your order is now being confirmed');
+        return redirect()->route('product.index')->with('success', __('order.controller.message.buy'));
     }
 }
