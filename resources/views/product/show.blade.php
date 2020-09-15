@@ -28,13 +28,17 @@
                             @endforeach
                             <hr>
                             <div class="form-group row" id="specs-form-group">
-                                <div class="specs-input-group input-group mb-3">
-                                    <input type="number" class="form-control" name="amount" min="1" value="1">
-                                    <div class="input-group-append">
-                                        <a class="btn btn-outline-primary btn-add" href="#" role="button">{{ __('product.show.cart') }}</a>
+                                <form action="{{ route('cart.addToCart',['id'=> $data['product']->getId()]) }}" method="POST">
+                                    @csrf
+                                    <div class="specs-input-group input-group mb-3">
+                                        <input type="number" class="form-control" name="quantity" min="1" value="1">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-primary btn-add" role="submit">{{ __('product.show.cart') }}</button>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
+
                         </div>
                     </div>
                 </div>

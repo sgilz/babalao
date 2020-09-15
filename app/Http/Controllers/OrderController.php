@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\Item;
+use App\Models\Order;
 use App\Models\Product;
 use App\Util\Status;
-use Symfony\Component\VarDumper\Cloner\Data;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\Order;
 
 class OrderController extends Controller
 {
@@ -35,8 +35,15 @@ class OrderController extends Controller
 
     public function save(Request $request)
     {
+        $user = Auth::user();
         Order::validate($request);
-        Order::create($request->only(["date", "status", "total"]));
+        //Order::create($request->only(["date", "status", "total",]));
+        Order::create([
+            'date' => $request['date'],
+            'status' => $request['status'],
+            'total' => $request['total'],
+            'user_id' => $user->getId(),
+        ]);
         return back()->with('success', __("order.messages.saveSuccess"));
     }
 
@@ -96,15 +103,18 @@ class OrderController extends Controller
             return view('order.cart')->with("data", $data);
         }
 
-        return redirect()->route('product.index');
+        return redirect()->route('home');
     }
 
     public function buy(Request $request)
     {
+        $user = Auth::user();
         $order = new Order();
         $order->setDate(date('Y-m-d H:i:s'));
         $order->setStatus(Status::PENDING);
         $order->setTotal("0");
+        $order->setUserId($user->getId());
+
         $order->save();
 
         $totalPrice = 0;
@@ -113,13 +123,14 @@ class OrderController extends Controller
         if ($products) {
             $keys = array_keys($products);
             foreach ($keys as $key) {
+                $currentProduct = Product::find($key);
+                $totalPrice = $totalPrice + $currentProduct->getPrice() * $products[$key];
                 $item = new Item();
                 $item->setProductId($key);
                 $item->setOrderId($order->getId());
                 $item->setQuantity($products[$key]);
+                $item->setSubtotal($products[$key], $currentProduct->getPrice());
                 $item->save();
-                $currentProduct = Product::find($key);
-                $totalPrice = $totalPrice + $currentProduct->getPrice() * $products[$key];
             }
 
             $order->setTotal($totalPrice);
@@ -127,6 +138,6 @@ class OrderController extends Controller
 
             $request->session()->forget('products');
         }
-        return redirect()->route('product.index')->with('success', __('order.controller.message.buy'));
+        return redirect()->route('home')->with('success', __('order.controller.message.buy'));
     }
 }
