@@ -97,11 +97,11 @@ class CreditCard extends Model
     public static function validate(Request $request)
     {
         $request->validate([
+            "card_number" => "required|integer|between:1000000000000000,9999999999999999",
+            "cvv" => "required|integer|min:100|max:999",
+            "expiration_date" => "required|after:tomorrow|date_format:m/y",
             "owner" => "required",
             "owner_id" => "required|integer|between:1000000,999999999999",
-            "card_number" => "required|integer|between:1000000000000000,9999999999999999",
-            "expiration_date" => "required|after:tomorrow|date_format:m/y",
-            "cvv" => "required|integer|min:100|max:999",
         ]);
     }
 

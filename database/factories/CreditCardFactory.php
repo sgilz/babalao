@@ -16,13 +16,14 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(CreditCard::class, function (Faker $faker) {
+$factory->define(CreditCard::class, function (Faker $faker)
+{
     return [
-        'user_id' => $faker->session_id(),
+        'card_number' => $faker->numberBetween($min = 1000000000000000, $max = 9999999999999999),
+        'cvv' => $faker->numberBetween($min = 100, $max = 999),
+        'expiration_date' => $faker->date('m/y'),
         'owner' => $faker->unique()->name(),
         'owner_id' => $faker->numberBetween($min = 1000000, $max = 99999999999),
-        'card_number' => $faker->numberBetween($min = 1000000000000000, $max = 9999999999999999),
-        'expiration_date' => $faker->date('m/y'),
-        'cvv' => $faker->numberBetween($min = 100, $max = 999),
+        'user_id' => $faker->session_id(),
     ];
 });
