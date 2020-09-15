@@ -47,6 +47,9 @@ class ProductController extends Controller
     public function searchBar(Request $request)
     {
         $search = $request['search'];
+        if (!$search) {
+            $search = " ";
+        }
         return redirect()->route("product.search", ['search' => $search]);
     }
 

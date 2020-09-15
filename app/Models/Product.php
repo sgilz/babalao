@@ -99,5 +99,21 @@ class Product extends Model
     {
         return $this->belongsToMany(WishList::class);
     }
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+
 }
 
