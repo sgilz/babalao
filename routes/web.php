@@ -30,6 +30,20 @@ Route::post('/review/save/{product_id}', 'ReviewController@save')->name('review.
 Routes for User
 */
 Route::get('/user', 'UserController@showInformation')->name('user.showInformation');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('user.logout');
+
+Auth::routes();
+
+/*
+Routes for CreditCard
+*/
+Route::get('/card/create', 'CreditCardController@create')->name("card.create");
+
+Route::post('/card/save', 'CreditCardController@save')->name("card.save");
+
+Route::get('/card/list/', 'CreditCardController@list')->name("card.list");
+
+Route::delete('/card/list/delete/{id}','CreditCardController@delete')->name("card.delete");
 
 /*
 Routes for Shopping-Cart and Order
