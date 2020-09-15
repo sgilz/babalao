@@ -103,7 +103,7 @@ class OrderController extends Controller
             return view('order.cart')->with("data", $data);
         }
 
-        return redirect()->route('product.index');
+        return redirect()->route('home');
     }
 
     public function buy(Request $request)
@@ -123,13 +123,14 @@ class OrderController extends Controller
         if ($products) {
             $keys = array_keys($products);
             foreach ($keys as $key) {
+                $currentProduct = Product::find($key);
+                $totalPrice = $totalPrice + $currentProduct->getPrice() * $products[$key];
                 $item = new Item();
                 $item->setProductId($key);
                 $item->setOrderId($order->getId());
                 $item->setQuantity($products[$key]);
+                $item->setSubtotal($products[$key], $currentProduct->getPrice());
                 $item->save();
-                $currentProduct = Product::find($key);
-                $totalPrice = $totalPrice + $currentProduct->getPrice() * $products[$key];
             }
 
             $order->setTotal($totalPrice);
@@ -137,6 +138,6 @@ class OrderController extends Controller
 
             $request->session()->forget('products');
         }
-        return redirect()->route('product.index')->with('success', __('order.controller.message.buy'));
+        return redirect()->route('home')->with('success', __('order.controller.message.buy'));
     }
 }

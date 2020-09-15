@@ -43,7 +43,7 @@ class CreditCardController extends Controller
 
         $user = Auth::user();
         $credit_card = new CreditCard($request->only(["owner", "owner_id", "card_number", "expiration_date", "cvv"]));
-        $credit_card->setUserId($user()->getId());
+        $credit_card->setUserId($user->getId());
         $credit_card->save();
         return back()->with('success', __("creditCard.message.success"));
     }
