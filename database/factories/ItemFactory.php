@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * @author    Santiago Gil Zapata sgilz@eafit.edu.co
+ */
+
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Models\Item;

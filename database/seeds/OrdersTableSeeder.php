@@ -1,4 +1,9 @@
 <?php
+
+/*
+ * @author    Felipe Sosa Patiño fsosap@eafit.edu.co
+ */
+
 use Illuminate\Database\Seeder;
 use App\Order;
 

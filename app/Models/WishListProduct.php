@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * @author    Manuel Alejandro Gutierrez Mejia magutierrm@eafit.edu.co
+ * @author    Felipe Sosa Patiño fsosap@eafit.edu.co
+ */
+
 namespace App\Models;
 
 use App\User;
@@ -21,7 +26,7 @@ class WishListProduct extends Model
         ]
         );
     }
-    
+
     public function getId()
     {
         return $this->attributes['id'];

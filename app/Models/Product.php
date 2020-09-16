@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * @author    Luis Miguel Arroyave Quiñones larroy13@eafit.edu.co
+ */
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -65,7 +69,7 @@ class Product extends Model
     {
         $this->attributes['price'] = $price;
     }
-    
+
     public function getSpecs()
     {
         return json_decode($this->attributes['specs']);
@@ -81,7 +85,7 @@ class Product extends Model
                 $specs['value'] = $spec['value'];
             }
         }
-    
+
         $this->attributes['specs'] = json_encode($specs);
     }
 
