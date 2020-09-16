@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * @author    Felipe Sosa Patiño fsosap@eafit.edu.co
+ */
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;

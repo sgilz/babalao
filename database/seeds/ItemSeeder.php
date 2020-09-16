@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * @author    Santiago Gil Zapata sgilz@eafit.edu.co
+ */
+
 use App\Models\Item;
 use Illuminate\Database\Seeder;
 

@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * @author    Santiago Gil Zapata sgilz@eafit.edu.co
+ */
+
 namespace App\Models;
 
 use Illuminate\Http\Request;

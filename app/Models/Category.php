@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * @author    Luis Miguel Arroyave Quiñones larroy13@eafit.edu.co
+ */
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -57,7 +61,7 @@ class Category extends Model
                 $specs[] = $spec;
             }
         }
-    
+
         $this->attributes['specs'] = json_encode($specs);
     }
 

@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * @author    Manuel Alejandro Gutierrez Mejia magutierrm@eafit.edu.co
+ */
+
 namespace App\Http\Controllers;
 
 use App\Models\Product;
@@ -54,6 +58,6 @@ class WishListController extends Controller
     public function deleteProduct($id_product)
     {
         WishListProduct::where('product_id',$id_product)->delete();
-        return redirect()->route('wishList.show'); 
+        return redirect()->route('wishList.show');
     }
 }
