@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * @author    Felipe Sosa Patiño fsosap@eafit.edu.co
+ */
+
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Order;

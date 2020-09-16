@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * @author    Luis Miguel Arroyave Quiñones larroy13@eafit.edu.co
+ */
+
 namespace App\Http\Controllers;
 
 use App\Models\Product;

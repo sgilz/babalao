@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * @author    Manuel Alejandro Gutierrez Mejia magutierrm@eafit.edu.co
+ */
+
 namespace App\Models;
 
 use App\User;
@@ -22,7 +26,7 @@ class Review extends Model
         ]
         );
     }
-    
+
     public function getId()
     {
         return $this->attributes['id'];

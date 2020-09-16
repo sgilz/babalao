@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * @author    Manuel Alejandro Gutierrez Mejia magutierrm@eafit.edu.co
+ */
+
 namespace App\Http\Controllers;
 
 use App\Models\Review;
