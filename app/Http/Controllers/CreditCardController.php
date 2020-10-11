@@ -30,7 +30,7 @@ class CreditCardController extends Controller
 
     public function list()
     {
-        $user = (object)Auth::user();
+        $user = Auth::user();
         $data = []; //to be sent to the view
         $data["title"] = __("creditCard.list.header_title");
         $data["cards"] = CreditCard::where('user_id', $user->getId())->get();
@@ -57,7 +57,7 @@ class CreditCardController extends Controller
     {
         CreditCard::validate($request);
 
-        $user = (object)Auth::user();
+        $user = Auth::user();
         $credit_card = new CreditCard($request->only(["owner", "owner_id", "card_number", "cvv"]));
         $credit_card->setUserId($user->getId());
         $credit_card->setExpirationDate($request->expiration_month . '/'.$request->expiration_year);
