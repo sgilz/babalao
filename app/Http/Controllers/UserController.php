@@ -23,7 +23,6 @@ class UserController extends Controller
         $data = [];
         $user = Auth::user();
 
-        $data["credit_cards"] = CreditCard::where('user_id', $user->getId())->get();
         $data["title"] = __("user.title_header");
         $data["user"] = $user;
 

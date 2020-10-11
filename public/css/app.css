@@ -10899,6 +10899,43 @@ a.text-dark:focus {
   }
 }
 
+/* The sidebar menu */
+
+.sidenav {
+  height: auto;
+  /* Full-height: remove this if you want "auto" height */
+  width: 20%;
+  /* Set the width of the sidebar */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;
+  /* Stay on top */
+  border-radius: 2%;
+  background-color: #e2e2e2;
+  /* Black */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  /* The navigation menu links */
+  /* When you mouse over the navigation links, change their color */
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #111;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #ffffff;
+}
+
+.sidenav a:active {
+  background-color: #111;
+  color: #e2e2e2;
+}
+
 .searchbar {
   margin-bottom: auto;
   margin-top: auto;
@@ -10988,10 +11025,7 @@ a.text-dark:focus {
 }
 
 .credit-card-container {
-  background-color: #f2f2f2;
   padding: 5px 20px 15px 20px;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
 }
 
@@ -11024,7 +11058,8 @@ a.text-dark:focus {
   padding: 0 16px;
 }
 
-.credit-card-container input[type=text] {
+.credit-card-container input[type=text],
+.credit-card-container select {
   width: 100%;
   margin-bottom: 20px;
   padding: 12px;
@@ -11199,6 +11234,4 @@ body {
   background-size: cover;
   background-image: url("https://images.unsplash.com/photo-1568781269551-3e3baf5ec909?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
 }
-
-
 

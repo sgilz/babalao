@@ -7,8 +7,8 @@ return [
         "cardIdPlaceHolder" => "1111-2222-3333-4444",
         "cvv" => "CVV",
         "cvvPlaceHolder" => "234",
-        "expDate" => "Exp date",
-        "expDatePlaceHolder" => "12/22",
+        "expMonth" => "Exp month",
+        "expYear" => "Exp year",
         "formTitle" => "Payment card",
         "header_title" => "New card",
         "owner" => "Name on card",
@@ -18,13 +18,19 @@ return [
         "submit" => "Save credit card",
     ],
     "list" => [
-        "card_tail" => "Card finished in :tail details",
-        "expiration" => "Expiration",
+        "card" =>[
+            "balance" => "Balance",
+            "card_tail" => "Card finished in :tail",
+            "expiration" => "Expiration date",
+            "recharge" => "Recharge balance",
+            "submit_balance" => "Add balance",
+        ],
         "header_title" => "Registered cards",
         "title" => "My cards",
     ],
     "message" => [
-        "success" => "Card created successfully!",
+        "created" => "Card created successfully!",
         "deleted" => "Card deleted successfully!",
+        "recharged" => "Card balance recharged successfully!",
     ],
 ];

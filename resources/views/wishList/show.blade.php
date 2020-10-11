@@ -1,6 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.account')
 @section("title",$data["title"])
-@section('content')
+@section('tab')
 
 <div class="container">
     <div class="row justify-content-center">

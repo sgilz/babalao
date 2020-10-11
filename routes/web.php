@@ -53,6 +53,7 @@ Route::get('/card/create', 'CreditCardController@create')->name("card.create");
 Route::post('/card/save', 'CreditCardController@save')->name("card.save");
 Route::get('/card/list/', 'CreditCardController@list')->name("card.list");
 Route::delete('/card/list/delete/{id}','CreditCardController@delete')->name("card.delete");
+Route::post('/card/list/recharge/{id}','CreditCardController@recharge')->name("card.recharge");
 
 /*
 Routes for Shopping-Cart and Order
