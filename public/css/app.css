@@ -11117,6 +11117,10 @@ a.text-dark:focus {
   color: rgba(0, 0, 0, 0.9);
 }
 
+.wish-list-container h1 {
+  text-align: center;
+}
+
 .wish-list-container hr {
   background-color: rgba(0, 0, 0, 0.9) !important;
   color: rgba(0, 0, 0, 0.9) !important;

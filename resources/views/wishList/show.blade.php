@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="jumbotron jumbotron-fluid">
-                <h1 class="display-4" style="text-align:center">{{ __('wishList.title') }}</h1>
+                <h1 class="display-4" >{{ __('wishList.title') }}</h1>
                 <hr class="my-4">
                 @foreach($data["products"] as $product)
                 <div class="row">
