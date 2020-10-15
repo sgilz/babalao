@@ -11109,6 +11109,34 @@ a.text-dark:focus {
   }
 }
 
+.wish-list-container a {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.wish-list-container .display-4 {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.wish-list-container h1 {
+  text-align: center;
+}
+
+.wish-list-container hr {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
+  border: solid 1px rgba(0, 0, 0, 0.9) !important;
+}
+
+.wish-list-container .img-thumbnail {
+  width: 130px;
+  height: 130px;
+  border: 4px solid #EBEBEB;
+}
+
+.wish-list-container .jumbotron {
+  background-color: #ffffff;
+}
+
 html,
 body {
   color: #636b6f;
