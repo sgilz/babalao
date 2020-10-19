@@ -53,6 +53,11 @@ class Order extends Model
         $this->attributes['status'] = $status;
     }
 
+    public function getUserId()
+    {
+        return $this->attributes['user_id'];
+    }
+
     public function setUserId($user_id)
     {
         $this->attributes['user_id'] = $user_id;

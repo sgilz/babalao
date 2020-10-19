@@ -88,7 +88,7 @@ class OrderController extends Controller
     public function removeCart(Request $request)
     {
         $request->session()->forget('products');
-        return redirect()->route('product.index');
+        return redirect()->route('home');
     }
 
     public function cart(Request $request)

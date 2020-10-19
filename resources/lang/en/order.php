@@ -27,7 +27,7 @@ return[
             ],
         'details'=> [
             'back'=>'Back',
-            'delete'=>'Delete',
+            'delete'=>'Cancel Order',
             'initialDate'=>'Initial date: ',
             'status'=>'Status: ',
             'total'=>'Total: ',
@@ -37,7 +37,12 @@ return[
             'new'=>'NEW ORDER',
         ],
         'list'=> [
-            'title'=>'Registered Orders'
+            'title'=>'My Orders',
+            'order#'=>'Order number: ',
+            'total'=>'Total: ',
+            'date'=>'Bought at ',
+            'details'=> 'Details',
+            'review'=>'Do a review',
         ],
     ],
 ];
