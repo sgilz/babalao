@@ -27,10 +27,22 @@ return[
             ],
         'details'=> [
             'back'=>'Back',
+            'billedTo'=>'Billed to: ',
             'delete'=>'Cancel Order',
+            'email'=>'Email: ',
             'initialDate'=>'Initial date: ',
+            'na'=>'N/A',
+            'order'=>'Order# ',
+            'orderDate'=>'Order Date: ',
+            'orderSummary'=>'Order Summary: ',
+            'paymentMethod'=>'Payment Method: ',
+            'product'=>'PRODUCT',
+            'quantity'=>'QUANTITY',
             'status'=>'Status: ',
+            'subtotal'=>'SUBTOTAL',
             'total'=>'Total: ',
+            'taxes'=>'Taxes',
+
         ],
         'index'=> [
             'list'=>'LIST PRODUCTS',
