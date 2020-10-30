@@ -17,27 +17,27 @@ class CategorySeeder extends Seeder
             [
                 "id" => 1,
                 "name" => "CPUs / Processors",
-                "specs" => json_encode([
+                "specs" => [
                     "Cores",
                     "Threads",
                     "Base Clock",
                     "Turbo Clock"
-                ])
+                ]
             ],
             [
                 "id" => 2,
                 "name" => "Video Graphic Devices",
-                "specs" => json_encode([
+                "specs" => [
                     "Base clock",
                     "Boost clock",
                     "Memory",
                     "Memory clock"
-                ])
+                ]
             ],
             [
                 "id" => 3,
                 "name" => "Motherboards",
-                "specs" => json_encode([
+                "specs" => [
                     "CPU support",
                     "Socket",
                     "Size",
@@ -47,39 +47,39 @@ class CategorySeeder extends Seeder
                     "Rear USB",
                     "Storage",
                     "Network"
-                ])
+                ]
             ],
             [
                 "id" => 4,
                 "name" => "Memory",
-                "specs" => json_encode([
+                "specs" => [
                     "Capacity",
                     "Speed",
                     "Timing",
                     "CAS Latency",
                     "Voltage"
-                ])
+                ]
             ],
             [
                 "id" => 5,
                 "name" => "Solid State Drives",
-                "specs" => json_encode([
+                "specs" => [
                     "Capacity",
                     "Memory",
                     "Interface",
                     "Seq. read",
                     "Seq. write"
-                ])
+                ]
             ],
             [
                 "id" => 6,
                 "name" => "Power supply units",
-                "specs" => json_encode([
+                "specs" => [
                     "Type",
                     "Maximum Power",
                     "Efficiency rating",
                     "Modularity"
-                ])
+                ]
             ]
         ];
 
