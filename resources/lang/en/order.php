@@ -40,9 +40,9 @@ return[
             'quantity'=>'QUANTITY',
             'status'=>'Status: ',
             'subtotal'=>'SUBTOTAL',
-            'total'=>'Total: ',
             'taxes'=>'Taxes',
-
+            'total'=>'Total: ',
+            'visa'=>'VISA ending: **** 1234',
         ],
         'index'=> [
             'list'=>'LIST PRODUCTS',

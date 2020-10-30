@@ -33,7 +33,7 @@
                                             <div class="col-xs-6">
                                                 <address>
                                                     <strong>{{__('order.views.details.paymentMethod')}}</strong><br>
-                                                    Visa ending **** 1234<br>
+                                                    {{__('order.views.details.visa')}}<br>
                                                 </address>
                                             </div>
                                         </div>
