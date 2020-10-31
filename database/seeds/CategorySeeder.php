@@ -18,10 +18,10 @@ class CategorySeeder extends Seeder
                 "id" => 1,
                 "name" => "CPUs / Processors",
                 "specs" => [
+                    "Base Clock",
                     "Cores",
                     "Threads",
-                    "Base Clock",
-                    "Turbo Clock"
+                    "Turbo Clock",
                 ]
             ],
             [
@@ -30,8 +30,8 @@ class CategorySeeder extends Seeder
                 "specs" => [
                     "Base clock",
                     "Boost clock",
+                    "Memory clock",
                     "Memory",
-                    "Memory clock"
                 ]
             ],
             [
@@ -39,25 +39,25 @@ class CategorySeeder extends Seeder
                 "name" => "Motherboards",
                 "specs" => [
                     "CPU support",
-                    "Socket",
-                    "Size",
-                    "Memory support",
                     "Expansion slots",
-                    "Video ports",
+                    "Memory support",
+                    "Network",
                     "Rear USB",
+                    "Size",
+                    "Socket",
                     "Storage",
-                    "Network"
+                    "Video ports",
                 ]
             ],
             [
                 "id" => 4,
                 "name" => "Memory",
                 "specs" => [
+                    "CAS Latency",
                     "Capacity",
                     "Speed",
                     "Timing",
-                    "CAS Latency",
-                    "Voltage"
+                    "Voltage",
                 ]
             ],
             [
@@ -65,20 +65,20 @@ class CategorySeeder extends Seeder
                 "name" => "Solid State Drives",
                 "specs" => [
                     "Capacity",
-                    "Memory",
                     "Interface",
+                    "Memory",
                     "Seq. read",
-                    "Seq. write"
+                    "Seq. write",
                 ]
             ],
             [
                 "id" => 6,
                 "name" => "Power supply units",
                 "specs" => [
-                    "Type",
-                    "Maximum Power",
                     "Efficiency rating",
-                    "Modularity"
+                    "Maximum Power",
+                    "Modularity",
+                    "Type",
                 ]
             ]
         ];
