@@ -19,6 +19,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "Intel",
                 "category_id" => 1,
+                "id" => 1,
                 "name" => "Intel Core i7 10700K",
                 "price" => 377,
                 "specs" => [
@@ -31,6 +32,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "Intel",
                 "category_id" => 1,
+                "id" => 2,
                 "name" => "Intel Core i9 10900K",
                 "price" => 746,
                 "specs" => [
@@ -43,6 +45,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "AMD",
                 "category_id" => 1,
+                "id" => 3,
                 "name" => "AMD Ryzen 9 3900X",
                 "price" => 729,
                 "specs" => [
@@ -55,90 +58,98 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "AMD",
                 "category_id" => 1,
+                "id" => 4,
                 "name" => "AMD Ryzen 7 3700X",
                 "price" => 305,
                 "specs" => [
                     "Base Clock" => "3.6GHz",
                     "Cores" => "8",
                     "Threads" => "16",
-                    "Turbo Clock" => "4.4GHz"
+                    "Turbo Clock" => "4.4GHz",
                 ]
             ],
             [
                 "brand" => "Intel",
                 "category_id" => 1,
+                "id" => 5,
                 "name" => "Intel Core i5 9400F",
                 "price" => 139,
                 "specs" => [
                     "Base Clock" => "2.9GHz",
                     "Cores" => "6",
                     "Threads" => "6",
-                    "Turbo Clock" => "4.1GHz"
+                    "Turbo Clock" => "4.1GHz",
                 ]
             ],
             [
                 "brand" => "Nvidia",
                 "category_id" => 2,
+                "id" => 6,
                 "name" => "Nvidia GeForce RTX 3080",
                 "price" => 339,
                 "specs" => [
                     "Base clock" => "1,440MHz",
                     "Boost clock" => "1,710MHz",
                     "Memory clock" => "19 GT/s",
-                    "Memory" => "10GB GDDR6X"
+                    "Memory" => "10GB GDDR6X",
                 ]
             ],
             [
                 "brand" => "Nvidia",
                 "category_id" => 2,
+                "id" => 7,
                 "name" => "Nvidia GeForce RTX 2070 Super",
                 "price" => 859,
                 "specs" => [
                     "Base clock" => "1,605MHz",
                     "Boost clock" => "1,770MHz",
                     "Memory clock" => "14 GT/s",
-                    "Memory" => "8GB GDDR6"
+                    "Memory" => "8GB GDDR6",
                 ]
             ],
             [
                 "brand" => "AMD",
                 "category_id" => 2,
+                "id" => 8,
                 "name" => "AMD Radeon RX 5700",
                 "price" => 399,
                 "specs" => [
                     "Base clock" => "1,465MHz",
                     "Boost clock" => "1,725MHz",
                     "Memory clock" => "14 GT/s",
-                    "Memory" => "8GB GDDR6"
+                    "Memory" => "8GB GDDR6",
                 ]
             ],
             [
                 "brand" => "AMD",
                 "category_id" => 2,
+                "id" => 9,
                 "name" => "AMD Radeon RX 5600 XT",
                 "price" => 279,
                 "specs" => [
                     "Base clock" => "1,375MHz",
                     "Boost clock" => "1,750MHz",
                     "Memory clock" => "12 - 14GT/s",
-                    "Memory" => "6GB GDDR6"
+                    "Memory" => "6GB GDDR6",
                 ]
             ],
             [
                 "brand" => "Nvidia",
                 "category_id" => 2,
+                "id" => 10,
                 "name" => "Nvidia GeForce GTX 1660 Super",
                 "price" => 285,
                 "specs" => [
                     "Base clock" => "1,530MHz",
                     "Boost clock" => "1,785MHz",
                     "Memory clock" => "14GT/s",
-                    "Memory" => "6GB GDDR6"
+                    "Memory" => "6GB GDDR6",
                 ]
             ],
             [
                 "brand" => "Asus",
                 "category_id" => 3,
+                "id" => 11,
                 "name" => "ROG Maximus XII Extreme",
                 "price" => 849,
                 "specs" => [
@@ -150,12 +161,13 @@ class ProductSeeder extends Seeder
                     "Size" => "Extended ATX",
                     "Socket" => "LGA 1200",
                     "Storage" => "2x M.2, 2x M.2 (DIMM.2 board)",
-                    "Video ports" => "2x Thunderbolt 3 ports on extension card (DP1.4)"
+                    "Video ports" => "2x Thunderbolt 3 ports on extension card (DP1.4)",
                 ]
             ],
             [
                 "brand" => "MSI",
                 "category_id" => 3,
+                "id" => 12,
                 "name" => "MPG Z490 Gaming Carbon WiFi",
                 "price" => 263,
                 "specs" => [
@@ -167,12 +179,13 @@ class ProductSeeder extends Seeder
                     "Size" => "ATX",
                     "Socket" => "LGA 1200",
                     "Storage" => "2x M.2, 6x SATA 6Gbps",
-                    "Video ports" => "1x DisplayPort, 1x HDMI"
+                    "Video ports" => "1x DisplayPort, 1x HDMI",
                 ]
             ],
             [
                 "brand" => "MSI",
                 "category_id" => 3,
+                "id" => 13,
                 "name" => "MAG B460M Mortar WiFi",
                 "price" => 161,
                 "specs" => [
@@ -184,12 +197,13 @@ class ProductSeeder extends Seeder
                     "Size" => "Micro ATX",
                     "Socket" => "LGA 1200",
                     "Storage" => "2x M.2, 6x SATA 6Gbps",
-                    "Video ports" => "1x DisplayPort, 1x HDMI"
+                    "Video ports" => "1x DisplayPort, 1x HDMI",
                 ]
             ],
             [
                 "brand" => "ASRock",
                 "category_id" => 3,
+                "id" => 14,
                 "name" => "B460 Steel Legend",
                 "price" => 99,
                 "specs" => [
@@ -201,12 +215,13 @@ class ProductSeeder extends Seeder
                     "Size" => "ATX",
                     "Socket" => "LGA 1200",
                     "Storage" => "2x M.2, 6x SATA 6Gbps",
-                    "Video ports" => "1x DisplayPort, 1x HDMI"
+                    "Video ports" => "1x DisplayPort, 1x HDMI",
                 ]
             ],
             [
                 "brand" => "Gigabyte",
                 "category_id" => 3,
+                "id" => 15,
                 "name" => "Z390 Aorus Ultra",
                 "price" => 249,
                 "specs" => [
@@ -218,12 +233,13 @@ class ProductSeeder extends Seeder
                     "Size" => "ATX",
                     "Socket" => "LGA 1151",
                     "Storage" => "3x M.2, 6x SATA",
-                    "Video ports" => "HDMI"
+                    "Video ports" => "HDMI",
                 ]
             ],
             [
                 "brand" => "TEAMGROUP",
                 "category_id" => 4,
+                "id" => 16,
                 "name" => "XTREEM ARGB 16GB DDR4-3600MHz C14",
                 "price" => 135,
                 "specs" => [
@@ -237,6 +253,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "Corsair",
                 "category_id" => 4,
+                "id" => 17,
                 "name" => "Dominator Platinum RGB 32GB DDR4-3200MHz",
                 "price" => 249,
                 "specs" => [
@@ -250,6 +267,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "G.Skill",
                 "category_id" => 4,
+                "id" => 18,
                 "name" => "Trident Z Royal 16GB DDR4-4000MHz",
                 "price" => 159,
                 "specs" => [
@@ -263,6 +281,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "Gigabyte",
                 "category_id" => 4,
+                "id" => 19,
                 "name" => "Z390 Trident Z Royal 16GB DDR4-4000MHz",
                 "price" => 244,
                 "specs" => [
@@ -276,6 +295,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "G.Skill",
                 "category_id" => 4,
+                "id" => 20,
                 "name" => "Ripjaws V 16GB DDR4-2400MHz",
                 "price" => 46,
                 "specs" => [
@@ -289,6 +309,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "Addlink",
                 "category_id" => 5,
+                "id" => 21,
                 "name" => "S70",
                 "price" => 136,
                 "specs" => [
@@ -302,6 +323,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "Western Digital",
                 "category_id" => 5,
+                "id" => 22,
                 "name" => "Black SN750 1TB",
                 "price" => 129,
                 "specs" => [
@@ -315,6 +337,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "Samsung",
                 "category_id" => 5,
+                "id" => 23,
                 "name" => "970 EVO Plus 500GB",
                 "price" => 187,
                 "specs" => [
@@ -328,6 +351,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "Crucial",
                 "category_id" => 5,
+                "id" => 24,
                 "name" => "MX500",
                 "price" => 109,
                 "specs" => [
@@ -341,6 +365,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "Crucial",
                 "category_id" => 5,
+                "id" => 25,
                 "name" => "P1 NVMe",
                 "price" => 107,
                 "specs" => [
@@ -354,6 +379,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "Corsair",
                 "category_id" => 6,
+                "id" => 26,
                 "name" => "RM850x",
                 "price" => 144,
                 "specs" => [
@@ -366,6 +392,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "Cooler Master",
                 "category_id" => 6,
+                "id" => 27,
                 "name" => "MasterWatt 750",
                 "price" => 93,
                 "specs" => [
@@ -378,6 +405,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "FSP",
                 "category_id" => 6,
+                "id" => 28,
                 "name" => "Dagger 500W",
                 "price" => 129,
                 "specs" => [
@@ -388,6 +416,7 @@ class ProductSeeder extends Seeder
                 ]
             ],
             [
+                "id" => 29,
                 "name" => "Astrape P1-750G",
                 "brand" => "Gamdias",
                 "price" => 107,
@@ -402,6 +431,7 @@ class ProductSeeder extends Seeder
             [
                 "brand" => "NZXT",
                 "category_id" => 6,
+                "id" => 30,
                 "name" => "E850",
                 "price" => 107,
                 "specs" => [
@@ -415,7 +445,9 @@ class ProductSeeder extends Seeder
         ];
 
         foreach ($products as $key => $product) {
-            Product::Create($product);
+            Product::updateOrCreate([
+                'id' => $product['id']
+            ],$product);
         }
     }
 }
