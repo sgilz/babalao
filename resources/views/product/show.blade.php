@@ -25,8 +25,8 @@
                                 </div>
                             </a>
                             <hr>
-                            @foreach($data['product']->getSpecs() as $spec)
-                            <p><b>{{$spec->name}}:</b> {{$spec->value}}</p>
+                            @foreach($data['product']->getSpecs() as $name => $value)
+                            <p><b>{{$name}}:</b> {{$value}}</p>
                             @endforeach
                             <hr>
                             <div class="form-group row" id="specs-form-group">
