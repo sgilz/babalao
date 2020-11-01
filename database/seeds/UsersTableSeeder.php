@@ -1,13 +1,13 @@
 <?php
 
 /*
- * @author    Santiago Gil Zapata sgilz@eafit.edu.co
+ * @author Manuel Gutierrez magutierrm@eafit.edu.co
  */
 
-use App\Models\Item;
 use Illuminate\Database\Seeder;
+use App\User;
 
-class ItemSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,6 +16,6 @@ class ItemSeeder extends Seeder
      */
     public function run()
     {
-        factory(Item::class,8)->create();
+        factory(User::class,8)->create();
     }
 }

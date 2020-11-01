@@ -24,7 +24,7 @@
                         </a>
                     </h5>
                     @foreach($product->getSpecs() as $spec)
-                    {{$spec->value}}&nbsp;
+                    {{$spec}}&nbsp;
                     @endforeach
 
                 </div>
