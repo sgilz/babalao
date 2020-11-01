@@ -33,7 +33,7 @@
                                             <div class="col-xs-6">
                                                 <address>
                                                     <strong>{{__('order.views.details.paymentMethod')}}</strong><br>
-                                                    {{__('order.views.details.visa')}}<br>
+                                                    {{__('order.views.details.card')}} {{$data["user"]->getId()}} <br>
                                                 </address>
                                             </div>
                                         </div>

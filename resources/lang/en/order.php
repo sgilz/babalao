@@ -42,7 +42,7 @@ return[
             'subtotal'=>'SUBTOTAL',
             'taxes'=>'Taxes',
             'total'=>'Total: ',
-            'visa'=>'VISA ending: **** 1234',
+            'card'=>'CREDIT CARD ending: ',
         ],
         'index'=> [
             'list'=>'LIST PRODUCTS',
