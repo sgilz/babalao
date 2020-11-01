@@ -21,9 +21,12 @@ class CategoryController extends Controller
 
     public function add()
     {
-        $data = [];
-        $data["title"] = __('category.formTitle');
-        return view('category.add')->with("data", $data);
+        if(Auth::user()->getIsAdmin()){
+            $data = [];
+            $data["title"] = __('category.formTitle');
+            return view('category.add')->with("data", $data);
+        }
+        return redirect()->route('home');
     }
 
     public function save(Request $request)
