@@ -13,6 +13,7 @@ use App\Models\Item;
 use App\Models\Order;
 use App\Models\Product;
 use App\Util\Status;
+use App\User;
 
 class OrderController extends Controller
 {
@@ -55,13 +56,27 @@ class OrderController extends Controller
     {
         $data = []; //to be sent to the view
         $order = Order::findOrFail($id);
+        $user = User::findOrFail($order->getUserId());
+        $items = Item::where('order_id', $order->getId())->get();
+        $products = [];
+        foreach ($items as $item) {
+            $product = Product::findOrFail($item->getProductId());
+            array_push($products, $product->getName());
+        }
         $data["title"] = __("order.details");
         $data["order"] = $order;
+        $data["user"] = $user;
+        $data["items"] = $items;
+        $data["products"] = $products;
         return view('order.details')->with("data", $data);
     }
 
     public function delete($id)
     {
+        $items = Item::where('order_id', $id)->get();
+        foreach ($items as $item) {
+            Item::destroy($item->getId());
+        }
         Order::destroy($id);
         return redirect()->route('order.list');
     }
@@ -88,7 +103,7 @@ class OrderController extends Controller
     public function removeCart(Request $request)
     {
         $request->session()->forget('products');
-        return redirect()->route('product.index');
+        return redirect()->route('home');
     }
 
     public function cart(Request $request)
@@ -100,7 +115,7 @@ class OrderController extends Controller
             $total = 0;
             foreach ($keys as $key) {
                 $currentProduct = Product::find($key);
-                $total+= $currentProduct->getPrice()*$products[$key];
+                $total += $currentProduct->getPrice() * $products[$key];
             }
             $data["total"] = $total;
             $data["products"] = $productsModels;
@@ -136,7 +151,6 @@ class OrderController extends Controller
                 $item->setSubtotal($products[$key], $currentProduct->getPrice());
                 $item->save();
             }
-
             $order->setTotal($totalPrice);
             $order->save();
 
