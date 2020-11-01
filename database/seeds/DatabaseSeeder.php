@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\CreditCard;
-use App\Models\Item;
-use App\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,6 +12,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UsersTableSeeder::class);
-        $this->call(CreditCard::class);
+        $this->call(CategorySeeder::class);
+        $this->call(ProductSeeder::class);
+        $this->call(CreditCardsSeeder::class);
     }
 }

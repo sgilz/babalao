@@ -7,7 +7,7 @@
 use Illuminate\Database\Seeder;
 use App\Models\CreditCard;
 
-class CreditCardsTableSeeder extends Seeder
+class CreditCardsSeeder extends Seeder
 {
     /**
      * Run the database seeds.

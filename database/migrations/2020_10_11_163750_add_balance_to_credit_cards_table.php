@@ -14,7 +14,7 @@ class AddBalanceToCreditCardsTable extends Migration
     public function up()
     {
         Schema::table('credit_cards', function (Blueprint $table) {
-            $table->unsignedDecimal('balance')->nullable(false)->default(0.00);
+            $table->unsignedDecimal('balance', 14, 2)->nullable(false)->default(0.00);
         });
     }
 
