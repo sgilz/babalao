@@ -71,11 +71,14 @@ class ProductController extends Controller
 
     public function add($category_id)
     {
-        $data = [];
-        $data['category'] = Category::findOrFail($category_id);
-        $data["title"] = __('product.formTitle', ['category'=>$data['category']->getName()]);
-
-        return view('product.add')->with("data", $data);
+        if(Auth::user()->getIsAdmin()){
+            $data = [];
+            $data['category'] = Category::findOrFail($category_id);
+            $data["title"] = __('product.formTitle', ['category'=>$data['category']->getName()]);
+    
+            return view('product.add')->with("data", $data);
+        }
+        return redirect()->route('home');
     }
 
     public function save(Request $request, int $category_id)
