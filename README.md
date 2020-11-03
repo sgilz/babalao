@@ -69,7 +69,7 @@ And replace it with your information
 6. Generate seeds
 
 
-    php artisan migrate
+    php artisan db:seed
 
 7. Now we need to generate the storage symlink, if you have problems with the existing one, delete:
 
