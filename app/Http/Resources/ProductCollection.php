@@ -2,6 +2,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Support\Facades\App;
 
 class ProductCollection extends ResourceCollection
 {
@@ -15,8 +16,9 @@ class ProductCollection extends ResourceCollection
     {
         return [
                 'collection-data' => [
-                    'id' => 'SKU678743',
-                    'link' => 'http://localhost/laravelcourse/public/product/create',
+                    'id' => uniqid("babalao_prod_req_"),
+                    'length' => $this->collection->count(),
+                    'link' => App::make("url")->to('/home'),
                 ],
                 'data' => $this->collection,
         ];
