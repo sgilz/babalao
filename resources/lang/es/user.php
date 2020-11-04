@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'address' => 'Dirección de envio:',
+    'address' => 'Dirección de envío:',
     'card_number' => 'Número de tu tarjeta:',
     'city' => 'Ciudad de residencia:',
     'email' => 'Correo electrónico:',

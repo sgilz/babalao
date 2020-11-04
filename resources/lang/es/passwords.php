@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'reset' => 'Tu contraseña ha sido cambiada!',
-    'sent' => 'Hemos enviado un link a tu correo para que puedas cambiar tu contraseña!',
-    'throttled' => 'Por favor espera mientras lo intentamos.',
-    'token' => 'Este token para cambiar tu contraseña es invalido.',
-    'user' => "No pudimos encontrar este usuario con este email.",
+    'reset' => '¡Tu contraseña ha sido cambiada!',
+    'sent' => '¡Hemos enviado un enlace a tu correo para que puedas cambiar tu contraseña!',
+    'throttled' => 'Por favor, espera mientras lo intentamos.',
+    'token' => 'Este token para cambiar tu contraseña es inválido.',
+    'user' => "No pudimos encontrar este usuario con este correo electrónico.",
 ];
