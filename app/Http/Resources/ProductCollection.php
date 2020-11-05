@@ -1,4 +1,8 @@
 <?php
+/*
+ * @author    Santiago Gil Zapata sgilz@eafit.edu.co
+ */
+
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
