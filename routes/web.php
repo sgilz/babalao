@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/home');
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/lang/{locale}', 'LanguageController@changeLang')->name('language.changeLang');
 
 /*
 Routes for Category
