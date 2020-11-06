@@ -21,6 +21,13 @@ return [
         'label' => 'Brand',
         'placeholder' => 'Product Brand'
     ],
+    'currency' => [
+        'COP' => 'COP',
+        'EUR' => 'EUR',
+        'HUF' => 'HUF',
+        'title' => 'Price per unit in:',
+        'USD' => 'USD'
+    ],
     'formTitle' => 'Add new product to :category category',
     'image' => [
         'label' => 'Upload image',
@@ -32,7 +39,8 @@ return [
     ],
     'price' => [
         'label' => 'Price',
-        'placeholder' => 'Amount'
+        'placeholder' => 'Amount',
+        'label_u' => 'Price (per unit)',
     ],
     'reviews' => [
         'exit' => 'Exit',

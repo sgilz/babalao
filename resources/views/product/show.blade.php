@@ -29,6 +29,33 @@
                             <p><b>{{$name}}:</b> {{$value}}</p>
                             @endforeach
                             <hr>
+                            <p><b>{{__('product.currency.title') }}</p>
+                            <div class="row">
+                                <div class="col">
+                                    <img src="{{ url('storage/products/co-flag.png') }}" width="25" height="25"
+                                        class="d-inline-block align-top" alt="" loading="lazy">
+                                    <b>{{$data['price_cop']}}</b>
+                                </div>
+                                <div class="col">
+                                    <img src="{{ url('storage/products/us-flag.png') }}" width="25" height="25"
+                                        class="d-inline-block align-top" alt="" loading="lazy">
+                                    <b>{{$data['product']->getPrice()}}</b>
+                                </div>
+                                <div class="w-100">
+                                    <p></p>
+                                </div>
+                                <div class="col">
+                                    <img src="{{ url('storage/products/hu-flag.png') }}" width="25" height="25"
+                                        class="d-inline-block align-top" alt="" loading="lazy">
+                                    <b>{{$data['price_huf']}}</b>
+                                </div>
+                                <div class="col">
+                                    <img src="{{ url('storage/products/eu-flag.png') }}" width="25" height="25"
+                                        class="d-inline-block align-top" alt="" loading="lazy">
+                                    <b>{{$data['price_eur']}}</b>
+                                </div>
+                            </div>
+                            <hr>
                             <div class="form-group row" id="specs-form-group">
                                 <form action="{{ route('cart.addToCart',['id'=> $data['product']->getId()]) }}"
                                     method="POST">
@@ -44,7 +71,8 @@
                         </div>
                         <form action="{{route('wishList.addProduct',$data['product']->getId())}}" method="POST">
                             @csrf
-                            <button class="btn btn-danger" role="submit"> {{ __('product.show.wish_list') }} </button>
+                            <button class="btn btn-danger" role="submit"> {{ __('product.show.wish_list') }}
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -56,7 +84,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">{{ __('product.reviews.title', ['product' => $data['product']->getName()]) }}
+                <h5 class="modal-title">
+                    {{ __('product.reviews.title', ['product' => $data['product']->getName()]) }}
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -88,4 +117,7 @@
         </div>
     </div>
 </div>
+@push('custom-scripts')
+<script type="text/javascript" src="{{ URL::asset('js/product/show.js') }}"></script>
+@endpush
 @endsection
