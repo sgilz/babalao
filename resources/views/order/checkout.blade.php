@@ -5,10 +5,12 @@
     <div class="checkoutrow">
         <div class="checkoutcol-75">
             <div class="checkoutcontainer">
-                <form action="">
+                <form action="{{ route('cart.buy') }}" method="POST">
+                    @csrf
                     <div class="checkoutrow">
                         <div class="checkoutcol-50">
                             <h3>{{__('checkout.title')}}</h3>
+                            @include('util.message')
                             <label for="fname"><i class="fa fa-user"></i>{{__('checkout.username')}}</label>
                             <b> {{$data['user_name']}} </b>
                             <hr>
@@ -31,9 +33,11 @@
                             </div>
                             <label for="cname">{{__('checkout.card_selection')}}</label>
                             <br>
-                            <select name="card_list" id="card_list">
+                            <select name="selected_card" id="selected_card">
                                 @foreach($data["credit_cards"] as $card)
-                                    <option value=""><b>{{$card}}</b></option>
+                                    <b>
+                                        <option>****{{Str::substr($card,-4)}}</option>
+                                    </b>
                                 @endforeach
                             </select>
                         </div>
@@ -42,10 +46,7 @@
                     <label>
                         <input type="checkbox" checked="checked" name="sameadr"> {{__('checkout.checkbox')}}
                     </label>
-                    <form action="{{ route('cart.buy') }}" method="POST">
-                        @csrf
-                        <button class="btn btn-success" type="submit">{{__('checkout.buy')}}</button>
-                    </form>
+                    <button class="btn btn-success" type="submit">{{__('checkout.buy')}}</button>
                 </form>
             </div>
         </div>

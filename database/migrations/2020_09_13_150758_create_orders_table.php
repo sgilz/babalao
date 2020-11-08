@@ -24,6 +24,8 @@ class CreateOrdersTable extends Migration
             $table->bigInteger('total');
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->bigInteger('credit_card_id')->unsigned();
+            $table->foreign('credit_card_id')->references('id')->on('credit_cards');
             $table->timestamps();
         });
     }
