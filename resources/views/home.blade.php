@@ -3,6 +3,9 @@
 @section('title', __('home.title'))
 
 @section('content')
+<video autoplay muted loop>
+  <source src="{{ URL::asset('storage/home/bg.mp4') }}" type="video/mp4">
+</video>
 <div class="row justify-content-md-center">
   <div class="col-10">
     <div class="card text-white p-5 banner">
