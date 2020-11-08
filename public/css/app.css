@@ -10940,18 +10940,18 @@ a.text-dark:focus {
   margin-bottom: auto;
   margin-top: auto;
   height: 60px;
-  background-color: #0b0201;
-  border-radius: 30px;
+  background-color: #3866f121;
+  border-radius: 12px;
   padding: 10px;
   transition: all 500ms cubic-bezier(0.68, -0.1, 0.265, 1.55);
 }
 
 .searchbar .search_input {
-  color: white;
+  color: #7f7f7f;
   border: 0;
   outline: 0;
   background: none;
-  width: 0;
+  width: 200px;
   caret-color: transparent;
   line-height: 40px;
   transition: all 500ms cubic-bezier(0.68, -0.1, 0.265, 1.55);
@@ -10960,15 +10960,16 @@ a.text-dark:focus {
 .searchbar .search_icon {
   height: 40px;
   width: 40px;
-  float: right;
+  float: left;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  color: white;
+  border-radius: 20%;
+  color: #7f7f7f;
   text-decoration: none !important;
   background: transparent;
   border: none;
+  transition: all 500ms cubic-bezier(0.68, -0.1, 0.265, 1.55);
 }
 
 .searchbar:hover,
@@ -10979,14 +10980,14 @@ a.text-dark:focus {
 .searchbar:hover .search_input,
 .searchbar:focus .search_input {
   padding: 0 10px;
+  caret-color: #7f7f7f;
   width: 450px;
-  caret-color: red;
 }
 
 .searchbar:hover .search_icon,
 .searchbar:focus .search_icon {
   background: white;
-  color: #e74c3c;
+  color: #9a74ff;
 }
 
 .user-menu .user_icon {
@@ -11146,6 +11147,10 @@ body {
   margin: 0;
 }
 
+body {
+  background-color: #63a0ff1a;
+}
+
 .full-height {
   height: 100vh;
 }
@@ -11220,9 +11225,8 @@ body {
 }
 
 .main-navbar {
-  padding-left: 5rem;
-  padding-right: 5rem;
-  padding-top: 2rem;
+  background-color: #fff;
+  padding: 2rem 5rem 2rem 5rem;
 }
 
 .main-navbar .navbar-toggler {
@@ -11263,130 +11267,3 @@ body {
   background-image: url("https://images.unsplash.com/photo-1568781269551-3e3baf5ec909?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
 }
 
-.orderTitle{
-    font-weight: bolder;
-    color: black;
-    padding-left: 10px;
-}
-
-.order-list-container {
-    border-left: 1px solid #ccc;
-    margin-left: -1px;
-    padding-left: 16px;
-    padding-right:16px
-}
-
-.order-container {
-    border-bottom: 1px solid #eee;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 4px;
-    padding-right:4px
-}
-
-.order-header {
-    background-color: #f7f7f7;
-    border-radius: .25rem;
-    padding:20px 16px
-}
-
-.order-header .btn.btn-default-outline {
-    font-weight: 300;
-    width:100%
-}
-
-.order-header .btn.btn-default-outline:focus, .order-header .btn.btn-default-outline:hover {
-    background-color:#333
-}
-
-.order-header .btn.btn-primary-outline {
-    background-color: #fff;
-    font-weight: 300;
-    width:100%
-}
-
-.order-header .btn.btn-primary-outline:focus, .order-header .btn.btn-primary-outline:hover {
-    background-color:#f50
-}
-
-.order-title {
-    font-family: Arial, Roboto, "-apple-system", Helvetica, sans-serif
-}
-
-.order-title span:first-child {
-    color: #333;
-    display: inline-block;
-    font-size: .8rem;
-    font-weight:700
-}
-
-.order-title .pipe {
-    color: #333;
-    font-size: .8rem;
-    font-weight:700
-}
-
-.order-title .pipe .info-gray {
-    color: #666;
-    font-weight:100
-}
-
-.pipe::before {
-    content: '|';
-    padding:0 8px
-}
-
-.pipe-after::after {
-    content: '|';
-    padding:0 8px
-}
-
-body{margin-top:20px;
-    background:#eee;
-}
-
-.invoice {
-    padding: 30px;
-}
-
-.invoice h2 {
-    margin-top: 0px;
-    line-height: 0.8em;
-}
-
-.invoice .small {
-    font-weight: 300;
-}
-
-.invoice hr {
-    margin-top: 10px;
-    border-color: #ddd;
-}
-
-.invoice .table tr.line {
-    border-bottom: 1px solid #ccc;
-}
-
-.invoice .table td {
-    border: none;
-}
-
-.invoice .identity {
-    margin-top: 10px;
-    font-size: 1.1em;
-    font-weight: 300;
-}
-
-.invoice .identity strong {
-    font-weight: 600;
-}
-
-.grid {
-    position: relative;
-    width: 100%;
-    background: #fff;
-    color: #666666;
-    border-radius: 2px;
-    margin-bottom: 25px;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
-}
