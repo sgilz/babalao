@@ -1,7 +1,7 @@
 /node_modules
 /storage/*.key
 /public/storage
-/vendor
+vendor/
 Homestead.yaml
 Homestead.json
 .env

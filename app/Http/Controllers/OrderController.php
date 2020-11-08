@@ -9,11 +9,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Interfaces\Invoice;
 use App\Models\Item;
 use App\Models\Order;
 use App\Models\Product;
-use App\Util\Status;
 use App\User;
+use App\Util\Status;
 
 class OrderController extends Controller
 {
@@ -153,8 +154,11 @@ class OrderController extends Controller
             }
             $order->setTotal($totalPrice);
             $order->save();
-
             $request->session()->forget('products');
+
+            $invoice_interface = app(Invoice::class);
+            $invoice_doc = $invoice_interface->checkIn($order);
+            return $invoice_doc->stream();
         }
         return redirect()->route('home')->with('success', __('order.controller.message.buy'));
     }
