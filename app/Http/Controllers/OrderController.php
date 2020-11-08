@@ -14,6 +14,7 @@ use App\Models\Order;
 use App\Models\Product;
 use App\Util\Status;
 use App\User;
+use function Sodium\add;
 
 class OrderController extends Controller
 {
@@ -123,6 +124,23 @@ class OrderController extends Controller
         }
 
         return redirect()->route('home');
+    }
+
+    public function checkout()
+    {
+        $data = [];
+        $user = Auth::user();
+        $data["user_name"] = $user->getName();
+        $data["email"]= $user->getEmail();
+        $data["address"] = $user->getAddress();
+        $data["neighborhood"] = $user->getNeighborhood();
+        $data["city"] = $user->getCity();
+        $data["credit_cards"] = [];
+        $creditCards = $user->creditCards;
+        foreach ($creditCards as $creditCard) {
+            array_push($data["credit_cards"], $creditCard->getCardNumber());
+        }
+        return view('order.checkout')->with("data", $data);
     }
 
     public function buy(Request $request)
