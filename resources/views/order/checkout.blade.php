@@ -36,7 +36,8 @@
                             <select name="selected_card" id="selected_card">
                                 @foreach($data["credit_cards"] as $card)
                                     <b>
-                                        <option>****{{Str::substr($card,-4)}}</option>
+                                        {{--                                        <option>****{{Str::substr($card,-4)}}</option>--}}
+                                        <option>{{$card}}</option>
                                     </b>
                                 @endforeach
                             </select>
