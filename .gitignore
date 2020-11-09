@@ -5,6 +5,7 @@
 Homestead.yaml
 Homestead.json
 .env
+.env.example
 
 # ====== OS X ===========================================
 .DS_Store
