@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     //attributes id, date, status, total, user, created_at, updated_at
-    protected $fillable = ['date', 'status', 'total', 'user_id', 'credit_card_id'];
+    protected $fillable = ['credit_card_id', 'date', 'status', 'total', 'user_id'];
 
     public function getId()
     {
