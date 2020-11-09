@@ -5,6 +5,7 @@
     <div class="col-md-12">
         <h4 class="orderTitle" style="font-weight: bolder; color: black; padding-left: 20px">{{__('order.views.list.title')}}</h4>
         <hr>
+        @include('util.message')
         <ul id="OrderList">
             @foreach($data["orders"] as $order)
                 <div class="order-list-container col-md-9 col-xs-12">

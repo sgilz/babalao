@@ -71,6 +71,7 @@ Route::get('/order/list', 'OrderController@list')->name('order.list');
 Route::post('/order/save', 'OrderController@save')->name('order.save');
 Route::get('/order/details/{id}','OrderController@details')->name('order.details');
 Route::delete('/order/delete/{id}', 'OrderController@delete')->name('order.delete');
+Route::get('/order/checkout', 'OrderController@checkout')->name('order.checkout');
 
 /*
 Routes for Wish List
