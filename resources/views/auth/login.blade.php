@@ -14,7 +14,7 @@
                                 class="d-inline-block align-top mb-1" alt="" loading="lazy">
                             <form method="POST" action="{{ route('login') }}" class=" p-2">
                                 @csrf
-                                <h5 class="font-weight-bold mb-5">{{ __('auth.login.title') }}</h5>
+                                <h5 class="font-weight-bold mb-3">{{ __('auth.login.title') }}</h5>
                                 <div class="form-group row">
                                     <div class="col-12">
                                         <input id="email" type="email"
@@ -76,7 +76,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-7 text-center p-5">
+                        <div class="col-7 text-center p-5 d-flex flex-column justify-content-center">
                             <img class="auth-img" src="{{ URL::asset('storage/home/login.png') }}" alt="" />
                         </div>
                     </div>

@@ -2160,11 +2160,6 @@ pre code {
   opacity: 1;
 }
 
-.form-control::-ms-input-placeholder {
-  color: #6c757d;
-  opacity: 1;
-}
-
 .form-control::placeholder {
   color: #6c757d;
   opacity: 1;
@@ -12054,8 +12049,7 @@ a.text-dark:focus {
 }
 
 .auth-card {
-  height: 80vh;
-  overflow-y: auto;
+  min-height: 80vh;
   border: 0;
   background: linear-gradient(to right, #fff 0%, #fff 43%, #9476ff 43%, #9476ff 100%);
 }
@@ -12078,12 +12072,6 @@ a.text-dark:focus {
   font-weight: 500;
 }
 
-.auth-card .form-control::-ms-input-placeholder {
-  color: #9ea1a3;
-  opacity: 1;
-  font-weight: 500;
-}
-
 .auth-card .form-control::placeholder {
   color: #9ea1a3;
   opacity: 1;
@@ -12091,7 +12079,7 @@ a.text-dark:focus {
 }
 
 .auth-card .auth-img {
-  height: 60vh;
+  width: 100%;
 }
 
 html,
