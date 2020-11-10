@@ -3,15 +3,15 @@
 return [
     'controller' => [
         'message' => [
-            'add' => 'Item añadido correctamente!',
-            'buy' => 'Éxito! tu orden está siendo confirmada',
+            'add' => '¡Item añadido correctamente!',
+            'buy' => '¡Éxito! tu orden está siendo confirmada',
             'error' => 'Error: No tienes suficiente saldo en tu tarjeta. Por favor, utiliza otra o recarga.',
         ]
     ],
     'creationTitle' => 'Nueva orden',
     'details' => 'Detalles',
     'messages' => [
-        'saveSuccess' => 'Orden creada con éxito!'
+        'saveSuccess' => '¡Orden creada con éxito!'
     ],
     'title' => 'Ordenes registradas',
     'views' => [
@@ -29,6 +29,7 @@ return [
         'details' => [
             'back' => 'Atrás',
             'billedTo' => 'Cobrada a: ',
+            'card' => 'Final de la tarjeta de crédito: ',
             'delete' => 'Cancelar Orden',
             'email' => 'Email: ',
             'initialDate' => 'Fecha inicial: ',
@@ -43,18 +44,17 @@ return [
             'subtotal' => 'SUBTOTAL',
             'taxes' => 'Impuestos',
             'total' => 'Total: ',
-            'card' => 'Final de la tarjeta de crédito: ',
         ],
         'index' => [
             'list' => 'LISTA DE PRODUCTOS',
             'new' => 'NUEVA ORDEN',
         ],
         'list' => [
-            'title' => 'Mis Ordenes',
-            'order#' => 'Numero de orden: ',
-            'total' => 'Total: ',
             'date' => 'Comprado el día: ',
             'details' => 'Detalles',
+            'title' => 'Mis Ordenes',
+            'order#' => 'Número de orden: ',
+            'total' => 'Total: ',
             'review' => 'Haga una review',
         ],
     ],
