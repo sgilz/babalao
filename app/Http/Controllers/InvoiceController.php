@@ -4,13 +4,16 @@
  */
 namespace App\Http\Controllers;
 
+use App\Interfaces\Invoice;
 use App\Models\Order;
-use Illuminate\Http\Request;
 
 class InvoiceController extends Controller
 {
-    public function show(Order $order)
+    public function show($order_id)
     {
-        # code...
+        $order = Order::find($order_id);
+        $invoice_interface = app(Invoice::class);
+        $invoice_doc = $invoice_interface->checkIn($order);
+        return $invoice_doc->stream();
     }
 }

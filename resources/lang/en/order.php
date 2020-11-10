@@ -4,7 +4,8 @@ return[
     'controller'=>[
         'message'=> [
             'add'=>'Item added successfully!',
-            'buy'=>'Success! your order is now being confirmed'
+            'buy'=>'Success! your order is now being confirmed',
+            'error'=>'Error: you dont have enough money in the card. Please, use another or recharge.',
         ]
     ],
     'creationTitle'=>'New Order',
@@ -36,6 +37,7 @@ return[
             'orderDate'=>'Order Date: ',
             'orderSummary'=>'Order Summary: ',
             'paymentMethod'=>'Payment Method: ',
+            'pdf'=>'Generate PDF',
             'product'=>'PRODUCT',
             'quantity'=>'QUANTITY',
             'status'=>'Status: ',
