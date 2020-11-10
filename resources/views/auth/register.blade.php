@@ -21,11 +21,11 @@
                         @csrf
                         <div class="form-group">
                             <label for="input_email">{{ __('auth.input.email') }}</label>
-                            <input type="email" class="form-control" name="email" placeholder="{{ __('auth.place_holder.email') }}">
+                            <input type="email" class="form-control" name="email" placeholder="{{ __('auth.place_holder.email') }}" value="{{ old("email") }}">
                         </div>
                         <div class="form-group">
                             <label for="input_name">{{ __('auth.input.name') }}</label>
-                            <input type="text" class="form-control" name="name" placeholder="{{ __('auth.place_holder.name') }}">
+                            <input type="text" class="form-control" name="name" placeholder="{{ __('auth.place_holder.name') }}" value="{{ old("name") }}">
                         </div>
                         <div class="row">
                             <div class="col">
@@ -46,19 +46,19 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="input_city">{{ __('auth.input.city') }}</label>
-                                    <input type="text" class="form-control" name="city" placeholder="{{ __('auth.place_holder.city') }}">
+                                    <input type="text" class="form-control" name="city" placeholder="{{ __('auth.place_holder.city') }}" value="{{ old("city") }}">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label for="input_neighborhood">{{ __('auth.input.neighborhood') }}</label>
-                                    <input type="text" class="form-control" name="neighborhood" placeholder="{{ __('auth.place_holder.neighborhood') }}">
+                                    <input type="text" class="form-control" name="neighborhood" placeholder="{{ __('auth.place_holder.neighborhood') }}" value="{{ old("neighborhood") }}">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="input_address">{{ __('auth.input.address') }}</label>
-                            <input type="address" class="form-control" name="address" placeholder="{{ __('auth.place_holder.address') }}">
+                            <input type="address" class="form-control" name="address" placeholder="{{ __('auth.place_holder.address') }}" value="{{ old("address") }}">
                         </div>
                         <button type="submit" class="btn btn-success btn-lg btn-block">{{ __('auth.submit') }}</button>
                     </form>

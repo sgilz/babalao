@@ -25,7 +25,7 @@
             <div class="searchbar">
                 <form method="POST" action="{{ route('product.searchBar') }}">
                     @csrf
-                    <input class="search_input" type="text" name="search" placeholder="{{ __('navigation.search') }}">
+                    <input class="search_input" type="text" name="search" value="{{ old("search") }}" placeholder="{{ __('navigation.search') }}">
                     <button class="search_icon"><i class="fas fa-search"></i></button>
                 </form>
             </div>

@@ -16,7 +16,7 @@
                 <form method="POST" action="{{ route('order.save') }}">
                     @csrf
                     <label>
-                        <input name="date" id="date" type="date" />
+                        <input name="date" value="{{ old("date") }}" id="date" type="date" />
                         <div class="label-text">{{__('order.views.create.date')}}</div>
                     </label>
                     <label>
@@ -33,7 +33,7 @@
                         <div class="label-text">{{__('order.views.create.status')}}</div>
                     </label>
                     <label>
-                        <input type="number" name="total" id="total" />
+                        <input type="number" name="total" value="{{ old("total") }}" id="total" />
                         <div class="label-text">{{__('order.views.create.total')}}</div>
                     </label>
                     <button type="submit" value="Submit">{{__('order.views.create.submit')}}</button>

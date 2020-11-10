@@ -25,11 +25,11 @@
                         @csrf
                         <div class="form-group">
                             <label for="name">{{__('product.name.label')}}</label>
-                            <input type="text" class="form-control" name="name" placeholder="{{__('product.name.placeholder')}}">
+                            <input type="text" class="form-control" name="name" value="{{ old("name") }}" placeholder="{{__('product.name.placeholder')}}">
                         </div>
                         <div class="form-group">
                             <label for="name">{{__('product.brand.label')}}</label>
-                            <input type="text" class="form-control" name="brand" placeholder="{{__('product.brand.placeholder')}}">
+                            <input type="text" class="form-control" name="brand" value="{{ old("brand") }}" placeholder="{{__('product.brand.placeholder')}}">
                         </div>
                         <div class="form-group row">
                             <label class="col-12" for="name">{{__('product.price.label')}}</label>
@@ -37,13 +37,13 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">$</span>
                                 </div>
-                                <input type="number" min="1" class="form-control" name="price" placeholder="{{__('product.price.placeholder')}}">
+                                <input type="number" min="1" class="form-control" name="price" value="{{ old("price") }}" placeholder="{{__('product.price.placeholder')}}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="name">{{__('product.image.label')}}</label>
                             <div class="custom-file">
-                                <input id="customImage" enctype="multipart/form-data" type="file" name="image" class="custom-file-input">
+                                <input id="customImage" enctype="multipart/form-data" type="file" name="image" value="{{ old("image") }}" class="custom-file-input">
                                 <label class="custom-file-label" for="customImage">{{__('product.image.placeholder')}}</label>
                             </div>
                         </div>
