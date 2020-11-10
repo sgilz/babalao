@@ -15,7 +15,9 @@
 </head>
 
 <body>
-    <x-navbar/>
+    @auth
+        <x-navbar/>
+    @endauth
     <div class="container-fluid p-5">
         @yield('content')
     </div>

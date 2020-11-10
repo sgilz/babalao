@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "node-forge": "^0.10.0",
-        "object-path": "^0.11.5"
+        "object-path": "^0.11.5",
+        "pretty-checkbox": "^3.0.3"
     }
 }

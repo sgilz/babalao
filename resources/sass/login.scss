@@ -1,0 +1,25 @@
+.auth-card{
+    height: 80vh;
+    overflow-y:auto;
+    border:0;
+    background: linear-gradient(to right, #fff 0%, #fff 43%, #9476ff 43%, #9476ff 100%);
+
+    .form-control{
+
+        border:0;
+        background-color: #b6b5ba1f;
+        height: calc(1.5em + 1rem + 2px);
+
+        &::placeholder {
+            color: #9ea1a3;
+            opacity: 1;
+            font-weight: 500;
+        }
+
+    }
+    
+
+    .auth-img{
+        height:60vh;
+    }
+}

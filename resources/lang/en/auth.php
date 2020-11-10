@@ -34,4 +34,18 @@ return [
     'submit' => 'Create your Babalao account',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'title' => 'Create account',
+    'login' => [
+        'title' => 'Welcome to Babalao',
+        'remember' => 'Remember Me',
+        'signup'=>'Don\'t have an account? ',
+        'place_holder' => [
+            'email' => 'Email address',
+            'password' => 'Password'
+        ],
+        'buttons' => [
+            'login' => 'Login',
+            'forgot' => 'Forgot Your Password?',
+            'register' => 'Sign Up'
+        ]
+    ]
 ];
