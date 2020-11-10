@@ -37,6 +37,7 @@ return[
             'orderDate'=>'Order Date: ',
             'orderSummary'=>'Order Summary: ',
             'paymentMethod'=>'Payment Method: ',
+            'pdf'=>'Generate PDF',
             'product'=>'PRODUCT',
             'quantity'=>'QUANTITY',
             'status'=>'Status: ',

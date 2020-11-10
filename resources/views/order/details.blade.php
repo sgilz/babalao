@@ -91,6 +91,7 @@
                                                 </table>
                                             </div>
                                         </div>
+                                        <a class="btn btn-info float-lg-right" href='{{ route("invoice.show", $data["order"]->getId() ) }}'> {{__('order.views.details.pdf')}}</a>
                                         <form method="post"
                                               action="{{ route('order.delete', $data["order"]->getId()) }}">
                                             @method('DELETE')

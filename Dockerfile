@@ -1,5 +1,5 @@
 FROM php:7.2-apache-stretch
-RUN apt-get update -y && apt-get install -y openssl zip unzip git 
+RUN apt-get update -y && apt-get install -y openssl zip unzip git
 RUN docker-php-ext-install pdo_mysql
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf
@@ -13,7 +13,8 @@ RUN composer install \
     --no-plugins \
     --no-scripts \
     --prefer-dist
-
+RUN php artisan invoices:install
+RUN php artisan invoices:update
 RUN php artisan key:generate
 RUN php artisan migrate:fresh --seed
 RUN chmod -R 777 storage

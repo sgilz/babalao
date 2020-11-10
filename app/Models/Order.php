@@ -5,6 +5,7 @@ namespace App\Models;
 use http\Env\Request;
 use App\Util\Status;
 use App\Models\Item;
+use App\User;
 
 use Illuminate\Database\Eloquent\Model;
 

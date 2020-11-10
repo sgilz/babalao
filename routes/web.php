@@ -74,6 +74,11 @@ Route::delete('/order/delete/{id}', 'OrderController@delete')->name('order.delet
 Route::get('/order/checkout', 'OrderController@checkout')->name('order.checkout');
 
 /*
+Invoice routes
+ */
+Route::get('/invoice/pdf/{id}', 'InvoiceController@show')->name("invoice.show");
+
+/*
 Routes for Wish List
 */
 Route::get('/wishList/show', 'WishListController@show')->name("wishList.show");
