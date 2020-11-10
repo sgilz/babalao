@@ -23,7 +23,7 @@
                                     </a>
                                 </div>
                                 <div class="col-xs-12 col-md-3">
-                                    <a class="btn btn-info " href="{{ route('review.create', $order->getId()) }}">
+                                    <a class="btn btn-info " href="{{ route('review.create', $order->items[0]->getProductId()) }}">
                                         {{__('order.views.list.review')}}
                                     </a>
                                 </div>
