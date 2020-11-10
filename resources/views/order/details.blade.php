@@ -23,9 +23,11 @@
                                                 <address>
                                                     <strong>{{__('order.views.details.billedTo')}}</strong><br>
                                                     {{ $data["user"]->getName() }}<br>
-                                                    {{ $data["user"]->getCity() }}, {{ $data["user"]->getNeighborhood() }}<br>
+                                                    {{ $data["user"]->getCity() }}
+                                                    , {{ $data["user"]->getNeighborhood() }}<br>
                                                     {{ $data["user"]->getAddress() }}<br>
-                                                    <abbr title="Phone">{{__('order.views.details.email')}}</abbr> {{ $data["user"]->getEmail() }}
+                                                    <abbr
+                                                        title="Phone">{{__('order.views.details.email')}}</abbr> {{ $data["user"]->getEmail() }}
                                                 </address>
                                             </div>
                                         </div>
@@ -33,7 +35,8 @@
                                             <div class="col-xs-6">
                                                 <address>
                                                     <strong>{{__('order.views.details.paymentMethod')}}</strong><br>
-                                                    {{__('order.views.details.card')}} {{$data["user"]->getId()}} <br>
+                                                    {{__('order.views.details.card')}}
+                                                    ****{{Str::substr($data["card"],-4)}}<br>
                                                 </address>
                                             </div>
                                         </div>
@@ -51,9 +54,12 @@
                                                 <table class="table table-striped">
                                                     <thead>
                                                     <tr class="line">
-                                                        <td class="text-center"><strong>{{__('order.views.details.product')}}</strong></td>
-                                                        <td class="text-center"><strong>{{__('order.views.details.quantity')}}</strong></td>
-                                                        <td class="text-right"><strong>{{__('order.views.details.subtotal')}}</strong></td>
+                                                        <td class="text-center">
+                                                            <strong>{{__('order.views.details.product')}}</strong></td>
+                                                        <td class="text-center">
+                                                            <strong>{{__('order.views.details.quantity')}}</strong></td>
+                                                        <td class="text-right">
+                                                            <strong>{{__('order.views.details.subtotal')}}</strong></td>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -68,13 +74,16 @@
                                                     @endforeach
                                                     <tr>
                                                         <td colspan="1"></td>
-                                                        <td class="text-right"><strong>{{__('order.views.details.taxes')}}</strong></td>
-                                                        <td class="text-right"><strong>{{__('order.views.details.na')}}</strong></td>
+                                                        <td class="text-right">
+                                                            <strong>{{__('order.views.details.taxes')}}</strong></td>
+                                                        <td class="text-right">
+                                                            <strong>{{__('order.views.details.na')}}</strong></td>
                                                     </tr>
                                                     <tr>
                                                         <td colspan="1">
                                                         </td>
-                                                        <td class="text-right"><strong>{{__('order.views.details.total')}}</strong></td>
+                                                        <td class="text-right">
+                                                            <strong>{{__('order.views.details.total')}}</strong></td>
                                                         <td class="text-right">
                                                             <strong>{{$data["order"]->getTotal()}}</strong></td>
                                                     </tr>
@@ -82,10 +91,13 @@
                                                 </table>
                                             </div>
                                         </div>
-                                        <form method="post" action="{{ route('order.delete', $data["order"]->getId()) }}">
+                                        <a class="btn btn-info float-lg-right" href='{{ route("invoice.show", $data["order"]->getId() ) }}'> {{__('order.views.details.pdf')}}</a>
+                                        <form method="post"
+                                              action="{{ route('order.delete', $data["order"]->getId()) }}">
                                             @method('DELETE')
                                             @csrf
-                                            <button type="submit" class="btn btn-danger"> {{__('order.views.details.delete')}}</button>
+                                            <button type="submit"
+                                                    class="btn btn-danger"> {{__('order.views.details.delete')}}</button>
                                         </form>
                                     </div>
                                 </div>

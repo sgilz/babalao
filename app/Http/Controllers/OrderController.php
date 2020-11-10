@@ -13,6 +13,7 @@ use App\Models\Item;
 use App\Models\Order;
 use App\Models\Product;
 use App\Util\Status;
+use App\Models\CreditCard;
 use App\User;
 
 class OrderController extends Controller
@@ -57,6 +58,7 @@ class OrderController extends Controller
         $data = []; //to be sent to the view
         $order = Order::findOrFail($id);
         $user = User::findOrFail($order->getUserId());
+        $card = $order->creditCard;
         $items = Item::where('order_id', $order->getId())->get();
         $products = [];
         foreach ($items as $item) {
@@ -68,6 +70,7 @@ class OrderController extends Controller
         $data["user"] = $user;
         $data["items"] = $items;
         $data["products"] = $products;
+        $data["card"] = $card->getCardNumber();
         return view('order.details')->with("data", $data);
     }
 
@@ -77,6 +80,10 @@ class OrderController extends Controller
         foreach ($items as $item) {
             Item::destroy($item->getId());
         }
+        $order = Order::find($id);
+        $card = $order->creditCard;
+        $card->setBalance($card->getBalance() + $order->getTotal());
+        $card->save();
         Order::destroy($id);
         return redirect()->route('order.list');
     }
@@ -125,37 +132,58 @@ class OrderController extends Controller
         return redirect()->route('home');
     }
 
+    public function checkout()
+    {
+        $data = [];
+        $user = Auth::user();
+        $data["user_name"] = $user->getName();
+        $data["email"] = $user->getEmail();
+        $data["address"] = $user->getAddress();
+        $data["neighborhood"] = $user->getNeighborhood();
+        $data["city"] = $user->getCity();
+        $data["credit_cards"] = [];
+        $creditCards = $user->creditCards;
+        foreach ($creditCards as $creditCard) {
+            array_push($data["credit_cards"], $creditCard->getCardNumber());
+        }
+        return view('order.checkout')->with("data", $data);
+    }
+
     public function buy(Request $request)
     {
+        $products = $request->session()->get("products");
+        $keys = array_keys($products);
+        $totalPrice = 0;
+        $items = [];
+        foreach ($keys as $key) {
+            $currentProduct = Product::find($key);
+            $totalPrice += $currentProduct->getPrice() * $products[$key];
+            $item = new Item();
+            $item->setProductId($key);
+            $item->setQuantity($products[$key]);
+            $item->setSubtotal($products[$key], $currentProduct->getPrice());
+            array_push($items, $item);
+        }
+        $cardNumber = $request->selected_card;
+        $card = CreditCard::where('card_number', $cardNumber)->first();
+        if ($card->getBalance() < $totalPrice) {
+            return back()->with('danger', __('order.controller.message.error'));
+        }
         $user = Auth::user();
         $order = new Order();
+        $order->setCreditCardId($card->getId());
         $order->setDate(date('Y-m-d H:i:s'));
         $order->setStatus(Status::PENDING);
-        $order->setTotal("0");
         $order->setUserId($user->getId());
-
+        $order->setTotal($totalPrice);
+        $card->setBalance($card->getBalance() - $totalPrice);
+        $card->save();
         $order->save();
-
-        $totalPrice = 0;
-
-        $products = $request->session()->get("products");
-        if ($products) {
-            $keys = array_keys($products);
-            foreach ($keys as $key) {
-                $currentProduct = Product::find($key);
-                $totalPrice = $totalPrice + $currentProduct->getPrice() * $products[$key];
-                $item = new Item();
-                $item->setProductId($key);
-                $item->setOrderId($order->getId());
-                $item->setQuantity($products[$key]);
-                $item->setSubtotal($products[$key], $currentProduct->getPrice());
-                $item->save();
-            }
-            $order->setTotal($totalPrice);
-            $order->save();
-
-            $request->session()->forget('products');
+        foreach ($items as $item) {
+            $item->setOrderId($order->getId());
+            $item->save();
         }
-        return redirect()->route('home')->with('success', __('order.controller.message.buy'));
+        $request->session()->forget('products');
+        return redirect()->route('order.list')->with('success', __('order.controller.message.buy'));
     }
 }

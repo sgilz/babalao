@@ -20,6 +20,6 @@ return [
     ],
     'shipping'=>'Shipping',
     'subtotal'=>'Sub-Total',
-    'title'=>'E-COMMERCE CART',
+    'title'=>'YOUR CART',
     'total' => 'Total',
 ];

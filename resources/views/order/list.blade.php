@@ -5,6 +5,7 @@
     <div class="col-md-12">
         <h4 class="orderTitle" style="font-weight: bolder; color: black; padding-left: 20px">{{__('order.views.list.title')}}</h4>
         <hr>
+        @include('util.message')
         <ul id="OrderList">
             @foreach($data["orders"] as $order)
                 <div class="order-list-container col-md-9 col-xs-12">
@@ -22,7 +23,7 @@
                                     </a>
                                 </div>
                                 <div class="col-xs-12 col-md-3">
-                                    <a class="btn btn-info " href="{{ route('review.create', $order->getId()) }}">
+                                    <a class="btn btn-info " href="{{ route('review.create', $order->items[0]->getProductId()) }}">
                                         {{__('order.views.list.review')}}
                                     </a>
                                 </div>

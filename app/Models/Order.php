@@ -5,13 +5,14 @@ namespace App\Models;
 use http\Env\Request;
 use App\Util\Status;
 use App\Models\Item;
+use App\User;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
     //attributes id, date, status, total, user, created_at, updated_at
-    protected $fillable = ['date', 'status',  'total', 'user_id',];
+    protected $fillable = ['credit_card_id', 'date', 'status', 'total', 'user_id'];
 
     public function getId()
     {
@@ -63,9 +64,24 @@ class Order extends Model
         $this->attributes['user_id'] = $user_id;
     }
 
+    public function getCreditCardId()
+    {
+        return $this->attributes['credit_card_id'];
+    }
+
+    public function setCreditCardId($credit_card_id)
+    {
+        $this->attributes['credit_card_id'] = $credit_card_id;
+    }
+
     public function items()
     {
         return $this->hasMany(Item::class);
+    }
+
+    public function creditCard()
+    {
+        return $this->belongsTo(CreditCard::class);
     }
 
     public function user()
