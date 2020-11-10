@@ -14,17 +14,17 @@
         @foreach($data["products"] as $product)
         <div class="col-md-3 mb-5 d-flex align-items-stretch">
             <div class="card card-product">
-                <div class="card-header">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div class="h-100 d-flex flex-column justify-content-center">
                     <img class="card-img-top" alt="Card image cap" src="{{ URL::asset('storage/products/'.$product->getId().'.png') }}">
-                </div>
-                <div class="card-body">
+                    </div>
                     <h5 class="card-title">
                         <a href="{{ route('product.show',$product->getId()) }}" class="stretched-link">
                             {{ $product->getName() }}
                         </a>
                     </h5>
-                    @foreach($product->getSpecs() as $spec)
-                    {{$spec}}&nbsp;
+                    @foreach($product->getSpecs() as $key => $spec)
+                    {{$key}}:&nbsp;{{$spec}}&nbsp;
                     @endforeach
 
                 </div>

@@ -16,6 +16,15 @@
         }
 
     }
+
+    .btn-primary {
+        
+        &:hover, &:focus, &:not(:disabled):not(.disabled):active{
+            padding: 0.65rem 0.75rem;
+            border-radius: 1.25rem;
+            width: 80%;
+        }
+    }
     
 
     .auth-img{

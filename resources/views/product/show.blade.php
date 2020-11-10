@@ -8,16 +8,17 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-body controls pl-5 pr-5">
                     <div class="row">
-                        <div class="col-8">
-                            <img class="card-img-top" alt="Card image cap"
-                                src="{{ URL::asset('storage/products/'.$data['product']->getId().'.png') }}">
+                        <div class="col-7">
+                            <img class="card-img-top display-product position-sticky" alt="Card image cap"
+                                src="{{ URL::asset('storage/products/'.$data['product']->getId().'.png') }}" />
                         </div>
-                        <div class="col-4">
-                            <h4>{{ $data['product']->getName() }}</h4>
+                        <div class="col-5">
+                            <h1 class="display-3 text-dark font-weight-bold">{{ $data['product']->getBrand() }}</h1>
+                            <h1 class="text-dark font-weight-light">{{ $data['product']->getName() }}</h1>
                             <a href="#" data-toggle="modal" data-target="#review-modal">
                                 <div class="star-ratings-sprite">
                                     <span style="width: {{ $data['reviews_avg'] }}%"
@@ -25,11 +26,15 @@
                                 </div>
                             </a>
                             <hr>
-                            @foreach($data['product']->getSpecs() as $name => $value)
-                            <p><b>{{$name}}:</b> {{$value}}</p>
-                            @endforeach
+                            <div class="row">
+                                @foreach($data['product']->getSpecs() as $name => $value)
+                                <div class="col-md-6">
+                                    <p>{{$name}}:<br><b>{{$value}}</b></p>
+                                </div>
+                                @endforeach
+                            </div>
                             <hr>
-                            <p><b>{{__('product.currency.title') }}</p>
+                            <p><b>{{__('product.currency.title') }}</b></p>
                             <div class="row">
                                 <div class="col">
                                     <img src="{{ url('storage/products/co-flag.png') }}" width="25" height="25"
@@ -66,14 +71,16 @@
                                             <button class="btn btn-outline-primary btn-add"
                                                 role="submit">{{ __('product.show.cart') }}</button>
                                         </div>
+                                    </div>
                                 </form>
                             </div>
+                            <form action="{{route('wishList.addProduct',$data['product']->getId())}}" method="POST">
+                                @csrf
+                                <button class="btn btn-danger" role="submit"> {{ __('product.show.wish_list') }}
+                                </button>
+                            </form>
                         </div>
-                        <form action="{{route('wishList.addProduct',$data['product']->getId())}}" method="POST">
-                            @csrf
-                            <button class="btn btn-danger" role="submit"> {{ __('product.show.wish_list') }}
-                            </button>
-                        </form>
+
                     </div>
                 </div>
             </div>

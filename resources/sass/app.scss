@@ -14,6 +14,7 @@
 @import "wishList";
 @import "login";
 @import 'checkout';
+@import 'home';
 
 // Main rules
 html,
@@ -105,6 +106,9 @@ body{
 .main-navbar {
     background-color: #fff;
     padding: 2rem 5rem 2rem 5rem;
+    width:100%;
+    transition: all .4s linear 0s;
+    z-index:99;
 
     .navbar-toggler {
         border-color: transparent;
@@ -113,6 +117,10 @@ body{
 
 .categories-list-title {
     color: #000;
+}
+
+.display-product{
+    top:0;
 }
 
 .list-group-item {
@@ -126,6 +134,7 @@ body{
 
 .card {
     border-radius: 1.25rem;
+    border:0;
 }
 
 .category-img {
@@ -143,9 +152,6 @@ body{
     &:hover, &:focus, &:not(:disabled):not(.disabled):active{
         background-color:$hover-purple;
         border-color: $purple;
-        padding: 0.65rem 0.75rem;
-        border-radius: 1.25rem;
-        width: 80%;
     }
 }
 
