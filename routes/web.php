@@ -52,8 +52,8 @@ Routes for CreditCard
 Route::get('/card/create', 'CreditCardController@create')->name("card.create");
 Route::post('/card/save', 'CreditCardController@save')->name("card.save");
 Route::get('/card/list/', 'CreditCardController@list')->name("card.list");
-Route::delete('/card/list/delete/{id}','CreditCardController@delete')->name("card.delete");
-Route::post('/card/list/recharge/{id}','CreditCardController@recharge')->name("card.recharge");
+Route::delete('/card/list/delete/{id}', 'CreditCardController@delete')->name("card.delete");
+Route::post('/card/list/recharge/{id}', 'CreditCardController@recharge')->name("card.recharge");
 
 /*
 Routes for Shopping-Cart and Order
@@ -62,22 +62,27 @@ Routes for Shopping-Cart and Order
 Route::get('/cart/remove-cart', 'OrderController@removeCart')->name("cart.removeCart");
 Route::post('/cart/add-to-cart/{id}', 'OrderController@addToCart')->name("cart.addToCart");
 Route::get('/cart', 'OrderController@cart')->name("cart.cart");
-Route::get('/cart/remove-item/{id}','OrderController@removeFromCart')->name("cart.removeFromCart");
+Route::get('/cart/remove-item/{id}', 'OrderController@removeFromCart')->name("cart.removeFromCart");
 Route::post('/cart/buy', 'OrderController@buy')->name("cart.buy");
 
 Route::get('/order', 'OrderController@index')->name('order.index');
 Route::get('/order/create', 'OrderController@create')->name('order.create');
 Route::get('/order/list', 'OrderController@list')->name('order.list');
 Route::post('/order/save', 'OrderController@save')->name('order.save');
-Route::get('/order/details/{id}','OrderController@details')->name('order.details');
+Route::get('/order/details/{id}', 'OrderController@details')->name('order.details');
 Route::delete('/order/delete/{id}', 'OrderController@delete')->name('order.delete');
 Route::get('/order/checkout', 'OrderController@checkout')->name('order.checkout');
 
 /*
 Routes for Wish List
 */
-Route::get('/wishList/show','WishListController@show')->name("wishList.show");
+Route::get('/wishList/show', 'WishListController@show')->name("wishList.show");
 Route::post('/wishList/{id_product}', 'WishListController@addProduct')->name("wishList.addProduct");
 Route::delete('wishList/delete-product/{id_product}', 'WishListController@deleteProduct')->name('wishList.deleteProduct');
+
+/*
+Route for consumed API
+ */
+Route::get('/cars', 'ServiceController@consume')->name("cars.show");
 
 Auth::routes();
