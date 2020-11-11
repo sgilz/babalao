@@ -29,7 +29,7 @@
     <div class="card text-white p-5 banner">
       <div class="col-xs-5">
         <h4>{{ __('home.banner.start') }} <br>{{ __('home.banner.end') }}</h4>
-        <a name="" id="" class="btn btn-dark mt-3" href="#" role="button">{{ __('home.banner.buttonText') }}</a>
+        <a name="" id="" class="btn btn-dark mt-3" href="{{ route('cars.show') }}" role="button">{{ __('home.banner.buttonText') }}</a>
       </div>
       <img src="{{ URL::asset('storage/home/case.png') }}" class="category-img" alt="" loading="lazy">
 
