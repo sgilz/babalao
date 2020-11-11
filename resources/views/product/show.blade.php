@@ -34,7 +34,7 @@
                                 @endforeach
                             </div>
                             <hr>
-                            <p><b>{{__('product.currency.title') }}</b></p>
+                            <p>{{__('product.currency.title') }}</p>
                             <div class="row">
                                 <div class="col">
                                     <img src="{{ url('storage/products/co-flag.png') }}" width="25" height="25"

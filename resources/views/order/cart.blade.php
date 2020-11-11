@@ -2,17 +2,14 @@
 
 @section('content')
 
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading">{{__('cart.title')}}</h1>
-        </div>
-    </section>
 
     <div class="container mb-4">
-        <div class="row">
-            <div class="col-12">
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <h1 class="Display-1 text-dark font-weight-light">{{__('cart.title')}}</h1>
+
                 <div class="table-responsive">
-                    <table class="table table-striped">
+                    <table class="table bg-white table-borderless rounded">
                         <thead>
                         <tr>
                             <th scope="col"></th>
@@ -26,11 +23,11 @@
                         <tbody>
                         @foreach($data["products"] as $product)
                             <tr>
-                                <td><img src="https://dummyimage.com/50x50/55595c/fff"/></td>
+                                <td><img width="100px" src="{{ URL::asset('storage/products/'.$product->getId().'.png') }}"/></td>
                                 <td>{{$product->getName()}}</td>
                                 <td>{{__('cart.availableOptions.inStock')}}</td>
-                                <td>{{ Session::get('products')[$product->getId()] }}</td>
-                                <td class="text-right">{{__('cart.coin.cop')}}
+                                <td class="text-center">{{ Session::get('products')[$product->getId()] }}</td>
+                                <td class="text-right text-primary font-weight-bold">{{__('cart.coin.cop')}}
                                     {{$product->getPrice()*Session::get('products')[$product->getId()]}}
                                 </td>
 
@@ -69,11 +66,15 @@
                         </tr>
                         </tbody>
                     </table>
+                    <div class="float-right">
+                        <a href="{{ route('cart.removeCart') }}" class="btn btn-danger"
+                        style="margin-right: 30px">{{__('cart.delete')}}</a>
+                     <a href="{{ route('order.checkout')}}" class="btn btn-success" type="submit">{{__('cart.checkout')}}</a>
+                    </div>
+
                 </div>
             </div>
-            <a href="{{ route('cart.removeCart') }}" class="btn btn-danger"
-               style="margin-right: 30px">{{__('cart.delete')}}</a>
-            <a href="{{ route('order.checkout')}}" class="btn btn-success" type="submit">{{__('cart.checkout')}}</a>
+
         </div>
     </div>
 
