@@ -25,7 +25,7 @@
                                 @endif
                                 <div class="form-group">
                                     <input type="email" class="form-control" name="email"
-                                        placeholder="{{ __('auth.place_holder.email') }}" value="{{ old("email") }}>
+                                        placeholder="{{ __('auth.place_holder.email') }}" value="{{ old("email") }}">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="name"
