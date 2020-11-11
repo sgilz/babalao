@@ -21,14 +21,28 @@ return [
         'email' => 'Ingresa tu correo electrónico:',
         'name' => 'Ingresa tu nombre:',
         'neighborhood' => 'Ingresa tu barrio:',
-        'password' => 'Ingresa tu contraseña:',
+        'password' => 'Contraseña:',
+    ],
+    'login' => [
+        'buttons' => [
+            'login' => 'Entrar',
+            'forgot' => 'Olvidaste tu contraseña?',
+            'register' => 'Registrate'
+        ],
+        'place_holder' => [
+            'email' => 'Correo electrónico',
+            'password' => 'Contraseña'
+        ],
+        'remember' => 'Recordarme',
+        'signup'=>'No tienes una cuenta',
+        'title' => 'Bienvenido a Babalao',
     ],
     'place_holder' => [
         'address' => 'Tu dirección de envio',
-        'city' => 'Tu ciudad de residencia',
-        'email' => 'nombre@ejemplo.com',
+        'city' => 'Ciudad',
+        'email' => 'Ingresa tu correos',
         'name' => 'Tu nombre',
-        'neighborhood' => 'Tu barrio de residencia',
+        'neighborhood' => 'Tu barrio',
     ],
     'register_title' => 'Crea tu cuenta',
     'submit' => 'Crear tu cuenta en Babalao',

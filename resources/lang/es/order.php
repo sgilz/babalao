@@ -38,6 +38,7 @@ return [
             'orderDate' => 'Fecha de la orden: ',
             'orderSummary' => 'Resumen de la orden: ',
             'paymentMethod' => 'Método de pago: ',
+            'pdf'=>'Generar PDF',
             'product' => 'PRODUCTO',
             'quantity' => 'CANTIDAD',
             'status' => 'Estado: ',

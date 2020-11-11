@@ -29,6 +29,7 @@ return[
         'details'=> [
             'back'=>'Back',
             'billedTo'=>'Billed to: ',
+            'card'=>'CREDIT CARD ending: ',
             'delete'=>'Cancel Order',
             'email'=>'Email: ',
             'initialDate'=>'Initial date: ',
@@ -44,7 +45,6 @@ return[
             'subtotal'=>'SUBTOTAL',
             'taxes'=>'Taxes',
             'total'=>'Total: ',
-            'card'=>'CREDIT CARD ending: ',
         ],
         'index'=> [
             'list'=>'LIST PRODUCTS',
