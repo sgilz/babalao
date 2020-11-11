@@ -25,11 +25,11 @@
                                 @endif
                                 <div class="form-group">
                                     <input type="email" class="form-control" name="email"
-                                        placeholder="{{ __('auth.place_holder.email') }}">
+                                        placeholder="{{ __('auth.place_holder.email') }}" value="{{ old("email") }}>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="name"
-                                        placeholder="{{ __('auth.place_holder.name') }}">
+                                        placeholder="{{ __('auth.place_holder.name') }}" value="{{ old("name") }}">
                                 </div>
                                 <div class="row">
                                     <div class="col">
@@ -51,19 +51,19 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <input type="text" class="form-control" name="city"
-                                                placeholder="{{ __('auth.place_holder.city') }}">
+                                                placeholder="{{ __('auth.place_holder.city') }}" value="{{ old("city") }}">
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
                                             <input type="text" class="form-control" name="neighborhood"
-                                                placeholder="{{ __('auth.place_holder.neighborhood') }}">
+                                                placeholder="{{ __('auth.place_holder.neighborhood') }}" value="{{ old("neighborhood") }}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="address" class="form-control" name="address"
-                                        placeholder="{{ __('auth.place_holder.address') }}">
+                                        placeholder="{{ __('auth.place_holder.address') }}" value="{{ old("address") }}">
                                 </div>
 
                                 <div class="form-group row mb-0">

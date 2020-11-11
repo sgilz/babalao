@@ -49,7 +49,7 @@
                     <div class="row justify-content-center">
                         <div class="col-3 ">
                         <label>
-                            <input type="checkbox" checked="checked" name="sameadr"> {{__('checkout.checkbox')}}
+                            <input type="checkbox" checked="checked" name="sameadr" value="{{ old("sameadr") }}"> {{__('checkout.checkbox')}}
                         </label>
                         <button class="btn btn-primary btn-block" type="submit">{{__('checkout.buy')}}</button>
                     </div>
