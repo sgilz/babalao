@@ -18,7 +18,7 @@ return [
         'buttonText' => 'Descubre las novedades'
     ],
     'sampleCategory' => 'Categoria de ejemplo',
-    'searchTitle' => 'Buscas algo?',
+    'searchTitle' => '¿Buscas algo?',
     'searchSubTitle' => 'Todo lo que necesitas, de las mejores marcas',
     'title' => 'Babalao Tienda de Computadoras'
 
