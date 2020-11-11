@@ -12,7 +12,6 @@ return [
     |
     */
 
-    'title' => 'Babalao Computer Components Store',
     'banner' => [
         'start' => 'Latest computer components',
         'end' => 'At the right cost',
@@ -20,7 +19,9 @@ return [
     ],
     'sampleCategory' => 'Sample Category',
     'searchTitle' => 'Looking for something?',
-    'searchSubTitle' => 'All you need from the best brands'
+    'searchSubTitle' => 'All you need from the best brands',
+    'title' => 'Babalao Computer Components Store'
+
 
 
 ];

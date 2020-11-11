@@ -23,6 +23,20 @@ return [
         'neighborhood' => 'Enter your neighborhood',
         'password' => 'Password',
     ],
+    'login' => [
+        'buttons' => [
+            'login' => 'Login',
+            'forgot' => 'Forgot Your Password?',
+            'register' => 'Sign Up'
+        ],
+        'place_holder' => [
+            'email' => 'Email address',
+            'password' => 'Password'
+        ],
+        'remember' => 'Remember Me',
+        'signup'=>'Don\'t have an account? ',
+        'title' => 'Welcome to Babalao',
+    ],
     'place_holder' => [
         'address' => 'Your shipping addres',
         'city' => 'Your city',
@@ -34,19 +48,6 @@ return [
     'registered' => 'Already have an account?',
     'submit' => 'Create your Babalao account',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'title' => 'Create account',
-    'login' => [
-        'title' => 'Welcome to Babalao',
-        'remember' => 'Remember Me',
-        'signup'=>'Don\'t have an account? ',
-        'place_holder' => [
-            'email' => 'Email address',
-            'password' => 'Password'
-        ],
-        'buttons' => [
-            'login' => 'Login',
-            'forgot' => 'Forgot Your Password?',
-            'register' => 'Sign Up'
-        ]
-    ]
+    'title' => 'Create account'
+
 ];
