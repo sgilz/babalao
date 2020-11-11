@@ -45,7 +45,7 @@
 
                     </div>
                     <label>
-                        <input type="checkbox" checked="checked" name="sameadr"> {{__('checkout.checkbox')}}
+                        <input type="checkbox" checked="checked" name="sameadr" value="{{ old("sameadr") }}"> {{__('checkout.checkbox')}}
                     </label>
                     <button class="btn btn-success" type="submit">{{__('checkout.buy')}}</button>
                 </form>

@@ -20,12 +20,12 @@
                         @csrf
                         <div class="form-group">
                             <label for="headline_input">{{ __('review.input.headline') }}</label>
-                            <input type="text" class="form-control form-control-sm" name="headline"
+                            <input type="text" class="form-control form-control-sm" name="headline" value="{{ old("headline") }}"
                                 placeholder="{{ __('review.placeholder.headline') }}">
                         </div>
                         <div class="form-group">
                             <label for="rating_input">{{ __('review.input.rating') }}</label>
-                            <input type="text" class="form-control" name="rating" placeholder="0-5">
+                            <input type="text" class="form-control" name="rating" value="{{ old("rating") }}" placeholder="0-5">
                         </div>
                         <div class="form-group">
                             <label for="description_input">{{ __('review.input.description') }}</label>

@@ -34,7 +34,7 @@
                         <label for="balance">{{ __("creditCard.list.card.recharge") }}</label>
                         <div class="row">
                             <div class="col">
-                                <input type="number" class="form-control" id="balance" name="balance" min="1000" value="1000" step="1000">
+                                <input type="number" class="form-control" id="balance" name="balance" value="{{ old("balance") }}" min="1000" value="1000" step="1000">
                             </div>
                             <div class="col">
                                 <button class="btn btn-sm btn-success">

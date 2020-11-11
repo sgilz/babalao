@@ -22,13 +22,13 @@
                         </div>
 
                         <label for="owner">{{ __("creditCard.create.owner")}}</label>
-                        <input type="text" id="owner" name="owner" placeholder="{{ __("creditCard.create.ownerPlaceHolder") }}">
+                        <input type="text" id="owner" name="owner" value="{{ old("owner") }}" placeholder="{{ __("creditCard.create.ownerPlaceHolder") }}">
 
                         <label for="owner_id">{{ __("creditCard.create.ownerId")}}</label>
-                        <input type="text" id="owner_id" name="owner_id" placeholder="{{ __("creditCard.create.ownerIdPlaceHolder")}}">
+                        <input type="text" id="owner_id" name="owner_id" value="{{ old("owner_id") }}" placeholder="{{ __("creditCard.create.ownerIdPlaceHolder")}}">
 
                         <label for="card_number">{{ __("creditCard.create.cardId")}}</label>
-                        <input type="text" id="card_number" name="card_number" placeholder="{{ __("creditCard.create.cardIdPlaceHolder")}}">
+                        <input type="text" id="card_number" name="card_number" value="{{ old("card_number") }}" placeholder="{{ __("creditCard.create.cardIdPlaceHolder")}}">
 
                         <div class="row">
 
@@ -52,7 +52,7 @@
 
                             <div class="col-50">
                                 <label for="cvv">{{ __("creditCard.create.cvv")}}</label>
-                                <input type="text" id="cvv" name="cvv" placeholder="{{ __("creditCard.create.cvvPlaceHolder")}}">
+                                <input type="text" id="cvv" name="cvv" value="{{ old("cvv") }}" placeholder="{{ __("creditCard.create.cvvPlaceHolder")}}">
                             </div>
                         </div>
                     </div>
