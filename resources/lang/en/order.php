@@ -4,7 +4,8 @@ return[
     'controller'=>[
         'message'=> [
             'add'=>'Item added successfully!',
-            'buy'=>'Success! your order is now being confirmed'
+            'buy'=>'Success! your order is now being confirmed',
+            'error'=>'Error: you dont have enough money in the card. Please, use another or recharge.',
         ]
     ],
     'creationTitle'=>'New Order',
@@ -28,6 +29,7 @@ return[
         'details'=> [
             'back'=>'Back',
             'billedTo'=>'Billed to: ',
+            'card'=>'CREDIT CARD ending: ',
             'delete'=>'Cancel Order',
             'email'=>'Email: ',
             'initialDate'=>'Initial date: ',
@@ -36,13 +38,13 @@ return[
             'orderDate'=>'Order Date: ',
             'orderSummary'=>'Order Summary: ',
             'paymentMethod'=>'Payment Method: ',
+            'pdf'=>'Generate PDF',
             'product'=>'PRODUCT',
             'quantity'=>'QUANTITY',
             'status'=>'Status: ',
             'subtotal'=>'SUBTOTAL',
             'taxes'=>'Taxes',
             'total'=>'Total: ',
-            'card'=>'CREDIT CARD ending: ',
         ],
         'index'=> [
             'list'=>'LIST PRODUCTS',

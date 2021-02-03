@@ -21,7 +21,7 @@ return [
             ],
             [
                 'label' => 'Your orders',
-                'route' => 'home'
+                'route' => 'order.list'
             ],
             [
                 'label' => 'Logout',

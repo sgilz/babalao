@@ -10899,6 +10899,917 @@ a.text-dark:focus {
   }
 }
 
+.pretty * {
+  box-sizing: border-box;
+}
+
+.pretty input:not([type=checkbox]):not([type=radio]) {
+  display: none;
+}
+
+.pretty {
+  position: relative;
+  display: inline-block;
+  margin-right: 1em;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.pretty input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 1em;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.pretty .state label {
+  position: initial;
+  display: inline-block;
+  font-weight: normal;
+  margin: 0;
+  text-indent: 1.5em;
+  min-width: calc(1em + 2px);
+}
+
+.pretty .state label:before,
+.pretty .state label:after {
+  content: "";
+  width: calc(1em + 2px);
+  height: calc(1em + 2px);
+  display: block;
+  box-sizing: border-box;
+  border-radius: 0;
+  border: 1px solid transparent;
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  top: calc((0% - (100% - 1em)) - 8%);
+  background-color: transparent;
+}
+
+.pretty .state label:before {
+  border-color: #bdc3c7;
+}
+
+.pretty .state.p-is-hover,
+.pretty .state.p-is-indeterminate {
+  display: none;
+}
+
+@-webkit-keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+    transform: scale(7);
+  }
+
+  38% {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  55% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    transform: scale(1.5);
+  }
+
+  72% {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+
+  81% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    transform: scale(1.24);
+  }
+
+  89% {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+
+  95% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    transform: scale(1.04);
+  }
+
+  100% {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+}
+
+@keyframes tada {
+  0% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+    transform: scale(7);
+  }
+
+  38% {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  55% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    transform: scale(1.5);
+  }
+
+  72% {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+
+  81% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    transform: scale(1.24);
+  }
+
+  89% {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+
+  95% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    transform: scale(1.04);
+  }
+
+  100% {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes jelly {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  40% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  50% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  75% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes jelly {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  40% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  50% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  75% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    opacity: 0;
+    transform: translateZ(-200px) rotate(-45deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateZ(0) rotate(0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    opacity: 0;
+    transform: translateZ(-200px) rotate(-45deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateZ(0) rotate(0);
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 0px 0px #bdc3c7;
+  }
+
+  100% {
+    box-shadow: 0px 0px 0px 1.5em rgba(189, 195, 199, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 0px 0px #bdc3c7;
+  }
+
+  100% {
+    box-shadow: 0px 0px 0px 1.5em rgba(189, 195, 199, 0);
+  }
+}
+
+.pretty.p-default.p-fill .state label:after {
+  transform: scale(1);
+}
+
+.pretty.p-default .state label:after {
+  transform: scale(0.6);
+}
+
+.pretty.p-default input:checked ~ .state label:after {
+  background-color: #bdc3c7 !important;
+}
+
+.pretty.p-default.p-thick .state label:before,
+.pretty.p-default.p-thick .state label:after {
+  border-width: calc(1em / 7);
+}
+
+.pretty.p-default.p-thick .state label:after {
+  transform: scale(0.4) !important;
+}
+
+.pretty.p-icon .state .icon {
+  position: absolute;
+  font-size: 1em;
+  width: calc(1em + 2px);
+  height: calc(1em + 2px);
+  left: 0;
+  z-index: 1;
+  text-align: center;
+  line-height: normal;
+  top: calc((0% - (100% - 1em)) - 8%);
+  border: 1px solid transparent;
+  opacity: 0;
+}
+
+.pretty.p-icon .state .icon:before {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+
+.pretty.p-icon input:checked ~ .state .icon {
+  opacity: 1;
+}
+
+.pretty.p-icon input:checked ~ .state label:before {
+  border-color: #5a656b;
+}
+
+.pretty.p-svg .state .svg {
+  position: absolute;
+  font-size: 1em;
+  width: calc(1em + 2px);
+  height: calc(1em + 2px);
+  left: 0;
+  z-index: 1;
+  text-align: center;
+  line-height: normal;
+  top: calc((0% - (100% - 1em)) - 8%);
+  border: 1px solid transparent;
+  opacity: 0;
+}
+
+.pretty.p-svg .state svg {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+
+.pretty.p-svg input:checked ~ .state .svg {
+  opacity: 1;
+}
+
+.pretty.p-image .state img {
+  opacity: 0;
+  position: absolute;
+  width: calc(1em + 2px);
+  height: calc(1em + 2px);
+  top: 0;
+  top: calc((0% - (100% - 1em)) - 8%);
+  left: 0;
+  z-index: 0;
+  text-align: center;
+  line-height: normal;
+  transform: scale(0.8);
+}
+
+.pretty.p-image input:checked ~ .state img {
+  opacity: 1;
+}
+
+.pretty.p-switch input {
+  min-width: 2em;
+}
+
+.pretty.p-switch .state {
+  position: relative;
+}
+
+.pretty.p-switch .state:before {
+  content: "";
+  border: 1px solid #bdc3c7;
+  border-radius: 60px;
+  width: 2em;
+  box-sizing: unset;
+  height: calc(1em + 2px);
+  position: absolute;
+  top: 0;
+  top: calc((0% - (100% - 1em)) - 16%);
+  z-index: 0;
+  transition: all 0.5s ease;
+}
+
+.pretty.p-switch .state label {
+  text-indent: 2.5em;
+}
+
+.pretty.p-switch .state label:before,
+.pretty.p-switch .state label:after {
+  transition: all 0.5s ease;
+  border-radius: 100%;
+  left: 0;
+  border-color: transparent;
+  transform: scale(0.8);
+}
+
+.pretty.p-switch .state label:after {
+  background-color: #bdc3c7 !important;
+}
+
+.pretty.p-switch input:checked ~ .state:before {
+  border-color: #5a656b;
+}
+
+.pretty.p-switch input:checked ~ .state label:before {
+  opacity: 0;
+}
+
+.pretty.p-switch input:checked ~ .state label:after {
+  background-color: #5a656b !important;
+  left: 1em;
+}
+
+.pretty.p-switch.p-fill input:checked ~ .state:before {
+  border-color: #5a656b;
+  background-color: #5a656b !important;
+}
+
+.pretty.p-switch.p-fill input:checked ~ .state label:before {
+  opacity: 0;
+}
+
+.pretty.p-switch.p-fill input:checked ~ .state label:after {
+  background-color: #fff !important;
+  left: 1em;
+}
+
+.pretty.p-switch.p-slim .state:before {
+  height: 0.1em;
+  background: #bdc3c7 !important;
+  top: calc(50% - 0.1em);
+}
+
+.pretty.p-switch.p-slim input:checked ~ .state:before {
+  border-color: #5a656b;
+  background-color: #5a656b !important;
+}
+
+.pretty.p-has-hover input:hover ~ .state:not(.p-is-hover) {
+  display: none;
+}
+
+.pretty.p-has-hover input:hover ~ .state.p-is-hover {
+  display: block;
+}
+
+.pretty.p-has-hover input:hover ~ .state.p-is-hover .icon {
+  display: block;
+}
+
+.pretty.p-has-focus input:focus ~ .state label:before {
+  box-shadow: 0px 0px 3px 0px #bdc3c7;
+}
+
+.pretty.p-has-indeterminate input[type=checkbox]:indeterminate ~ .state:not(.p-is-indeterminate) {
+  display: none;
+}
+
+.pretty.p-has-indeterminate input[type=checkbox]:indeterminate ~ .state.p-is-indeterminate {
+  display: block;
+}
+
+.pretty.p-has-indeterminate input[type=checkbox]:indeterminate ~ .state.p-is-indeterminate .icon {
+  display: block;
+  opacity: 1;
+}
+
+.pretty.p-toggle .state.p-on {
+  opacity: 0;
+  display: none;
+}
+
+.pretty.p-toggle .state.p-off,
+.pretty.p-toggle .state .icon,
+.pretty.p-toggle .state .svg,
+.pretty.p-toggle .state img {
+  opacity: 1;
+  display: inherit;
+}
+
+.pretty.p-toggle .state.p-off .icon {
+  color: #bdc3c7;
+}
+
+.pretty.p-toggle input:checked ~ .state.p-on {
+  opacity: 1;
+  display: inherit;
+}
+
+.pretty.p-toggle input:checked ~ .state.p-off {
+  opacity: 0;
+  display: none;
+}
+
+.pretty.p-plain input:checked ~ .state label:before,
+.pretty.p-plain.p-toggle .state label:before {
+  content: none;
+}
+
+.pretty.p-plain.p-plain .icon {
+  transform: scale(1.1);
+}
+
+.pretty.p-round .state label:before,
+.pretty.p-round .state label:after {
+  border-radius: 100%;
+}
+
+.pretty.p-round.p-icon .state .icon {
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.pretty.p-round.p-icon .state .icon:before {
+  transform: scale(0.8);
+}
+
+.pretty.p-curve .state label:before,
+.pretty.p-curve .state label:after {
+  border-radius: 20%;
+}
+
+.pretty.p-smooth label:before,
+.pretty.p-smooth label:after,
+.pretty.p-smooth .icon,
+.pretty.p-smooth .svg {
+  transition: all 0.5s ease;
+}
+
+.pretty.p-smooth input:checked + .state label:after {
+  transition: all 0.3s ease;
+}
+
+.pretty.p-smooth input:checked + .state .icon,
+.pretty.p-smooth input:checked + .state .svg,
+.pretty.p-smooth input:checked + .state img {
+  -webkit-animation: zoom 0.2s ease;
+          animation: zoom 0.2s ease;
+}
+
+.pretty.p-smooth.p-default input:checked + .state label:after {
+  -webkit-animation: zoom 0.2s ease;
+          animation: zoom 0.2s ease;
+}
+
+.pretty.p-smooth.p-plain input:checked + .state label:before {
+  content: "";
+  transform: scale(0);
+  transition: all 0.5s ease;
+}
+
+.pretty.p-tada:not(.p-default) input:checked + .state .icon,
+.pretty.p-tada:not(.p-default) input:checked + .state .svg,
+.pretty.p-tada:not(.p-default) input:checked + .state img,
+.pretty.p-tada:not(.p-default) input:checked + .state label:before,
+.pretty.p-tada:not(.p-default) input:checked + .state label:after {
+  -webkit-animation: tada 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1 alternate;
+          animation: tada 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1 alternate;
+  opacity: 1;
+}
+
+.pretty.p-jelly:not(.p-default) input:checked + .state .icon,
+.pretty.p-jelly:not(.p-default) input:checked + .state .svg,
+.pretty.p-jelly:not(.p-default) input:checked + .state img,
+.pretty.p-jelly:not(.p-default) input:checked + .state label:before,
+.pretty.p-jelly:not(.p-default) input:checked + .state label:after {
+  -webkit-animation: jelly 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation: jelly 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 1;
+}
+
+.pretty.p-jelly:not(.p-default) input:checked + .state label:before {
+  border-color: transparent;
+}
+
+.pretty.p-rotate:not(.p-default) input:checked ~ .state .icon,
+.pretty.p-rotate:not(.p-default) input:checked ~ .state .svg,
+.pretty.p-rotate:not(.p-default) input:checked ~ .state img,
+.pretty.p-rotate:not(.p-default) input:checked ~ .state label:before,
+.pretty.p-rotate:not(.p-default) input:checked ~ .state label:after {
+  -webkit-animation: rotate 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation: rotate 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 1;
+}
+
+.pretty.p-rotate:not(.p-default) input:checked ~ .state label:before {
+  border-color: transparent;
+}
+
+.pretty.p-pulse:not(.p-switch) input:checked ~ .state label:before {
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+}
+
+.pretty input[disabled] {
+  cursor: not-allowed;
+  display: none;
+}
+
+.pretty input[disabled] ~ * {
+  opacity: 0.5;
+}
+
+.pretty.p-locked input {
+  display: none;
+  cursor: not-allowed;
+}
+
+.pretty input:checked ~ .state.p-primary label:after,
+.pretty.p-toggle .state.p-primary label:after {
+  background-color: #428bca !important;
+}
+
+.pretty input:checked ~ .state.p-primary .icon,
+.pretty input:checked ~ .state.p-primary .svg,
+.pretty.p-toggle .state.p-primary .icon,
+.pretty.p-toggle .state.p-primary .svg {
+  color: #fff;
+  stroke: #fff;
+}
+
+.pretty input:checked ~ .state.p-primary-o label:before,
+.pretty.p-toggle .state.p-primary-o label:before {
+  border-color: #428bca;
+}
+
+.pretty input:checked ~ .state.p-primary-o label:after,
+.pretty.p-toggle .state.p-primary-o label:after {
+  background-color: transparent;
+}
+
+.pretty input:checked ~ .state.p-primary-o .icon,
+.pretty input:checked ~ .state.p-primary-o .svg,
+.pretty input:checked ~ .state.p-primary-o svg,
+.pretty.p-toggle .state.p-primary-o .icon,
+.pretty.p-toggle .state.p-primary-o .svg,
+.pretty.p-toggle .state.p-primary-o svg {
+  color: #428bca;
+  stroke: #428bca;
+}
+
+.pretty.p-default:not(.p-fill) input:checked ~ .state.p-primary-o label:after {
+  background-color: #428bca !important;
+}
+
+.pretty.p-switch input:checked ~ .state.p-primary:before {
+  border-color: #428bca;
+}
+
+.pretty.p-switch.p-fill input:checked ~ .state.p-primary:before {
+  background-color: #428bca !important;
+}
+
+.pretty.p-switch.p-slim input:checked ~ .state.p-primary:before {
+  border-color: #245682;
+  background-color: #245682 !important;
+}
+
+.pretty input:checked ~ .state.p-info label:after,
+.pretty.p-toggle .state.p-info label:after {
+  background-color: #5bc0de !important;
+}
+
+.pretty input:checked ~ .state.p-info .icon,
+.pretty input:checked ~ .state.p-info .svg,
+.pretty.p-toggle .state.p-info .icon,
+.pretty.p-toggle .state.p-info .svg {
+  color: #fff;
+  stroke: #fff;
+}
+
+.pretty input:checked ~ .state.p-info-o label:before,
+.pretty.p-toggle .state.p-info-o label:before {
+  border-color: #5bc0de;
+}
+
+.pretty input:checked ~ .state.p-info-o label:after,
+.pretty.p-toggle .state.p-info-o label:after {
+  background-color: transparent;
+}
+
+.pretty input:checked ~ .state.p-info-o .icon,
+.pretty input:checked ~ .state.p-info-o .svg,
+.pretty input:checked ~ .state.p-info-o svg,
+.pretty.p-toggle .state.p-info-o .icon,
+.pretty.p-toggle .state.p-info-o .svg,
+.pretty.p-toggle .state.p-info-o svg {
+  color: #5bc0de;
+  stroke: #5bc0de;
+}
+
+.pretty.p-default:not(.p-fill) input:checked ~ .state.p-info-o label:after {
+  background-color: #5bc0de !important;
+}
+
+.pretty.p-switch input:checked ~ .state.p-info:before {
+  border-color: #5bc0de;
+}
+
+.pretty.p-switch.p-fill input:checked ~ .state.p-info:before {
+  background-color: #5bc0de !important;
+}
+
+.pretty.p-switch.p-slim input:checked ~ .state.p-info:before {
+  border-color: #2390b0;
+  background-color: #2390b0 !important;
+}
+
+.pretty input:checked ~ .state.p-success label:after,
+.pretty.p-toggle .state.p-success label:after {
+  background-color: #5cb85c !important;
+}
+
+.pretty input:checked ~ .state.p-success .icon,
+.pretty input:checked ~ .state.p-success .svg,
+.pretty.p-toggle .state.p-success .icon,
+.pretty.p-toggle .state.p-success .svg {
+  color: #fff;
+  stroke: #fff;
+}
+
+.pretty input:checked ~ .state.p-success-o label:before,
+.pretty.p-toggle .state.p-success-o label:before {
+  border-color: #5cb85c;
+}
+
+.pretty input:checked ~ .state.p-success-o label:after,
+.pretty.p-toggle .state.p-success-o label:after {
+  background-color: transparent;
+}
+
+.pretty input:checked ~ .state.p-success-o .icon,
+.pretty input:checked ~ .state.p-success-o .svg,
+.pretty input:checked ~ .state.p-success-o svg,
+.pretty.p-toggle .state.p-success-o .icon,
+.pretty.p-toggle .state.p-success-o .svg,
+.pretty.p-toggle .state.p-success-o svg {
+  color: #5cb85c;
+  stroke: #5cb85c;
+}
+
+.pretty.p-default:not(.p-fill) input:checked ~ .state.p-success-o label:after {
+  background-color: #5cb85c !important;
+}
+
+.pretty.p-switch input:checked ~ .state.p-success:before {
+  border-color: #5cb85c;
+}
+
+.pretty.p-switch.p-fill input:checked ~ .state.p-success:before {
+  background-color: #5cb85c !important;
+}
+
+.pretty.p-switch.p-slim input:checked ~ .state.p-success:before {
+  border-color: #357935;
+  background-color: #357935 !important;
+}
+
+.pretty input:checked ~ .state.p-warning label:after,
+.pretty.p-toggle .state.p-warning label:after {
+  background-color: #f0ad4e !important;
+}
+
+.pretty input:checked ~ .state.p-warning .icon,
+.pretty input:checked ~ .state.p-warning .svg,
+.pretty.p-toggle .state.p-warning .icon,
+.pretty.p-toggle .state.p-warning .svg {
+  color: #fff;
+  stroke: #fff;
+}
+
+.pretty input:checked ~ .state.p-warning-o label:before,
+.pretty.p-toggle .state.p-warning-o label:before {
+  border-color: #f0ad4e;
+}
+
+.pretty input:checked ~ .state.p-warning-o label:after,
+.pretty.p-toggle .state.p-warning-o label:after {
+  background-color: transparent;
+}
+
+.pretty input:checked ~ .state.p-warning-o .icon,
+.pretty input:checked ~ .state.p-warning-o .svg,
+.pretty input:checked ~ .state.p-warning-o svg,
+.pretty.p-toggle .state.p-warning-o .icon,
+.pretty.p-toggle .state.p-warning-o .svg,
+.pretty.p-toggle .state.p-warning-o svg {
+  color: #f0ad4e;
+  stroke: #f0ad4e;
+}
+
+.pretty.p-default:not(.p-fill) input:checked ~ .state.p-warning-o label:after {
+  background-color: #f0ad4e !important;
+}
+
+.pretty.p-switch input:checked ~ .state.p-warning:before {
+  border-color: #f0ad4e;
+}
+
+.pretty.p-switch.p-fill input:checked ~ .state.p-warning:before {
+  background-color: #f0ad4e !important;
+}
+
+.pretty.p-switch.p-slim input:checked ~ .state.p-warning:before {
+  border-color: #c77c11;
+  background-color: #c77c11 !important;
+}
+
+.pretty input:checked ~ .state.p-danger label:after,
+.pretty.p-toggle .state.p-danger label:after {
+  background-color: #d9534f !important;
+}
+
+.pretty input:checked ~ .state.p-danger .icon,
+.pretty input:checked ~ .state.p-danger .svg,
+.pretty.p-toggle .state.p-danger .icon,
+.pretty.p-toggle .state.p-danger .svg {
+  color: #fff;
+  stroke: #fff;
+}
+
+.pretty input:checked ~ .state.p-danger-o label:before,
+.pretty.p-toggle .state.p-danger-o label:before {
+  border-color: #d9534f;
+}
+
+.pretty input:checked ~ .state.p-danger-o label:after,
+.pretty.p-toggle .state.p-danger-o label:after {
+  background-color: transparent;
+}
+
+.pretty input:checked ~ .state.p-danger-o .icon,
+.pretty input:checked ~ .state.p-danger-o .svg,
+.pretty input:checked ~ .state.p-danger-o svg,
+.pretty.p-toggle .state.p-danger-o .icon,
+.pretty.p-toggle .state.p-danger-o .svg,
+.pretty.p-toggle .state.p-danger-o svg {
+  color: #d9534f;
+  stroke: #d9534f;
+}
+
+.pretty.p-default:not(.p-fill) input:checked ~ .state.p-danger-o label:after {
+  background-color: #d9534f !important;
+}
+
+.pretty.p-switch input:checked ~ .state.p-danger:before {
+  border-color: #d9534f;
+}
+
+.pretty.p-switch.p-fill input:checked ~ .state.p-danger:before {
+  background-color: #d9534f !important;
+}
+
+.pretty.p-switch.p-slim input:checked ~ .state.p-danger:before {
+  border-color: #a02622;
+  background-color: #a02622 !important;
+}
+
+.pretty.p-bigger label:before,
+.pretty.p-bigger label:after,
+.pretty.p-bigger .icon,
+.pretty.p-bigger .svg,
+.pretty.p-bigger .img {
+  font-size: 1.2em !important;
+  top: calc((0% - (100% - 1em)) - 35%) !important;
+}
+
+.pretty.p-bigger label {
+  text-indent: 1.7em;
+}
+
+@media print {
+  .pretty .state:before,
+  .pretty .state label:before,
+  .pretty .state label:after,
+  .pretty .state .icon {
+    color-adjust: exact;
+    /* stylelint-disable */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
 /* The sidebar menu */
 
 .sidenav {
@@ -10928,7 +11839,7 @@ a.text-dark:focus {
 }
 
 .sidenav a:hover {
-  color: #ffffff;
+  color: #6f42c1;
 }
 
 .sidenav a:active {
@@ -10940,18 +11851,19 @@ a.text-dark:focus {
   margin-bottom: auto;
   margin-top: auto;
   height: 60px;
-  background-color: #0b0201;
-  border-radius: 30px;
+  background-color: #3866f121;
+  border-radius: 12px;
   padding: 10px;
   transition: all 500ms cubic-bezier(0.68, -0.1, 0.265, 1.55);
 }
 
 .searchbar .search_input {
-  color: white;
+  color: #7f7f7f;
   border: 0;
   outline: 0;
   background: none;
-  width: 0;
+  width: 200px;
+  padding: 0;
   caret-color: transparent;
   line-height: 40px;
   transition: all 500ms cubic-bezier(0.68, -0.1, 0.265, 1.55);
@@ -10960,15 +11872,16 @@ a.text-dark:focus {
 .searchbar .search_icon {
   height: 40px;
   width: 40px;
-  float: right;
+  float: left;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  color: white;
+  border-radius: 20%;
+  color: #7f7f7f;
   text-decoration: none !important;
   background: transparent;
   border: none;
+  transition: all 500ms cubic-bezier(0.68, -0.1, 0.265, 1.55);
 }
 
 .searchbar:hover,
@@ -10979,14 +11892,14 @@ a.text-dark:focus {
 .searchbar:hover .search_input,
 .searchbar:focus .search_input {
   padding: 0 10px;
+  caret-color: #7f7f7f;
   width: 450px;
-  caret-color: red;
 }
 
 .searchbar:hover .search_icon,
 .searchbar:focus .search_icon {
   background: white;
-  color: #e74c3c;
+  color: #9a74ff;
 }
 
 .user-menu .user_icon {
@@ -11137,13 +12050,226 @@ a.text-dark:focus {
   background-color: #ffffff;
 }
 
+.auth-card {
+  min-height: 80vh;
+  border: 0;
+  background: linear-gradient(to right, #fff 0%, #fff 43%, #9476ff 43%, #9476ff 100%);
+}
+
+.auth-card .form-control {
+  border: 0;
+  background-color: #b6b5ba1f;
+  height: calc(1.5em + 1rem + 2px);
+}
+
+.auth-card .form-control::-moz-placeholder {
+  color: #9ea1a3;
+  opacity: 1;
+  font-weight: 500;
+}
+
+.auth-card .form-control:-ms-input-placeholder {
+  color: #9ea1a3;
+  opacity: 1;
+  font-weight: 500;
+}
+
+.auth-card .form-control::-ms-input-placeholder {
+  color: #9ea1a3;
+  opacity: 1;
+  font-weight: 500;
+}
+
+.auth-card .form-control::placeholder {
+  color: #9ea1a3;
+  opacity: 1;
+  font-weight: 500;
+}
+
+.auth-card .btn-primary:hover,
+.auth-card .btn-primary:focus,
+.auth-card .btn-primary:not(:disabled):not(.disabled):active {
+  padding: 0.65rem 0.75rem;
+  border-radius: 1.25rem;
+  width: 80%;
+}
+
+.auth-card .auth-img {
+  width: 100%;
+}
+
+.checkoutrow {
+  /* IE10 */
+  display: flex;
+  /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.checkoutcol-25 {
+  /* IE10 */
+  flex: 25%;
+}
+
+.checkoutcol-50 {
+  /* IE10 */
+  flex: 50%;
+}
+
+.checkoutcol-75 {
+  /* IE10 */
+  flex: 75%;
+  padding: 0 16px;
+}
+
+.checkoutcontainer {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.checkouticon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.checkoutbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.checkoutbtn:hover {
+  background-color: #45a049;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+
+@media (max-width: 800px) {
+  .checkoutrow {
+    flex-direction: column-reverse;
+  }
+
+  .checkoutcol-25 {
+    margin-bottom: 20px;
+  }
+}
+
+.bg-video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  background-color: #00000070;
+}
+
+.hero-section {
+  height: 100vh;
+  padding-top: 200px;
+}
+
+.hero-section h1 {
+  color: white;
+  font-weight: 800;
+}
+
+.hero-section h4 {
+  color: white;
+}
+
+.hero-section .searchbar {
+  background-color: white;
+}
+
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+}
+
+.main-navbar.active {
+  background-color: transparent;
+}
+
+.main-navbar.active .btn-toolbar {
+  background-color: transparent;
+}
+
+.main-navbar.active .btn-toolbar:hover {
+  background-color: #d8d8d870;
+}
+
+.main-navbar.active .btn-toolbar .icon-toolbar {
+  color: white;
+}
+
+.main-navbar.active .brand-text {
+  color: #fff;
+}
+
+.main-navbar.active .searchbar {
+  display: none;
+}
+
+.main-navbar.active .btn-outline-dark {
+  background-color: #c8b8ff;
+  color: #5636c8;
+  font-weight: 600;
+  transition: all 300ms cubic-bezier(0.68, -0.1, 0.265, 1.55);
+}
+
+.main-navbar.active .btn-outline-dark:hover {
+  background-color: #5f4ca6;
+  color: white;
+}
+
 html,
 body {
   color: #636b6f;
   font-family: "Montserrat", sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   height: 100vh;
   margin: 0;
+}
+
+body {
+  background-color: #63a0ff1a;
 }
 
 .full-height {
@@ -11220,9 +12346,11 @@ body {
 }
 
 .main-navbar {
-  padding-left: 5rem;
-  padding-right: 5rem;
-  padding-top: 2rem;
+  background-color: #fff;
+  padding: 2rem 5rem 2rem 5rem;
+  width: 100%;
+  transition: all 0.4s linear 0s;
+  z-index: 99;
 }
 
 .main-navbar .navbar-toggler {
@@ -11231,6 +12359,10 @@ body {
 
 .categories-list-title {
   color: #000;
+}
+
+.display-product {
+  top: 0;
 }
 
 .list-group-item {
@@ -11244,6 +12376,7 @@ body {
 
 .card {
   border-radius: 1.25rem;
+  border: 0;
 }
 
 .category-img {
@@ -11251,6 +12384,23 @@ body {
   height: 120%;
   bottom: 0;
   left: 50%;
+}
+
+.btn-primary {
+  background-color: #9476ff;
+  border-color: #9476ff;
+  transition: all 300ms cubic-bezier(0.68, -0.1, 0.265, 1.55);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #7c61dc;
+  border-color: #9476ff;
+}
+
+.btn-link {
+  color: #9476ff;
 }
 
 .btn-dark {
@@ -11263,130 +12413,3 @@ body {
   background-image: url("https://images.unsplash.com/photo-1568781269551-3e3baf5ec909?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
 }
 
-.orderTitle{
-    font-weight: bolder;
-    color: black;
-    padding-left: 10px;
-}
-
-.order-list-container {
-    border-left: 1px solid #ccc;
-    margin-left: -1px;
-    padding-left: 16px;
-    padding-right:16px
-}
-
-.order-container {
-    border-bottom: 1px solid #eee;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 4px;
-    padding-right:4px
-}
-
-.order-header {
-    background-color: #f7f7f7;
-    border-radius: .25rem;
-    padding:20px 16px
-}
-
-.order-header .btn.btn-default-outline {
-    font-weight: 300;
-    width:100%
-}
-
-.order-header .btn.btn-default-outline:focus, .order-header .btn.btn-default-outline:hover {
-    background-color:#333
-}
-
-.order-header .btn.btn-primary-outline {
-    background-color: #fff;
-    font-weight: 300;
-    width:100%
-}
-
-.order-header .btn.btn-primary-outline:focus, .order-header .btn.btn-primary-outline:hover {
-    background-color:#f50
-}
-
-.order-title {
-    font-family: Arial, Roboto, "-apple-system", Helvetica, sans-serif
-}
-
-.order-title span:first-child {
-    color: #333;
-    display: inline-block;
-    font-size: .8rem;
-    font-weight:700
-}
-
-.order-title .pipe {
-    color: #333;
-    font-size: .8rem;
-    font-weight:700
-}
-
-.order-title .pipe .info-gray {
-    color: #666;
-    font-weight:100
-}
-
-.pipe::before {
-    content: '|';
-    padding:0 8px
-}
-
-.pipe-after::after {
-    content: '|';
-    padding:0 8px
-}
-
-body{margin-top:20px;
-    background:#eee;
-}
-
-.invoice {
-    padding: 30px;
-}
-
-.invoice h2 {
-    margin-top: 0px;
-    line-height: 0.8em;
-}
-
-.invoice .small {
-    font-weight: 300;
-}
-
-.invoice hr {
-    margin-top: 10px;
-    border-color: #ddd;
-}
-
-.invoice .table tr.line {
-    border-bottom: 1px solid #ccc;
-}
-
-.invoice .table td {
-    border: none;
-}
-
-.invoice .identity {
-    margin-top: 10px;
-    font-size: 1.1em;
-    font-weight: 300;
-}
-
-.invoice .identity strong {
-    font-weight: 600;
-}
-
-.grid {
-    position: relative;
-    width: 100%;
-    background: #fff;
-    color: #666666;
-    border-radius: 2px;
-    margin-bottom: 25px;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
-}

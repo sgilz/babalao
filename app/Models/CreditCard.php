@@ -118,6 +118,5 @@ class CreditCard extends Model
             "owner_id" => "required|integer|between:1000000,999999999999",
         ]);
     }
-
 }
 

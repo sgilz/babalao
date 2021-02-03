@@ -25,19 +25,19 @@
                     @csrf
                         <div class="form-group">
                             <label for="name">{{__('category.name.label')}}</label>
-                            <input type="text" class="form-control" name="name" placeholder="{{__('category.name.label')}}">
+                            <input type="text" class="form-control" name="name" value="{{ old("name") }}" placeholder="{{__('category.name.label')}}">
                         </div>
                         <div class="form-group">
                             <label for="name">{{__('category.image.label')}}</label>
                             <div class="custom-file">
-                                <input id="customImage" enctype="multipart/form-data" type="file" name="image" class="custom-file-input">
+                                <input id="customImage" enctype="multipart/form-data" type="file" name="image" value="{{ old("image") }}" class="custom-file-input">
                                 <label class="custom-file-label" for="customImage">{{__('category.image.placeholder')}}</label>
                             </div>
                         </div>
                         <div class="form-group row" id="specs-form-group">
                             <label class="col-12" for="name">{{__('category.specs.label')}}</label>
                             <div class="specs-input-group input-group mb-3 col-md-8">
-                                <input type="text" class="form-control" name="specs[]" placeholder="{{__('category.specs.placeholder')}}">
+                                <input type="text" class="form-control" name="specs[]" value="{{ old("specs[]") }}" placeholder="{{__('category.specs.placeholder')}}">
                                 <div class="input-group-append">
                                     <button class="btn btn-outline-primary btn-add" type="button"><i class="fas fa-plus" aria-hidden="true"></i></button>
                                 </div>

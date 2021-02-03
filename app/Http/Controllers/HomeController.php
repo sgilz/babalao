@@ -18,10 +18,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -32,14 +28,17 @@ class HomeController extends Controller
     {
         $data = []; //to be sent to the view
 
-        $user = Auth::user();
-        $wish_list_aux = WishList::where('user_id',$user->getId())->get();
+        if (Auth::check()) {
+            $user = Auth::user();
+            $wish_list_aux = WishList::where('user_id', $user->getId())->get();
 
-        if($wish_list_aux->isEmpty()){
-            $wish_list = new WishList();
-            $wish_list->setUserId($user->getId());
-            $wish_list->save();
+            if ($wish_list_aux->isEmpty()) {
+                $wish_list = new WishList();
+                $wish_list->setUserId($user->getId());
+                $wish_list->save();
+            }
         }
+
 
         $data["categories"] = Category::all();
         return view('home')->with("data", $data);

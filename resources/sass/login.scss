@@ -1,0 +1,33 @@
+.auth-card{
+    min-height: 80vh;
+    border:0;
+    background: linear-gradient(to right, #fff 0%, #fff 43%, #9476ff 43%, #9476ff 100%);
+
+    .form-control{
+
+        border:0;
+        background-color: #b6b5ba1f;
+        height: calc(1.5em + 1rem + 2px);
+
+        &::placeholder {
+            color: #9ea1a3;
+            opacity: 1;
+            font-weight: 500;
+        }
+
+    }
+
+    .btn-primary {
+        
+        &:hover, &:focus, &:not(:disabled):not(.disabled):active{
+            padding: 0.65rem 0.75rem;
+            border-radius: 1.25rem;
+            width: 80%;
+        }
+    }
+    
+
+    .auth-img{
+        width:100%;
+    }
+}

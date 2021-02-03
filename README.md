@@ -29,61 +29,80 @@ Babalao has the following requirements:
 
 1. Clone the release branch of the BookStack GitHub repository into a folder.
 
-
+~~~bash
     git clone https://github.com/sgilz/babalao.git
-
+~~~
 
 2. cd into the application folder and run:
 
-
+    ~~~bash
     composer install
+    ~~~
 
-2. Also install npm dependencies
 
+3. Also install npm dependencies
 
+    ~~~bash
     npm install
+    ~~~
 
+    if you prefer yarn, run:
 
-if you prefer yarn, run:
-
-
+    ~~~bash
     yarn
+    ~~~
 
-3. Set up a .env file, you'll need to have a mysql database.
+4. Set up a .env file, you'll need to have a mysql database.
 
-You can copy [.env.example](https://github.com/laravel/laravel/blob/master/.env.example) from laravel repository
+    You can copy [.env.example](https://github.com/laravel/laravel/blob/master/.env.example) from laravel repository
 
-And replace it with your information
+    And replace it with your information
 
-4. In the application root, generate a unique application key, by running:
+5. In the application root, generate a unique application key, by running:
 
-
+    ~~~bash
     php artisan key:generate 
+    ~~~
 
+6. Install the next library already downloaded for invoices management.
 
-5. Run migrations
+    ~~~bash
+    php artisan invoices:install
+    ~~~
+    Since it is evolving fast you might want to have latest template after update using Artisan command:
 
+    ~~~bash
+    php artisan invoices:update
+    ~~~
+    **Notice**: It will give a warning if you really want to override default resources
 
+7. Run migrations
+
+    ~~~bash
     php artisan migrate
+    ~~~
 
-6. Generate seeds
+8. Generate seeds
 
+    ~~~bash
+    php artisan db:seed
+    ~~~
 
-    php artisan migrate
-
-7. Now we need to generate the storage symlink, if you have problems with the existing one, delete:
+9. Now we need to generate the storage symlink, if you have problems with the existing one, delete:
 
 
     babalao/public/storage
 
-And run 
+    And run 
 
+    ~~~bash
     php artisan storage:link
+    ~~~
 
-7. We are almost ready, al you need to do now is run:
+10. We are almost ready, al you need to do now is run:
 
-
+    ~~~bash
     php artisan serve
+    ~~~
 
-
-You are good to go!
+### **You are good to go!**

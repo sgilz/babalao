@@ -3,8 +3,8 @@
 
 @section('tab')
 <div class="row justify-content-center">
-    <div class="jumbotron">
-        <div class="container">
+    <div class="card">
+        <div class="card-body p-5">
             <h1 class="display-4">{{ __('user.title_header') }}</h1>
             <hr class="my-4">
             <h2>{{ __('user.title.account_information') }}</h2>
